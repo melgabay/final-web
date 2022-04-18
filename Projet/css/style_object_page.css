@@ -111,13 +111,18 @@ nav li
 
 }
 
-.trip_details
+#trip_details
+{
+    display:flex;
+    justify-content: center;
+}
+.trip_details_section
 {
     display: flex;
-}
-.trip_details_section{
-    position: relative;
-
+    flex-wrap: wrap; 
+    max-width: 100px;
+    margin-left: 80px;
+    margin-top: 20px;
 
 }
 .trip_details_section span
