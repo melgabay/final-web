@@ -142,6 +142,7 @@ nav li
 {
     display:flex;
     justify-content:space-between;
+    margin-top: 50px;
     margin-left: 26px;
     margin-right: 26px;
 
@@ -152,4 +153,21 @@ nav li
     width: 300px;
     background-color: #FFFFFF;
     opacity: 0.5; 
+    position: relative;
+}
+.destnation img
+{
+    position: absolute;
+    top: 48px;
+    left:7.5px;
+    width: 288px;
+    height: 1px;
+}
+.destnation h3
+{
+    color: black;
+    font-size: 20px;
+    line-height: 42px;
+    text-align: center;
+
 }
