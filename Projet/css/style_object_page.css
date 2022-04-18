@@ -102,12 +102,13 @@ nav li
 {
     background-color: #B5DBD3;
     width: 100%;
-    height: 42px;
+    height: 50px;
 }
 .title_template h1
 {
     line-height: 42px;
     text-align: center;
+    padding: 0px;
 
 }
 
