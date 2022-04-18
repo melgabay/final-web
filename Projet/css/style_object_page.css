@@ -131,3 +131,25 @@ nav li
     font-size: 30px;
 }
 
+#object_page_h2
+{
+    margin-left:30px;
+    margin-top: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#trip_destnations
+{
+    display:flex;
+    justify-content:space-between;
+    margin-left: 26px;
+    margin-right: 26px;
+
+}
+.destnation
+{
+    height: 400px;
+    width: 300px;
+    background-color: #FFFFFF;
+    opacity: 0.5; 
+}
