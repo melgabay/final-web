@@ -1,6 +1,7 @@
 *{
     margin:0px;
     padding:0px;
+    font-family: 'Assistant';
 
 }
 header,main,footer, nav, aside,section,div,article{
@@ -15,7 +16,7 @@ a
 header{
     background-color: #F7EBD4;
     display: flex;
-    height: 80px;
+    height: 70px;
     justify-content: space-between;
 }
 
@@ -25,9 +26,9 @@ header{
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 0px;
-    width: 75px;
-    height: 75px;
-    margin-top: auto;
+    width: 55px;
+    height: 55px;
+    margin: auto 0px;
 }
 
 .user_pic
@@ -47,17 +48,11 @@ header{
     background-repeat: no-repeat;
     background-size: contain;
     border-radius: 0px;
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
 
 }
 
-.hamburger{
-    width: 30px;
-    height: 30px;
-    display: block;
-    float: right; 
-}
 
 nav{
     margin-left: 10px;
@@ -106,6 +101,7 @@ nav li
 }
 .title_template h1
 {
+    font-weight: bold;
     line-height: 42px;
     text-align: center;
     padding: 0px;
@@ -171,3 +167,4 @@ nav li
     text-align: center;
 
 }
+
