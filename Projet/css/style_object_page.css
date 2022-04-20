@@ -186,6 +186,19 @@ nav li
     font-size: 18px;
 
 }
+.area_list section
+{
+    position:absolute;
+    width: 168px;
+    height: 32px;
+    top: 314px;
+    left: 60px;
+    background: #E1AA7A;
+    text-align: center;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
 #des_img 
 {
     position: relative;
