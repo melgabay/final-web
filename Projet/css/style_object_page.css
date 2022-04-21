@@ -20,7 +20,7 @@ header{
     justify-content: space-between;
 }
 
-.logo
+header a
 {
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
@@ -31,6 +31,10 @@ header{
     margin: auto 0px;
 }
 
+header section
+{   
+    margin:auto 0px;
+}
 .user_pic
 {
     display: flex;
@@ -40,6 +44,7 @@ header{
 .user_pic span
 {
     font-size: 5px;
+    text-align: center;
 
 }
 .user_pic{
@@ -150,6 +155,7 @@ nav li
 #trip_destnations
 {
     display:flex;
+    flex-wrap: wrap;
     justify-content:space-between;
     margin-top: 0px;
     margin-left: 200px;
@@ -256,5 +262,48 @@ nav li
     #trip_destnations
     {
     margin-left: 16px;
+    margin-right: 8px;
+    justify-content:end;
+    }
+    nav
+    {
+        display:none;
+    }
+    header a
+    {
+        width: 56px;
+        height: 56px;
+    }
+    .des_img 
+    {
+        width: 208px;
+    }
+    .area_list
+    {
+        width: 186px;
+        height: 288px; 
+    }    
+    .area_list img
+    {
+    width: 167.5px;
+    }
+    .des_img :nth-child(1)
+    {
+    width: 208px;
+    }
+    .des_img :nth-child(4)
+    {
+    left: 109px;
+    }
+    .area_list section
+    {
+        width: 168px;
+        height: 32px;
+        top: 248px;
+        left: 8px;
+    }
+    #last_vector
+    {
+        width: 208px;
     }
 } 
