@@ -1,0 +1,164 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family: 'Assistant';
+}
+
+header,main,footer, nav, aside,section,div,article{
+    display: block;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    background-color: #F7EBD4;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+}
+
+.logo
+{
+    background-image: url("../images/logo.png");
+    background-size: contain;
+    width: 55px;
+    height: 55px;
+}
+
+.user_pic{
+    display: flex;
+    margin: auto;
+    background-image: url("../images/user_picture.png");
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
+
+.user_container{
+    /* margin-right: 5px; */
+    display: flex;
+}
+
+.user_pic p
+{
+    font-size: 5px;
+}
+
+nav{
+    margin-left: 10px;
+    height: 35px;
+    display: flex;
+}
+
+.breadcrumb{
+    margin:auto 0px;
+    background-color: #FFFFFF;
+}
+
+.title_template
+{
+    background-color: #B5DBD3;
+    width: 100%;
+    height: 50px;
+}
+
+.title_template h1
+{
+    font-weight: bold;
+    text-align: center;
+}
+
+.main_template
+{
+    background-image: url("../images/background.png");
+    width: 100%;    
+    height: 100vh;
+}
+
+.main_template .object_page_h2
+{
+    margin-left: 2%;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.trip_destnations
+{
+    display:flex;
+    justify-content:space-between;
+    margin: 5%;
+}
+
+.destnation{
+    width: 20%;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.destnation h3{
+    text-align: center;
+}
+
+.destnation p{
+    margin-left: 2%;
+} 
+
+.crayon{
+    display: flex;
+    justify-content: space-between;
+}
+
+.crayon img{
+    width: 25px;
+    height: 25px;
+}
+
+.div-red{
+    width: 40%;
+    background-color: rgb(255, 208, 0);
+    margin-bottom: 7px;
+}
+
+.poubelle{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.poubelle img{
+    width: 25px;
+    height: 25px;
+}
+
+
+@media screen and (max-width: 760px) {
+    .trip_destnations{
+        display: block;
+        /* align-items: center; */
+        margin-left: 33%;
+    }
+
+    .destnation{
+        /* margin: 0 auto; */
+        width: 50%;
+        margin-top: 20px;
+    }
+}
+
+
+.side{
+    width:10%;
+    margin:0 10px;
+    display: flex;
+    align-items: center;
+}
+
+#hamburger{
+    width: 30px;
+    height: 30px;
+    display: block;
+    float: right; 
+}
