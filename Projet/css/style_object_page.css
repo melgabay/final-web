@@ -113,6 +113,7 @@ nav li
 {
     display:flex;
     justify-content: center;
+    flex-wrap: wrap; 
 }
 .trip_details_section
 {
@@ -125,10 +126,19 @@ nav li
 }
 .trip_details_section span
 {
+    font-weight: bold;
     font-size: 24px;
 }
+.trip_details_section input
+{
+    text-align: center;
+    margin-top: 5px;
+}
 
-
+.trip_details_section select
+{
+    text-align: center;
+}
 
 #object_page_h2
 {
@@ -146,10 +156,7 @@ nav li
     margin-right: 200px;
 
 }
-.destnation
-{
 
-}
 
 .area_list
 {
@@ -199,80 +206,55 @@ nav li
     line-height: 26px;
     font-weight: bold;
 }
-#des_img 
+.des_img 
 {
     position: relative;
-    width: 1503px;
+    width: 288px;
     height: 87px;
-    margin-left:200px;
 }
-#des_img :nth-child(1)
+.des_img :nth-child(1)
 {
     
     position: absolute;
     top: 29px;
     left:0px;
-    width: 1503px;
+    width: 405px;
     height: 3px;
 }
 
-.des_cir 
+.des_img :nth-child(2)
 {
     position: absolute;
     top: 10px;
+    left:0px;
 }
-
-#des_img :nth-child(3)
-{
-    left:405px;
-}
-
-#des_img :nth-child(4)
-{
-    left:810px;
-}
-
-#des_img :nth-child(5)
-{
-    left:1215px;
-}
-.des_dots
+.des_img :nth-child(3)
 {
     position: absolute;
     top:52px;
-}
-
-#des_img :nth-child(6)
-{
     left: 17px;
 }
-#des_img :nth-child(7)
-{
-    left: 422px;
-}
-#des_img :nth-child(8)
-{
-    left: 827px;
-}
-#des_img :nth-child(9)
-{
-    left: 1232px;
-}
-.des_vehicle
+
+.des_img :nth-child(4)
 {
     position: absolute;
     top:10px;
-}
-
-#des_img :nth-child(10)
-{
     left: 240px;
 }
-#des_img :nth-child(11)
+
+#last_vector
 {
-    left: 645px;
+    width: 288px;
 }
-#des_img :nth-child(12)
+
+@media (max-width: 1420px)
 {
-    left: 1050px;
-}
+    #object_page_h2
+    {
+        margin-left:16px;
+    }
+    #trip_destnations
+    {
+    margin-left: 16px;
+    }
+} 
