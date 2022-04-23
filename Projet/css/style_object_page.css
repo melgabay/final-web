@@ -119,30 +119,43 @@ nav li
     display:flex;
     justify-content: center;
     flex-wrap: wrap; 
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
+
+
 }
 .trip_details_section
 {
     display: flex;
     flex-wrap: wrap; 
-    max-width: 100px;
-    margin-left: 80px;
-    margin-top: 10px;
-
+    max-width: 396px;
+    height: 117px;
+    width: 93px;
+    margin: 0px auto;
 }
 .trip_details_section span
 {
     font-weight: bold;
     font-size: 24px;
+    width: 97px;
+    height: 64px;
 }
 .trip_details_section input
 {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 2px;
+    width: 117px;
+    height: 28px;
 }
 
 .trip_details_section select
 {
     text-align: center;
+    margin-top: 0px;
+    width: 117px;
+    height: 28px;
+
 }
 
 #object_page_h2
@@ -158,8 +171,8 @@ nav li
     flex-wrap: wrap;
     justify-content:space-between;
     margin-top: 0px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 13%;
+    margin-right: 13%;
 
 }
 
@@ -255,16 +268,27 @@ nav li
 
 @media (max-width: 1420px)
 {
+    #trip_details
+    {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .trip_details_section
+    {
+        margin-left: 1%;
+        margin-top: 5%;
+    }
     #object_page_h2
     {
-        margin-left:16px;
+        margin-left: 1.5%;
     }
     #trip_destnations
     {
-    margin-left: 16px;
-    margin-right: 8px;
-    justify-content:end;
+        margin-left: auto;
+        margin-right: auto;
     }
+
     nav
     {
         display:none;
@@ -274,13 +298,13 @@ nav li
         width: 56px;
         height: 56px;
     }
-    .des_img 
+      .des_img 
     {
-        width: 208px;
+        width: 176px;
     }
-    .area_list
+      .area_list
     {
-        width: 186px;
+        width: 176px;
         height: 288px; 
     }    
     .area_list img
@@ -304,6 +328,7 @@ nav li
     }
     #last_vector
     {
-        width: 208px;
+        width: 186px;
     }
+
 } 
