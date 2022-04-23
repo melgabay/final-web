@@ -1,3 +1,4 @@
+
 $("document").ready(() => {
     $('.edit_button').click(function() 
     {
@@ -21,9 +22,21 @@ $("document").ready(() => {
             index=index-2;
             if(index ==1)
             {
-                
+                $('input[name="dest1_ares[]').css("visibility", "visible");
             }  
-
+            if(index ==2)
+            {
+                $('input[name="dest2_ares[]').css("visibility", "visible");
+            } 
+            if(index ==3)
+            {
+                $('input[name="dest3_ares[]').css("visibility", "visible");
+            }  
+            if(index ==4)
+            {
+                $('input[name="dest4_ares[]').css("visibility", "visible");
+            }   
         }
+        $('#Save-Button').css("visibility", "visible");
     })
 });

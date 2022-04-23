@@ -88,7 +88,7 @@ nav li
     background-color: #FFFFFF;
     margin:auto 0px;
 }
-.main_template
+main
 {
     background-image: url("../images/background.png");
     background-size: contain;
@@ -286,7 +286,27 @@ nav li
 {
     width: 288px;
 }
-
+#Save-Button
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  visibility: hidden;
+}
+#Save-Button button
+{
+    
+    width: 140px;
+    height: 49px;
+    background: #338575;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 134.3%;
+    text-align: center;
+    color: #000000;
+}
 @media (max-width: 1420px)
 {
     #trip_details
