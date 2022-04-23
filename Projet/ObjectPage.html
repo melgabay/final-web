@@ -46,6 +46,7 @@
         <div id="trip_details">
             <section class="trip_details_section">
                 <span>Dates:</span>
+                <button class="edit_button"></button> 
                 <input type="date" name="begin" 
                 placeholder="dd-mm-yyyy" value="2021-07-22"
                 min="1997-01-01" max="2030-12-31" disabled>
@@ -54,7 +55,8 @@
                 min="1997-01-01" max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
-                <span>Ages:</span>      
+                <span>Ages:</span>   
+                <button class="edit_button"></button> 
                 <select name="Ages" disabled> 
 					<option value="">18-25</option>
 					<option value="26-35">26-35</option>
@@ -65,6 +67,7 @@
             </section>
             <section class="trip_details_section">
                 <span>Character</span>
+                <button class="edit_button"></button> 
                 <select name="Character" disabled> 
 					<option value="">Chill</option>
 					<option value="Sunbathing">Sunbathing</option>
@@ -93,15 +96,47 @@
                     <div class="area_list">
                         <h3>Argentina</h3>
                         <img src="../images/Vector 4.png">
+                        <button class="edit_button"></button> 
                         <span>Areas:</span>
                         <ol>
-                            <li>Buenos Aires</li>
-                            <li>Ushuaia</li>
-                            <li>Bariloche</li>
-                            <li>El Calafate</li>
-                            <li>El Chalten</li>
-                            <li>Mendoza</li>
+                            <li>			
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Buenos Aires" checked>
+                                <label class="form-check-label">Buenos Aires</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Ushuaia" checked>
+                                <label class="form-check-label">Ushuaia</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Bariloche" checked>
+                                <label class="form-check-label">Bariloche</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="El Calafate" checked>
+                                <label class="form-check-label">El Calafate</label>
+                                </div> 
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="El Chalten" checked>
+                                <label class="form-check-label">El Chalten</label>
+                                </div> 
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Mendoza" checked>
+                                <label class="form-check-label">Mendoza</label>
+                                </div> 
+                            </li>
                         </ol>
+                        
                         <section>
                             <p>Total:7000  &nbsp;&#8362;</p>
                         </section>
@@ -117,10 +152,21 @@
                     <div class="area_list">
                         <h3>Chile</h3>
                         <img src="../images/Vector 4.png">
+                        <button class="edit_button"></button> 
                         <span>Areas:</span>
                         <ol>
-                            <li>Santiago</li>
-                            <li>Pucon</li>
+                            <li>			
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest2_ares[]" value="Santiago" checked>
+                                <label class="form-check-label">Santiago</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest2_ares[]" value="Pucon" checked>
+                                <label class="form-check-label">Pucon</label>
+                                </div>
+                            </li>
                         </ol>
                         <section>
                             <p>Total:3000  &nbsp;&#8362;</p>
@@ -137,12 +183,33 @@
                     <div class="area_list">
                         <h3>Brazil</h3>
                         <img src="../images/Vector 4.png">
+                        <button class="edit_button"></button> 
                         <span>Areas:</span>
                         <ol>
-                            <li>Rio De Janeiro</li>
-                            <li>Iguazo</li>
-                            <li>Florianopolis</li>
-                            <li>Olinda</li>
+                            <li>			
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Rio De Janeiro" checked>
+                                <label class="form-check-label">Rio De Janeiro</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Iguazo" checked>
+                                <label class="form-check-label">Iguazo</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Florianopolis" checked>
+                                <label class="form-check-label">Florianopolis</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Olinda" checked>
+                                <label class="form-check-label">Olinda</label>
+                                </div> 
+                            </li>
                         </ol>
                         <section>
                             <p>Total:6000  &nbsp;&#8362;</p>
@@ -158,12 +225,33 @@
                     <div class="area_list">
                         <h3>Peru</h3>
                         <img src="../images/Vector 4.png">
+                        <button class="edit_button"></button> 
                         <span>Areas:</span>
                         <ol>
-                            <li>Cusco</li>
-                            <li>Lima</li>
-                            <li>Machu Picchu</li>
-                            <li>Huaraz</li>
+                            <li>			
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Cusco" checked>
+                                <label class="form-check-label">Cusco</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Lima" checked>
+                                <label class="form-check-label">Lima</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Machu Picchu" checked>
+                                <label class="form-check-label">Machu Picchu</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Huaraz" checked>
+                                <label class="form-check-label">Huaraz</label>
+                                </div> 
+                            </li>
                         </ol>
                         <section>
                             <p>Total:4000  &nbsp;&#8362;</p>
