@@ -1,6 +1,4 @@
 
-
-
 .object_page_h2
 {
     margin-left: 2%;
@@ -23,7 +21,6 @@
 }
 
 .destnation{
-    visibility:none;
     width: 20%;
     background-color: rgb(255, 255, 255, 0.5);
 }

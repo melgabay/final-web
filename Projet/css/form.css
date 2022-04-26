@@ -70,12 +70,22 @@
     margin: 0 10px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1121px) {
     .continent{
         display: block;
     }
+}
 
-    .continent img{
-        width: 17px;
-    }
+
+.two-div-in-one{
+    display: flex;
+    margin-left: 2%;
+}
+
+.middle-age{
+    margin-left: 10%;
+}
+
+.first-dest h2{
+    margin-left: 2%;
 }
