@@ -32,14 +32,13 @@ header{
 .user_pic{
     display: flex;
     margin: auto;
-    background-image: url("../images/user_picture.png");
+    background-image: url("../images/someone.png");
     background-size: contain;
     width: 40px;
     height: 40px;
 }
 
 .user_container{
-    /* margin-right: 5px; */
     display: flex;
 }
 
