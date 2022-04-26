@@ -1,0 +1,91 @@
+
+.main_template .object_page_h2
+{
+    margin-left: 2%;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.continent{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15%;
+}
+
+.continent label{
+    font-size: 20px;
+}
+
+.anotherD{
+    margin-top: 6%;
+    position: relative;
+}
+.another-destinatation{
+    margin-left: 5%;
+    position: absolute;
+    bottom: 90%;
+}
+
+.budget{
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.budget h3{
+    text-decoration: underline;
+}
+
+.choose-budget{
+    display: flex;
+
+}
+
+.trait{
+    height: 5px;
+    width: 25px;
+    background-color: black;
+  
+}
+
+#trait1{
+    position: relative;
+    top: 15px;
+}
+
+.choose-date{
+    display: flex;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.choose-date h3{
+    text-decoration: underline;
+}
+
+
+#trait2{
+    position: relative;
+    top: 60px;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 1121px) {
+    .continent{
+        display: block;
+    }
+}
+
+
+.two-div-in-one{
+    display: flex;
+    margin-left: 2%;
+}
+
+.middle-age{
+    margin-left: 10%;
+}
+
+.first-dest h2{
+    margin-left: 2%;
+}
