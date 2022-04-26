@@ -102,6 +102,8 @@ main
     line-height: 134.3%;
     text-align: center;
     color: #000000;
+    margin-bottom: 15px;
+    Border-radius :25px;
 }
 
 #Save-Button
