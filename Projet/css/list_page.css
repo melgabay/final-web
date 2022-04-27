@@ -40,9 +40,13 @@
     justify-content: space-between;
 }
 
-.crayon img{
-    width: 25px;
+.crayon a{
+    background-image: url("../images/crayon.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 0px;
     height: 25px;
+    width: 25px;
 }
 
 .div-red{
