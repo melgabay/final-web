@@ -42,3 +42,11 @@ $("document").ready(() => {
 
 
 });
+
+
+(function () {
+    if (document.getElementsByClassName("destnation").length == 1) {
+        document.getElementsByClassName("trip_destnations")[0].style.justifyContent = "center";
+        document.getElementsByClassName("destnation")[0].style.width = "50%";
+    }
+})();

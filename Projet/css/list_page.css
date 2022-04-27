@@ -74,6 +74,10 @@
         margin-left: 33%;
     }
 
+    main{
+        height: 100%;
+    }
+
     .destnation{
         /* margin: 0 auto; */
         width: 50%;
