@@ -40,6 +40,29 @@ $("document").ready(() => {
         $('#Save-Button').css("visibility", "visible");
     })
 
+    $('#Save-Button').click(function() 
+    {
+       $('input[name="begin"]').prop('disabled', true);
+       $('input[name="end"]').prop('disabled', true);
+       $('select[name="Ages"]').prop('disabled', true);
+       $('select[name="Character"]').prop('disabled', true);
+       let Cheaks=$('.form-check-input');
+       let ClassCheack=$('.form-check');
+       let numberOfCheaks= Cheaks.length;
+       for(i=0;i<numberOfCheaks;i++)
+       {
+            if(!Cheaks.eq(i).is(':checked'))
+            {
+                ClassCheack.eq(i).css("display", "none");
+            }
+       }
+       $('input[name="dest1_ares[]').css("visibility", "hidden");;
+        $('input[name="dest2_ares[]').css("visibility", "hidden");;
+        $('input[name="dest3_ares[]').css("visibility", "hidden");;
+        $('input[name="dest4_ares[]').css("visibility", "hidden");;
+
+    })   
+
 
 });
 
