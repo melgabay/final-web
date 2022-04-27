@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Added Player</title>
+        <title>Added Trip</title>
     </head>
     <body>
         <section>
             <?php
-                echo "<h2>The player has been successfully added</h2>";
+                echo "<h2>The trip has been successfully added</h2>";
             ?>
         </section>
     </body>
