@@ -13,8 +13,13 @@ form{
 }
 
 .anotherD, .budget, .choose-date, .two-div-in-one, .typeoftyoul, .middle-age,.login-container{
-    margin-top: 10%;
+    margin-top: 2%;
 }
+/* 
+.anotherD{
+    /* margin-top: 2%; 
+    margin-left: 2%;
+} */
 
 .choose-budget{
     display: flex;
@@ -22,7 +27,10 @@ form{
 
 .choose-date, .two-div-in-one{
     display: flex;
-    justify-content: space-between;
+}
+
+.dater{
+    margin-left: 2%;
 }
 
 #trait2{
