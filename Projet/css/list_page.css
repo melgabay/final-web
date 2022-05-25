@@ -1,4 +1,12 @@
+.trip_destnations{
+    margin: 0 3%;
+}
 
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: rgb(13 110 253 / 25%);
+    /* color: var(--bs-table-striped-color); */
+}
+/* 
 .object_page_h2
 {
     margin-left: 2%;
@@ -7,9 +15,10 @@
 
 .trip_destnations
 {
-    display:flex;
-    justify-content:space-between;
-    /* margin: 5%; */
+    /* display:flex;
+    justify-content:space-between; */
+    /* margin: 5%; 
+    margin-left: 2%;
     
 }
 
@@ -69,7 +78,7 @@
 @media screen and (max-width: 760px) {
     .trip_destnations{
         display: block;
-        /* align-items: center; */
+        /* align-items: center; 
         margin-left: 33%;
     }
 
@@ -78,10 +87,10 @@
     }
 
     .destnation{
-        /* margin: 0 auto; */
+        /* margin: 0 auto; 
         width: 50%;
         margin-top: 20px;
     }
 }
 
-
+ */
