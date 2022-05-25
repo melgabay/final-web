@@ -123,31 +123,25 @@ main
     height:100%;
 }
 
-nav{
-    height: 50px;
+nav{ 
+    /* height: 50px; */
     margin-left: 2%;
     /* display: flex; */
     /* justify-content: center; */
-    /* align-items: center; */
-}
-
+    /* /* align-items: center;  */
+} 
+/* 
 ul{
     display: flex;
-    /* justify-content: center; */
     list-style-type: none;
-    /* margin: 0 auto; */
     margin: 0;
-}
+} */
 
-nav > ul > li > a {
+
+.navbar-light .navbar-nav .nav-link{
     color: #585858;
 }
 
-nav > ul > li > a:hover,
-nav > ul > li.nav-item> a.nav-link.active:hover{
+.navbar-light .navbar-nav .nav-link:hover{
     color: #B48D11;
-}
-
-nav > ul > li.nav-item> a.nav-link.active {
-    color: black;
 }
