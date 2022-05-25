@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
 
     <!-- BOOTSRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- css -->
 
@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="css/template.css">
     <link rel="stylesheet" href="css/list_page.css">
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script defer="" src="js/list_page.js"></script>
     <script defer="" src="js/script.js"></script>
-    
+
 
     <title>TripDream</title>
 </head>
@@ -39,36 +40,48 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-            <div class="container-fluid">
-    
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-    
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+
                 <span class="navbar-toggler-icon"></span>
-    
-              </button>
-    
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-                  <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Homepage</a></li>
-    
-                  <li class="nav-item"><a class="nav-link" href="form.html">Create New Trip</a></li>
-    
-                  <li class="nav-item"><a class="nav-link active" href="#">My Trips</a></li>
-    
+
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Homepage</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="form.html">Create New Trip</a></li>
+
+                    <li class="nav-item"><a class="nav-link active" href="#">My Trips</a></li>
+
                 </ul>
-    
-              </div>
-    
-           </div>
-    
-    </nav> 
-     <!-- <div class="h1_template">
+
+            </div>
+
+        </div>
+
+    </nav>
+    <!-- <div class="h1_template">
          <h1>My Trips</h1>
     </div> -->
+
+    <!-- <nav>
+        <ul>
+
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Homepage</a></li>
+
+            <li class="nav-item"><a class="nav-link " href="form.html">Create New Trip</a></li>
+
+            <li class="nav-item"><a class="nav-link active" href="#">My Trips</a></li>
+
+        </ul>
+    </nav> -->
     <main>
 
         <!-- <h2 class="object_page_h2">Path:</h2> -->
@@ -76,54 +89,43 @@
 
         <div class="trip_destnations">
 
-            <div class="destnation">
-                <h3>South Africa</h3>
-                <p>Created on the 01.04.22</p>
-                <div class="crayon">
-                    <p> <b> 01.07.21 - 29.10.21 </b> </p>
-                    <a href="ObjectPage.html"></a>
-                </div>
-                <div class="poubelle">
-                    <div></div>
-                    <div class="div-red">
-                        Total: 40,000 $
-                    </div>
-                    <img src="images/poubelle.png" class="delete_button" alt="poubelle" title="poubelle">
-                </div>
-            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Contry</th>
+                            <th scope="col">Depart Date</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-            <div class="destnation">
-                <h3>Center USA</h3>
-                <p>Created on the 30.12.20</p>
-                <div class="crayon">
-                    <p> <b> 20.01.21 - 25.06.21 </b> </p>
-                    <a href="#"></a>
-                </div>
-                <div class="poubelle">
-                    <div></div>
-                    <div class="div-red">
-                        Total: 50,000 $
-                    </div>
-                    <img src="images/poubelle.png" class="delete_button" alt="poubelle" title="poubelle">
-                </div>
+                        <tr class='clickable-row' data-href='ObjectPage.html'>
+                            <th scope="row">1</th>
+                            <td>South Africa</td>
+                            <td>01.07.21</td>
+                            <td>29.10.21</td>
+                            <td>40.000$</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Center USA</td>
+                            <td>20.01.21</td>
+                            <td>25.06.21</td>
+                            <td>50.000$</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Inde</td>
+                            <td>02.02.22</td>
+                            <td>29.07.22</td>
+                            <td>20.000$</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="destnation" >
-                <h3>Inde</h3>
-                <p>Created on the 15.01.22</p>
-                <div class="crayon">
-                    <p> <b> 02.02.22 - 29.07.22 </b> </p>
-                    <a href="#"></a>
-                </div>
-                <div class="poubelle">
-                    <div></div>
-                    <div class="div-red">
-                        Total: 20,000 $
-                    </div>
-                    <img src="images/poubelle.png" class="delete_button" alt="poubelle" title="poubelle">
-                </div>
-            </div>
-
         </div>
     </main>
 
