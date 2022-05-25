@@ -3,23 +3,13 @@
     font-weight: bold;
 }
 
-form{
-    margin-left: 5%;
+form, .col-md-3{
     padding-top: 1%;
-}
-
-.continent label{
-    font-size: 20px;
 }
 
 .anotherD, .budget, .choose-date, .two-div-in-one, .typeoftyoul, .middle-age,.login-container{
     margin-top: 2%;
 }
-/* 
-.anotherD{
-    /* margin-top: 2%; 
-    margin-left: 2%;
-} */
 
 .choose-budget{
     display: flex;
@@ -33,12 +23,6 @@ form{
     margin-left: 2%;
 }
 
-#trait2{
-    position: relative;
-    top: 60px;
-    margin: 0 10px;
-}
-
 .login-container{
 
   display: flex;
@@ -48,4 +32,16 @@ form{
 
 .mx-sm-3 {
     margin-left: 0 !important;
+}
+
+.continent, .object_page_h2,.another-destinatation,.budget,.choose-date,.typeoftyoul,.middle-age{
+    margin-left: 3%;
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .col-md-3{
+    width: 25%;
+    }
 }
