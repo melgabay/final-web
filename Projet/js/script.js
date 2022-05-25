@@ -50,3 +50,9 @@ $("document").ready(() => {
         document.getElementsByClassName("destnation")[0].style.width = "50%";
     }
 })();
+
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
