@@ -39,8 +39,6 @@ $("document").ready(() => {
         }
         $('#Save-Button').css("visibility", "visible");
     })
-   
-    $('.navbar-nav').append('<li class="nav-item"><a a class="nav-link active" href="#">Softh Amrica</a></li>');
 
 
 });
@@ -53,12 +51,20 @@ $("document").ready(() => {
     }
 })();
 
-<<<<<<< Updated upstream
 jQuery(document).ready(function($) {
     $(".clickable-row").click(function() {
         window.location = $(this).data("href");
     });
 });
-=======
 
->>>>>>> Stashed changes
+$(document).ready(function(){
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    var options={
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    };
+    date_input.datepicker(options);
+  })
