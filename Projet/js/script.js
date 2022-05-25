@@ -39,11 +39,11 @@ $("document").ready(() => {
         }
         $('#Save-Button').css("visibility", "visible");
     })
-   
-    $('.navbar-nav').append('<li class="nav-item"><a a class="nav-link active" href="#">Softh Amrica</a></li>');
+    $('select[name="Ages"]')
 
 
 });
+
 
 
 (function () {
@@ -53,12 +53,3 @@ $("document").ready(() => {
     }
 })();
 
-<<<<<<< Updated upstream
-jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
-    });
-});
-=======
-
->>>>>>> Stashed changes
