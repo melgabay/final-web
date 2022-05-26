@@ -95,7 +95,7 @@
 
                     <li class="nav-item"><a class="nav-link" href="form.html">Create New Trip</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="list_page.html">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="list_page.html">My Trips</a></li>
 
                     <?php  echo ' <li class="nav-item"><a class="nav-link" href="list_page.html">'. $row["t_name"]. '</a></li>'; 	?> 
 
