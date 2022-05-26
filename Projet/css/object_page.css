@@ -1,4 +1,4 @@
-#trip_details
+/* #trip_details
 {
     display:flex;
     justify-content: center;
@@ -65,10 +65,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* margin-top: 0px; */
+    /* margin-top: 0px; 
     margin: 5%;
-    /* margin-left: 13%; */
-    /* margin-right: 13%; */
+    /* margin-left: 13%; 
+    /* margin-right: 13%; 
 }
 
 
@@ -261,7 +261,7 @@
 
 .change-button{
     display: flex;
-    /* float: right; */
+    /* float: right; 
     flex-direction: row-reverse;
     padding-bottom: 2%;
     margin-right: 2%;
@@ -269,4 +269,4 @@
 
 .edit{
     margin-right: 2%;
-}
+} */

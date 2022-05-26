@@ -1,3 +1,5 @@
+/****** TEMPLATE ******/
+
 *{
     margin:0px;
     padding:0px;
@@ -14,6 +16,7 @@ header,main,footer, nav, aside,section,div,article{
     width: 100%;
     height: 60px;
 }
+
 .h1_template h1
 {
     font-weight: bold;
@@ -31,7 +34,6 @@ header{
     display: flex;
     height: 75px;
 }
-
 
 header > a
 {
@@ -52,33 +54,31 @@ header > section
 
 }
 
-.user_pic
-{
-    display: flex;
-    width: 55px;
-    height: 55px;
-}
-
 .user_pic span
 {
     font-size: 5px;
     text-align: center;
-
 }
 
 .user_pic{
-    margin:auto auto;
+    display: flex;
+    margin:auto;
     background-image: url("../images/user_picture.png");
-    background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 0px;
     width: 40px;
     height: 40px;
 }
 
-.bg-light 
-{
-    background-color: #FFFFFF!important;
+nav{ 
+    margin-left: 2%;
+} 
+
+.navbar-light .navbar-nav .nav-link{
+    color: #585858;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #B48D11;
 }
 
 
@@ -89,6 +89,347 @@ main
     height:100vh;
 }
 
+.prof-pic{
+    margin-right: 15px;
+}
+
+.main-form{
+    height:100%;
+}
+
+
+
+/****** INDEX ******/
+
+.user_pic.index{
+    background-image: url("../images/somone.png");
+
+}
+.form-index{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px auto 0 auto;
+    text-align: right;
+    max-width: 600px;
+}
+
+.form-group{
+    width:100%;
+    height:100px;
+}
+
+.form-group input{
+    width:100%;
+    height:50px;
+}
+
+.form-group:first-child{
+    margin-bottom:10px;
+}
+
+.form-group  .form-check-input {
+    float: left;
+
+    margin-left: 10px !important;
+}
+
+.btn.btn-primary.index{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.or-container {
+    align-items: center;
+    display: flex;
+    margin: 25px auto;
+    max-width: 600px;
+}
+
+.line-separator {
+    background-color: black;
+    flex-grow: 5;
+    height: 1px;
+}
+
+.or-label {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.login-container{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.footer-index a {
+    color: black;
+}
+
+.footer-index .another-connect{
+    display: flex;
+    gap: 20px;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 660px){
+    .form-index, .or-container{
+        width: 50%;
+    }
+}
+
+/****** FORM ******/
+
+.form-page-form, .col-md-3{
+    padding-top: 1%;
+}
+
+.anotherD, .budget, .choose-date, .two-div-in-one, .typeoftyoul, .middle-age,.login-container{
+    margin-top: 2%;
+}
+
+.choose-budget{
+    display: flex;
+}
+
+.choose-date, .two-div-in-one{
+    display: flex;
+}
+
+.dater{
+    margin-left: 2%;
+}
+
+.login-container{
+
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1%;
+}
+
+.mx-sm-3 {
+    margin-left: 0 !important;
+}
+
+.continent, .object_page_h2,.another-destinatation,.budget,.choose-date,.typeoftyoul,.middle-age{
+    margin-left: 3%;
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .col-md-3{
+    width: 25%;
+    }
+}
+
+/****** LIST PAGE ******/
+
+.trip_destnations{
+    margin: 0 3%;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: rgb(13 110 253 / 25%);
+}
+
+tr.clickable-row:hover{
+    cursor: pointer;
+    --bs-table-accent-bg: rgba(206, 204, 204, 0.678)!important;
+}
+
+/* ChANGE PAGE + OBJECT PAGE */
+
+
+#trip_details
+{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0px;
+    padding: 2%;
+
+
+}
+.trip_details_section
+{
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 396px;
+    height: 100px;
+    width: 135px;
+    margin: 0px auto;
+    position: relative;
+}
+.trip_details_section span
+{
+    font-weight: bold;
+    font-size: 24px;
+    width: 97px;
+    height: 40px;
+}
+.trip_details_section input
+{
+    text-align: center;
+    margin-top: 2px;
+    width: 117px;
+    height: 28px;
+}
+.edit_button
+{
+    background: url("../images/edit_button.png");
+    border: 0px;
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 5px;
+    right: 5px;
+
+}
+.trip_details_section select
+{
+    text-align: center;
+    margin-top: 0px;
+    width: 117px;
+    height: 28px;
+
+}
+
+#object_page_h2
+{
+    margin-left:200px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+#trip_destnations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-top: 0px; */
+    margin: 5%;
+    /* margin-left: 13%; */
+    /* margin-right: 13%; */
+}
+
+
+.area_list
+{
+    height: 388px;
+    width: 288px;
+    background-color: rgba(255, 255, 255, .5);
+    position: relative;
+}
+
+.area_list img
+{
+    position: absolute;
+    top: 40px;
+    left:7.5px;
+    width: 278px;
+    height: 1px;
+}
+.area_list h3
+{
+    font-size: 25px;
+    line-height: 42px;
+    text-align:left;
+    margin-left: 7.5px;
+}
+.area_list span
+{
+    font-size: 21px;
+    font-weight: bold;
+    margin-left: 32px;
+}
+
+.area_list ol li
+{
+    list-style: none;
+    font-size: 18px;
+}
+
+.form-check-input:checked {
+    background-color: #B5DBD3;
+    border-color: #B5DBD3;
+  }
+
+.form-check-input
+{
+    visibility:hidden;
+}
+.area_list section
+{
+    position:absolute;
+    width: 168px;
+    height: 32px;
+    top: 314px;
+    left: 60px;
+    background: #E1AA7A;
+    text-align: center;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.des_img 
+{
+    position: relative;
+    width: 288px;
+    height: 87px;
+}
+.des_img :nth-child(1)
+{
+    
+    position: absolute;
+    top: 29px;
+    left:0px;
+    width: 405px;
+    height: 3px;
+}
+
+.des_img :nth-child(2)
+{
+    position: absolute;
+    top: 10px;
+    left:0px;
+}
+.des_img :nth-child(3)
+{
+    position: absolute;
+    top:52px;
+    left: 17px;
+}
+
+.des_img :nth-child(4)
+{
+    position: absolute;
+    top:10px;
+    left: 240px;
+}
+
+#last_vector
+{
+    width: 288px;
+}
+#Save-Button
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  visibility: hidden;
+}
 #Save-Button button
 {
     
@@ -102,46 +443,83 @@ main
     line-height: 134.3%;
     text-align: center;
     color: #000000;
-    margin-bottom: 15px;
-    border-radius: .25rem; 
 }
 
-#Save-Button
+@media (max-width: 1420px)
 {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
-}
+    #trip_details
+    {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .trip_details_section
+    {
+        margin:auto auto;
+    }
+    #object_page_h2
+    {
+        margin-left: 1.5%;
+    }
+    #trip_destnations
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+      .des_img 
+    {
+        width: 156px;
+    }
+      .area_list
+    {
+        width: 156px;
+        height: 288px; 
+    }    
+    .area_list img
+    {
+    width: 156px;
+    }
+    .des_img :nth-child(1)
+    {
+    width: 170px;
+    }
+    .des_img :nth-child(4)
+    {
+    left: 109px;
+    }
+    .area_list section
+    {
+        width: 150px;
+        height: 32px;
+        top: 248px;
+        left: 8px;
+    }
+    #last_vector
+    {
+        width: 156px
+    }
 
-.prof-pic{
-    margin-right: 15px;
-}
+    .area_list span
+    {
+    margin-left: 22px;
+    font-size: 18px;
 
+    }
 
-
-.main-form{
-    height:100%;
-}
-
-nav{ 
-    /* height: 50px; */
-    margin-left: 2%;
-    /* display: flex; */
-    /* justify-content: center; */
-    /* /* align-items: center;  */
+    .area_list ol li
+    {
+    font-size: 16px;
+    }
 } 
-/* 
-ul{
+
+.change-button{
     display: flex;
-    list-style-type: none;
-    margin: 0;
-} */
-
-
-.navbar-light .navbar-nav .nav-link{
-    color: #585858;
+    /* float: right; */
+    flex-direction: row-reverse;
+    padding-bottom: 2%;
+    margin-right: 2%;
 }
 
-.navbar-light .navbar-nav .nav-link:hover{
-    color: #B48D11;
+.edit{
+    margin-right: 2%;
 }

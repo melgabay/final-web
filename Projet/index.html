@@ -36,7 +36,7 @@
     <header>
         <a href="index.html" href="#"></a>
         <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
+            <a href="#" class="user_pic index"></a>
             <span>Hello Guest</span>
         </section>
     </header>
@@ -48,24 +48,27 @@
             <h1>Connect</h1>
        </div>
 
-            <form action="#" method="post">
+       <form action="logincheck.php" method="get" class="form-index">
+
+            <!-- <form action="logincheck.php" method="GET"> -->
                 <div class="form-group">
                     <label for="exampleInputEmail1">Enter an email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Enter email" required>
+                        placeholder="Enter email" name="email" required>
                 </div>
     
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
                 </div>
     
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="Remember" value="Remember">
                     <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                 </div>
-    
-                <button type="submit" class="btn btn-primary" id="submit-button" href="form.html">Sign in</button>
+                <button type="submit" class="btn btn-primary index">Sign in</button>
+
+
             </form>
     
             <div class="or-container">
@@ -80,7 +83,7 @@
                     Login With Google
                 </button>
             </div>
-            <footer>
+            <footer class="footer-index">
                 <div class="another-connect">
                     <a href="#"> Sign Up</a>
                     <a href="#"> Forgot my password</a>
