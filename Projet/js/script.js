@@ -40,11 +40,14 @@ $("document").ready(() => {
         $('#Save-Button').css("visibility", "visible");
     })
 
-
+ 
+        const selectedAges =$('select[name="Ages"]').attr("data-selected");
+        $('select[name="Ages"]').val(selectedAges);
+        const selectedNature =$('select[name="Character"]').attr("data-selected");
+        $('select[name="Character"]').val(selectedNature);
+    
 
 });
-
-
 
 (function () {
     if (document.getElementsByClassName("destnation").length == 1) {
@@ -52,7 +55,6 @@ $("document").ready(() => {
         document.getElementsByClassName("destnation")[0].style.width = "50%";
     }
 })();
-
 
 jQuery(document).ready(function($) {
     $(".clickable-row").click(function() {
