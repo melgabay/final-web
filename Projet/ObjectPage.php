@@ -50,10 +50,10 @@
 <html lang="en">
 
 <head>
+
     <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
     <!-- BOOTSRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -200,7 +200,7 @@
 
         <div class="change-button">
             <button type="button" class="btn btn-secondary">Delete</button>
-            <a href="changepage.html" class="edit"> <button type="button" class="btn btn-secondary">Edit</button></a>
+            <div class="edit" > <button type="button" class="btn btn-secondary">Edit</button></div>
         </div>
 
     </main>
