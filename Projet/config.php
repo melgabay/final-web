@@ -8,6 +8,4 @@
 
 	$dbname = "dbShnkr22studWeb1";
 
-	define('URL', 'http://localhost', true);
-
 ?>

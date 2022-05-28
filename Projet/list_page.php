@@ -41,7 +41,8 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <link rel="icon" href="favicon.ico">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
@@ -62,6 +63,7 @@
         crossorigin="anonymous"></script>
     <script defer="" src="js/list_page.js"></script>
     <script defer="" src="js/script.js"></script>
+
 
     <title>TripDream</title>
 </head>
@@ -127,9 +129,9 @@
                 echo    '<td>'.$row["start_date"].'</td>';
                 echo    '<td>'.$row["end_date"].'</td>';
                 echo     '<td>'.$row["budget"].'$</td>';
-                echo '</tbody>';
                 $rowCount++;
              } ?> 
+             </tbody>
          </table>
         </div>
         </div>

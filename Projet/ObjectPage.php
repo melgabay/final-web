@@ -28,15 +28,18 @@
 
 	$prodId = $_GET["prodId"];
 
-	$query 	= "SELECT * FROM tbl_trips_206 where t_id=" . $prodId;
-
+	$query 	= "SELECT * from tbl_trips_206 as t
+    inner join tbl_destinations_trip_206 as t_d
+    on t.t_id= t_d.t_id
+    inner join tbl_destination_206 as d
+    on d.d_id= t_d.d_id where t.t_id=" . $prodId;
 	// echo $query;
 
 	$result = mysqli_query($connection, $query);
 
 	if($result) {
 
-		$row 	= mysqli_fetch_assoc($result);//there is only 1 with id=X
+		$row 	= mysqli_fetch_assoc($result);
 
 	}
 
@@ -47,6 +50,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +65,7 @@
     <link rel="stylesheet" href="css/object_page.css">
     <link rel="stylesheet" href="css/template.css">
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/object_page.js"></script>
     <title>TripDream</title>
 </head>
 
@@ -97,8 +101,6 @@
 
                     <li class="nav-item"><a class="nav-link active" href="list_page.html">My Trips</a></li>
 
-                    <?php  echo ' <li class="nav-item"><a class="nav-link" href="list_page.html">'. $row["t_name"]. '</a></li>'; 	?> 
-
                 </ul>
 
             </div>
@@ -107,18 +109,18 @@
 
     </nav>
     <main class="main-form">
-        <div id="trip_details">
+    <div id="trip_details">
             <section class="trip_details_section">
                 <span>Dates:</span>
-                <input type="date" name="begin" placeholder="dd-mm-yyyy" value="2021-07-22" min="1997-01-01"
-                    max="2030-12-31" disabled>
-                <input type="date" name="end" placeholder="dd-mm-yyyy" value="2021-11-22" min="1997-01-01"
+                <input type="date" name="begin" placeholder="dd-mm-yyyy"  min="1997-01-01"
+                    max="2030-12-31" value="<?php echo $row["start_date"];?>" disabled >
+                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row["end_date"];?>"" min="1997-01-01"
                     max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
                 <span>Ages:</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Ages" disabled  data-selected="<?php echo $row["ages"];?>">
+                <select name="Ages" disabled data-selected="<?php echo $row["ages"];?>">
                     <option value="1">18-25</option>
                     <option value="2">26-35</option>
                     <option value="3">36-45</option>
@@ -129,210 +131,71 @@
             <section class="trip_details_section">
                 <span>Character</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Character" disabled>
-                    <option value="">Chill</option>
-                    <option value="Sunbathing">Sunbathing</option>
-                    <option value="Tracks">Tracks</option>
-                    <option value="Nature">Nature</option>
-                    <option value="Field">Field</option>
-                    <option value="Shopping">Shopping</option>
+                <select name="Character" disabled  data-selected="<?php echo $row["nature"];?>">
+                    <option value="1">Chill</option>
+                    <option value="2">Sunbathing</option>
+                    <option value="3">Tracks</option>
+                    <option value="4">Nature</option>
+                    <option value="5">Field</option>
+                    <option value="6">Shopping</option>
                 </select>
             </section>
             <section class="trip_details_section">
                 <span>Total</span>
-                <span>20,000 &nbsp;&#8362;</span>
+                <span><?php echo $row["budget"];?> &nbsp;&#8362;</span>
             </section>
-        </div>
+    </div>
         <h2 id="object_page_h2">Path:</h2>
         <div id="trip_destnations">
-            <div class="destnation">
-                <div class="des_img">
-                    <img src="images/Vector 3.png">
-                    <img src="images/dest1.png">
-                    <img src="images/dots.png">
-                    <img src="images/bus.png">
-                </div>
-                <div class="area_list">
-                    <h3>Argentina</h3>
-                    <img src="images/Vector 4.png">
-                    <!-- <button class="edit_button"></button>  -->
-                    <span>Areas:</span>
-                    <ol>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Buenos Aires"
-                                    checked>
-                                <label class="form-check-label">Buenos Aires</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Ushuaia"
-                                    checked>
-                                <label class="form-check-label">Ushuaia</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Bariloche"
-                                    checked>
-                                <label class="form-check-label">Bariloche</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="El Calafate"
-                                    checked>
-                                <label class="form-check-label">El Calafate</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="El Chalten"
-                                    checked>
-                                <label class="form-check-label">El Chalten</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest1_ares[]" value="Mendoza"
-                                    checked>
-                                <label class="form-check-label">Mendoza</label>
-                            </div>
-                        </li>
-                    </ol>
+            <?php 
+        $numberDest=0;
+        while($row) 
+                {
+                $numberDest++;
+                echo '<div class="destnation">';
+                echo         '<div class="des_img">';
+                echo             '<img src="images/Vector 3.png">';
+                echo             '<img src="images/dest'.$numberDest.'.png">';
+                echo              '<img src="images/dots.png">';
+                echo             '<img src="images/bus.png">';
+                echo          '</div>';
+                echo          '<div class="area_list">';
+                echo            '<h3>'. $row["destination_name"] .'</h3>';
+                echo             '<img src="images/Vector 4.png">';
+                echo             '<span>Areas:</span>';
+                echo             '<ol>';
+                $queryArea 	= "SELECT a.area_name from tbl_destination_206 as d
+                inner join tbl_destination_area_206  as d_a
+                on d.d_id=d_a.d_id
+                inner join tbl_area_206 as a
+                on d_a.a_id= a.a_id where d.d_id=" . $row["d_id"]."";
+                $resultArea = mysqli_query($connection, $queryArea);
+                if($resultArea) {
 
-                    <section>
-                        <p>Total:7000 &nbsp;&#8362;</p>
-                    </section>
-                </div>
-            </div>
-            <div class="destnation">
-                <div class="des_img">
-                    <img src="images/Vector 3.png">
-                    <img src="images/dest2.png">
-                    <img src="images/dots.png">
-                    <img src="images/airplane.png">
-                </div>
-                <div class="area_list">
-                    <h3>Chile</h3>
-                    <img src="images/Vector 4.png">
-                    <!-- <button class="edit_button"></button>  -->
-                    <span>Areas:</span>
-                    <ol>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest2_ares[]" value="Santiago"
-                                    checked>
-                                <label class="form-check-label">Santiago</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest2_ares[]" value="Pucon"
-                                    checked>
-                                <label class="form-check-label">Pucon</label>
-                            </div>
-                        </li>
-                    </ol>
-                    <section>
-                        <p>Total:3000 &nbsp;&#8362;</p>
-                    </section>
-                </div>
-            </div>
-            <div class="destnation">
-                <div class="des_img">
-                    <img src="images/Vector 3.png">
-                    <img src="images/dest3.png">
-                    <img src="images/dots.png">
-                    <img src="images/bus.png">
-                </div>
-                <div class="area_list">
-                    <h3>Brazil</h3>
-                    <img src="images/Vector 4.png">
-                    <!-- <button class="edit_button"></button>  -->
-                    <span>Areas:</span>
-                    <ol>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest3_ares[]"
-                                    value="Rio De Janeiro" checked>
-                                <label class="form-check-label">Rio De Janeiro</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Iguazo"
-                                    checked>
-                                <label class="form-check-label">Iguazo</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest3_ares[]"
-                                    value="Florianopolis" checked>
-                                <label class="form-check-label">Florianopolis</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest3_ares[]" value="Olinda"
-                                    checked>
-                                <label class="form-check-label">Olinda</label>
-                            </div>
-                        </li>
-                    </ol>
-                    <section>
-                        <p>Total:6000 &nbsp;&#8362;</p>
-                    </section>
-                </div>
-            </div>
-            <div class="destnation">
-                <div class="des_img">
-                    <img src="images/Vector 3.png" id="last_vector">
-                    <img src="images/dest4.png">
-                    <img src="images/dots.png">
-                </div>
-                <div class="area_list">
-                    <h3>Peru</h3>
-                    <img src="images/Vector 4.png">
-                    <!-- <button class="edit_button"></button>  -->
-                    <span>Areas:</span>
-                    <ol>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Cusco"
-                                    checked>
-                                <label class="form-check-label">Cusco</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Lima"
-                                    checked>
-                                <label class="form-check-label">Lima</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Machu Picchu"
-                                    checked>
-                                <label class="form-check-label">Machu Picchu</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="dest4_ares[]" value="Huaraz"
-                                    checked>
-                                <label class="form-check-label">Huaraz</label>
-                            </div>
-                        </li>
-                    </ol>
-                    <section>
-                        <p>Total:4000 &nbsp;&#8362;</p>
-                    </section>
-                </div>
-            </div>
+                    $rowArea= mysqli_fetch_assoc($resultArea);
+            
+                }
+                else die("DB query failed.");
+                while($rowArea) 
+                {
+                echo                 '<li>';
+                echo                     '<div class="form-check">';
+                echo    '<input class="form-check-input" type="checkbox" name="dest1_ares[]" value="' . $row["d_id"].'" checked>';
+                echo    '<label class="form-check-label"> '.  $rowArea["area_name"].'</label>';
+                echo                     '</div>';
+                echo                 '</li>';
+                $rowArea= mysqli_fetch_assoc($resultArea);
+                 }
+                echo             '</ol>';
+                echo             '<section>';
+                echo                '<p>Total:7000 &nbsp;&#8362;</p>';
+                echo            '</section>';
+                echo         '</div>';
+                echo     '</div>';
+                $row= mysqli_fetch_assoc($result);
+                }
+        ?> 
+        
         </div>
 
         <div class="change-button">
