@@ -200,17 +200,15 @@
 
         <div class="change-button">
             <button type="button" class="btn btn-secondary">Delete</button>
-            <div class="edit" > <button type="button" class="btn btn-secondary">Edit</button></div>
+            <div class="edit" id="edit_button"> <button type="button" class="btn btn-secondary">Edit</button></div>
         </div>
 
     </main>
 </body>
 
 </html>
+
 <?php
-
 //close DB connection
-
 mysqli_close($connection);
-
 ?>
