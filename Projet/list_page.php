@@ -41,8 +41,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="favicon.ico">
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
@@ -64,13 +63,12 @@
     <script defer="" src="js/list_page.js"></script>
     <script defer="" src="js/script.js"></script>
 
-
     <title>TripDream</title>
 </head>
 
 <body>
-<header>
-        <a href="index.html" href="#"></a>
+<!-- <header>
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
             <span>Hello Dana</span>
@@ -92,11 +90,11 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="form.html">Create New Trip</a></li>
+                    <li class="nav-item"><a class="nav-link" href="form.php">Create New Trip</a></li>
 
-                    <li class="nav-item"><a class="nav-link active" href="#">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
 
                 </ul>
 
@@ -104,7 +102,56 @@
 
         </div>
 
-    </nav>
+    </nav> -->
+
+    <header>
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+       
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="container-fluid">
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+    
+                    <span class="navbar-toggler-icon"></span>
+    
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
+    
+                        <li class="nav-item"><a class="nav-link active" href="form.php">Create New Trip</a></li>
+    
+                        <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+    
+                    </ul>
+    
+                </div>
+    
+            </div>
+        </nav> -->
+      
+      <nav>
+          <ul>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
+    
+            <li class="nav-item"><a class="nav-link " href="form.php">Create New Trip</a></li>
+
+            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+
+          </ul>
+      </nav>
+        <section class="prof-pic">
+            <a href="#" class="user_pic"></a>
+            <span>Hello Dana</span>
+        </section>
+    </header>
     <main>
         <div class="trip_destnations">
         <div class="table-responsive">
@@ -129,9 +176,9 @@
                 echo    '<td>'.$row["start_date"].'</td>';
                 echo    '<td>'.$row["end_date"].'</td>';
                 echo     '<td>'.$row["budget"].'$</td>';
+                echo '</tbody>';
                 $rowCount++;
              } ?> 
-             </tbody>
          </table>
         </div>
         </div>
