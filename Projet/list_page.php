@@ -176,9 +176,9 @@
                 echo    '<td>'.$row["start_date"].'</td>';
                 echo    '<td>'.$row["end_date"].'</td>';
                 echo     '<td>'.$row["budget"].'$</td>';
-                echo '</tbody>';
                 $rowCount++;
              } ?> 
+             </tbody>
          </table>
         </div>
         </div>
