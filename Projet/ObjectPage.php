@@ -110,9 +110,9 @@
 
     </nav> -->
 
-    <header>
+    <header class="d-flex justify-content-between">
         <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
-       
+
 
         <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -142,17 +142,18 @@
     
             </div>
         </nav> -->
-      
-      <nav>
-          <ul>
-            <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
-    
-            <li class="nav-item"><a class="nav-link " href="form.php">Create New Trip</a></li>
 
-            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
 
-          </ul>
-      </nav>
+        <nav>
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+
+                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+
+            </ul>
+        </nav>
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
             <span>Hello Dana</span>

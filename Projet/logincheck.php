@@ -28,5 +28,5 @@
 </html>
 
 <?php
-    header("Location: form.php")
+    header("Location: homepage.php")
 ?>
