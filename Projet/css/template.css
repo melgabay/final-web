@@ -123,8 +123,8 @@ nav>ul>li.nav-item>a.nav-link:hover {
 main {
     background-color: #dce7e9;
     width: 100%;
-    /* height: 100vh; */
-    height: 100%;
+    height: 100vh;
+    /* height: 100%; */
 
 }
 
@@ -252,6 +252,7 @@ main {
     display: flex;
 }
 
+
 .dater {
     margin-left: 2%;
 }
@@ -266,7 +267,7 @@ main {
     margin-left: 0 !important;
 }
 
-.continent,.choose-budget{
+.continent,.choose-date,.col-md-3.budget-in{
     margin-left: 2%;
 }
 
@@ -541,6 +542,10 @@ tr.clickable-row:hover {
 
 
 /* HOMEPAGE */
+
+.hpmain{
+    height: 100%;
+}
 
 .mont{
     background-image: url("../images/mont.svg");

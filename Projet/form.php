@@ -217,13 +217,14 @@
 
                 <div class="budget">
                     <h2> Enter a budget:</h2>
+                </div>
 
-                    <div class="choose-budget">
+
+                    <!-- <div class="choose-budget"> -->
                         <div class="col-md-3">
                             <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
                         </div>
-                    </div>
-                </div>
+                    <!-- </div> -->
 
                 <div class="choose-date">
 
