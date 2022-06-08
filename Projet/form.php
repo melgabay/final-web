@@ -221,7 +221,7 @@
 
 
                     <!-- <div class="choose-budget"> -->
-                        <div class="col-md-3">
+                        <div class="col-md-3 budget-in">
                             <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
                         </div>
                     <!-- </div> -->

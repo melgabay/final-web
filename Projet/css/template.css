@@ -267,7 +267,7 @@ main {
     margin-left: 0 !important;
 }
 
-.continent,.choose-date,.col-md-3.budget-in{
+.continent,.col-md-3.budget-in{
     margin-left: 2%;
 }
 
@@ -275,7 +275,7 @@ main {
 .another-destinatation,
 .budget,
 .typeoftyoul,
-.middle-age {
+.middle-age,.choose-date {
     margin-left: 3%;
 }
 
