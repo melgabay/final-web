@@ -66,20 +66,34 @@
 
 <body>
 
-    <header class="d-flex justify-content-between">
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
-
-        <nav >
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="homepage.php">Homepage</a></li>
-
-                <li class="nav-item"><a class="nav-link " href="form.php">Create New Trip</a></li>
-
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-
+<header class="d-flex justify-content-between">
+     <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+            <h3>Menu</h3>
+            <ul>
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+            <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
             </ul>
         </nav>
+        </label>
+
+        <div class="overlay"></div>
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+
+         <nav id="main-menu">
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+            </ul>
+        </nav>
+
+        
+
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
             <span>Hello Dana</span>

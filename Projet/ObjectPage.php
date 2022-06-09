@@ -145,16 +145,19 @@
 
 
         <nav>
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-
-                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-
-
+            <ul class="menu">
+                <li><a class="menuItem" href="#">Home</a></li>
+                <li><a class="menuItem" href="#">Profile</a></li>
+                <li><a class="menuItem" href="#">About</a></li>
+                <li><a class="menuItem" href="#">Contacts</a></li>
             </ul>
+            <button class="hamburger">
+            <span class="material-icons">
+                density_medium
+                </span>
+                <i class="menuIcon material-icons">menu</i>
+                <i class="closeIcon material-icons">close</i>
+            </button>
         </nav>
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>

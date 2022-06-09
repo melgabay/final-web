@@ -1,4 +1,6 @@
 $("document").ready(() => {
+    
+
     $(".edit").click(function() {
 
         if ($(".edit").attr('id') == "edit_button") {
