@@ -603,3 +603,35 @@ tr.clickable-row:hover {
         margin-top: 20px;
     }
 }
+
+/* FIND FRIEND */
+.ffmain{
+    padding-top: 2%;
+    height: 100%;
+}
+.find-friend-page{
+    background-color: white;
+    border-radius: 8px;
+    width: 76%;
+    padding-top: 2%;
+    margin-left:10%;
+}
+
+.ffmain .find-friend-page h3{
+    margin-left: 2%;
+}
+
+.btn.btn-primary.new-color.bouton-vert{
+    margin: 2% 45%;
+}
+
+.ffp{
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+
+.btn.btn-primary.new-color.ffp{
+    margin-left: 33%;
+    margin-bottom: 2%;
+}
