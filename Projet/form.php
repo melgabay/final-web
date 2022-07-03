@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +41,8 @@
         crossorigin="anonymous"></script>-->
     <script defer="" src="js/list_page.js"></script>
     <script defer="" src="js/script.js"></script>
+    <script defer="" src="js/addform.js"></script>
+
 
 
     <!-- calendar -->
@@ -64,69 +66,47 @@
 
 <body>
 
-    <header class="d-flex justify-content-between">
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
-
-
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-            <div class="container-fluid">
-    
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-    
-                    <span class="navbar-toggler-icon"></span>
-    
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
-    
-                        <li class="nav-item"><a class="nav-link active" href="form.php">Create New Trip</a></li>
-    
-                        <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-    
-                    </ul>
-    
-                </div>
-    
-            </div>
-        </nav> -->
-
-
-        <nav>
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-
-                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-
-
+  
+<header class="d-flex justify-content-between">
+     <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+            <h3>Menu</h3>
+            <ul>
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+            <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
             </ul>
         </nav>
+        </label>
+
+        <div class="overlay"></div>
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+
+         <nav id="main-menu">
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+            </ul>
+        </nav>
+
+        
+
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
             <span>Hello Dana</span>
         </section>
     </header>
-
-
-
-    <main class="main-form">
-
-        <form action="get_params_login.php" method="GET" class="form-page-form">
-                <h2 class="object_page_h2">Choose destination:</h2>
-
-                <div class="continent">
+    <main class="formpage">
+        <form action="#" method="GET" class="form-page-form">
+            <h3> Choose destination:</h3>
+            <div class="rec-white form-dest-page " id="form">
+                <div class="d-flex fp justify-content-around">
                     <div class="col-md-3">
-                        <img src="images/Looks_One_Icon_1.png" alt="nb1">
-                        <label for="inputState" class="form-label">Choose continent:</label>
+                        <label for="inputState" class="form-label">Choose continent</label>
                         <select id="inputState" class="form-select" required>
                             <option value="">...</option>
                             <option value="South America">South America</option>
@@ -139,8 +119,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <img src="images/Looks_Two_Icon_1.png" alt="nb1">
-                        <label for="inputState" class="form-label">Choose Country:</label>
+                        <label for="inputState" class="form-label">Choose Country</label>
                         <select id="inputState" class="form-select" required>
                             <option value="">...</option>
                             <option value="Bresilia">Bresilia</option>
@@ -153,8 +132,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <img src="images/Looks_3_Icon_1.png" alt="nb1">
-                        <label for="inputState" class="form-label">Choose Town:</label>
+                        <label for="inputState" class="form-label">Choose Town</label>
                         <select id="inputState" class="form-select" required>
                             <option value="">...</option>
                             <!-- IF THE COUNTRY CHOOSE IS BRASILIA -->
@@ -165,142 +143,102 @@
                             <option value="Manaus">Manaus</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="d-flex fp justify-content-around">
+                    <div class="col-md-3 budget-in">
+                        <label class="control-label" for="budget">Enter a budget</label>
+                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label" for="date">Start Date</label>
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <label class="control-label" for="date">End date</label>
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+                    </div>
 
                 </div>
 
-                <div class="anotherD">
-                    <h5 class="another-destinatation"> Choose another destination (optionaly):</h4>
-                        <div class="continent">
-                            <div class="col-md-3">
-                                <img src="images/Looks_One_Icon_1.png" alt="nb1">
-                                <label for="inputState" class="form-label">Choose continent:</label>
-                                <select id="inputState" class="form-select" required>
-                                    <option value="">...</option>
-                                    <option value="South America">South America</option>
-                                    <option value="North America">North America</option>
-                                    <option value="Europe">Europe</option>
-                                    <option value="Asia">Asia</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Africa">Africa</option>
-                                </select>
-                            </div>
+                <div class="d-flex fp justify-content-around">
+                    <div class="col-md-3">
+                        <label> Type of trip</label>
+                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="18">
+                    </div>
 
-                            <div class="col-md-3">
-                                <img src="images/Looks_Two_Icon_1.png" alt="nb1">
-                                <label for="inputState" class="form-label">Choose Country:</label>
-                                <select id="inputState" class="form-select" required>
-                                    <option value="">...</option>
-                                    <option value="Bresilia">Bresilia</option>
-                                    <option value="Paraguay">Paraguay</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Urugay">Urugay</option>
-                                    <option value="Perou">Perou</option>
-                                    <option value="Mexique">Mexique</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-3">
-                                <img src="images/Looks_3_Icon_1.png" alt="nb1">
-                                <label for="inputState" class="form-label">Choose Town:</label>
-                                <select id="inputState" class="form-select" required>
-                                    <option value="">...</option>
-                                    <!-- IF THE COUNTRY CHOOSE IS BRASILIA -->
-                                    <option value="Brasilia">Brasilia</option>
-                                    <option value="Rio de Janero">Rio de Janero</option>
-                                    <option value="Sao Paulo">Sao Paulo</option>
-                                    <option value="Salvador da Bahia">Salvador da Bahia</option>
-                                    <option value="Manaus">Manaus</option>
-                                </select>
-                            </div>
-
+                    <div class="col-md-3">
+                        <label> Type of trip</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Nature">
+                            <label class="form-check-label" for="flexCheckDefault">Nature</label>
                         </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
+                            <label class="form-check-label" for="flexCheckDefault">Beach</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
+                            <label class="form-check-label" for="flexCheckDefault">Sport</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
+                            <label class="form-check-label" for="flexCheckDefault">Quiet</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
+                            <label class="form-check-label" for="flexCheckDefault">Party</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label> Select the age</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="18!">
+                            <label class="form-check-label">18-25</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="25">
+                            <label class="form-check-label">25-35</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="35">
+                            <label class="form-check-label">35-45</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="45">
+                            <label class="form-check-label">45-60</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="60">
+                            <label class="form-check-label">60 +</label>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <div class="budget">
-                    <h2> Enter a budget:</h2>
-                </div>
-                <div class="col-md-3 budget-in">
-                    <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
-                </div>
+            </div>
 
-                <div class="choose-date d-flex">
+            <div class=" d-block" id="pre">
+                <button type="button" class="btn btn-outline-success" id="count">
+                    Add destination
+                    <img src="./images/PLUS.png" alt="plus">
+                </button>
 
-                    <div class="dater-1">
-                        <h2> Start Date:</h2>
-                        <label class="control-label" for="date">Date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                    </div>
-
-
-                    <div class="dater">
-                        <h2> End Date:</h2>
-                        <label class="control-label" for="date">Date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                    </div>
-                </div>
-
-                <div class="typeoftyoul">
-                    <h2> Type of trip:</h2>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="interests[]" value="Play Quidditch">
-                        <label class="form-check-label" for="flexCheckDefault">Nature</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="interests[]" value="Play Quidditch">
-                        <label class="form-check-label" for="flexCheckDefault">Beach</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="interests[]" value="Play Quidditch">
-                        <label class="form-check-label" for="flexCheckDefault">Sport</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="interests[]" value="Play Quidditch">
-                        <label class="form-check-label" for="flexCheckDefault">Quiet</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="interests[]" value="Play Quidditch">
-                        <label class="form-check-label" for="flexCheckDefault">Party</label>
-                    </div>
-                </div>
-
-                <div class="middle-age">
-                    <h2> Select the age:</h2>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" value="Yes and proud!">
-                        <label class="form-check-label">18-25</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" value="Yes and proud!">
-                        <label class="form-check-label">25-35</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" value="Yes and proud!">
-                        <label class="form-check-label">35-45</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" value="Yes and proud!">
-                        <label class="form-check-label">45-60</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" value="Yes and proud!">
-                        <label class="form-check-label">60 +</label>
-                    </div>
-
-                </div>
-                <div class="login-container d-flex justify-content-center">
-                    <button type="submit" class="btn btn-outline-dark">
-                        Search
-                    </button>
-                </div>
+                <button type="button" class="btn btn-primary new-color bouton-form">Search</button>
+            </div>
         </form>
     </main>
 </body>
