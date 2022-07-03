@@ -1,7 +1,5 @@
 $("document").ready(() => {
-    
-
-    $(".edit").click(function() {
+    $(".edit").click(function () {
 
         if ($(".edit").attr('id') == "edit_button") {
             $('input[name="begin"]').prop('disabled', false);
@@ -49,7 +47,7 @@ $("document").ready(() => {
 
 
 
-(function() {
+(function () {
     if (document.getElementsByClassName("destnation").length == 1) {
         document.getElementsByClassName("trip_destnations")[0].style.justifyContent = "center";
         document.getElementsByClassName("destnation")[0].style.width = "50%";
@@ -57,13 +55,13 @@ $("document").ready(() => {
 })();
 
 
-jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
+jQuery(document).ready(function ($) {
+    $(".clickable-row").click(function () {
         window.location = $(this).data("href");
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     var date_input = $('input[name="date"]'); //our date input has the name "date"
     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
     var options = {
@@ -74,3 +72,6 @@ $(document).ready(function() {
     };
     date_input.datepicker(options);
 })
+
+
+

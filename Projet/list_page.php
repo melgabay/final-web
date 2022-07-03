@@ -26,7 +26,8 @@
 
 	//get data from DB
 
-    $query 	= "SELECT * FROM tbl_trips_206";
+    $query 	= "SELECT * FROM tbl_trips_206  ORDER BY start_date "; //change by date by default
+    
 
 	$result = mysqli_query($connection, $query);
 
@@ -41,9 +42,7 @@
 <html lang="en">
 
 <head>
-<link rel="icon" href="favicon.ico">
-
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
@@ -69,46 +68,98 @@
 </head>
 
 <body>
- 
-
-     <header class="d-flex justify-content-between">
-     <input type="checkbox" id="hamburger-input" class="burger-shower" />
-        <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-            <h3>Menu</h3>
-            <ul>
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-            <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
-            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
-        </label>
-
-        <div class="overlay"></div>
+    <!-- <header>
         <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
-
-         <nav id="main-menu">
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
-
-        
-
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
             <span>Hello Dana</span>
         </section>
     </header>
-   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="form.php">Create New Trip</a></li>
+
+                    <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav> -->
+
+    <header class="d-flex justify-content-between">
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="container-fluid">
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+    
+                    <span class="navbar-toggler-icon"></span>
+    
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Homepage</a></li>
+    
+                        <li class="nav-item"><a class="nav-link active" href="form.php">Create New Trip</a></li>
+    
+                        <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+    
+                    </ul>
+    
+                </div>
+    
+            </div>
+        </nav> -->
+
+
+        <nav>
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+
+                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+
+
+            </ul>
+        </nav>
+        <section class="prof-pic">
+            <a href="#" class="user_pic"></a>
+            <span>Hello Dana</span>
+        </section>
+    </header>
 
     <main>
         <div class="trip_destnations">
-        <div class="table-responsive">
+            <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -120,7 +171,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php 
+                        <?php 
                     $rowCount=1;
             while($row = mysqli_fetch_assoc($result)) 
             { 
@@ -131,16 +182,16 @@
                 echo    '<td>'.$row["end_date"].'</td>';
                 echo     '<td>'.$row["budget"].'$</td>';
                 $rowCount++;
-             } ?> 
-             </tbody>
-         </table>
+             } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        </div>
 
 
 
 
-            <?php 
+        <?php 
             //release returned data
             mysqli_free_result($result);
             ?>
