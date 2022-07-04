@@ -101,82 +101,7 @@
         </section>
     </header>
     <main class="ffmain">
-        <form action="#" method="GET" class="rec-white find-friend-page ">
-            <h3> How would you like to search for Friend</h3>
-
-            <div class="d-flex d1">
-                <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by trip</label>
-                    <select id="inputState" class="form-select" required>
-                        <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by Destination</label>
-                    <select id="inputState" class="form-select" required>
-                        <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <label class="control-label" for="date">Search by date</label>
-                    <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                </div>
-            </div>
-
-
-            <div class="d-flex d1">
-                <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by trip Charactere</label>
-                    <select id="inputState" class="form-select" required>
-                        <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by Location</label>
-                    <select id="inputState" class="form-select" required>
-                        <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3">
-                    <label> Search by age (minimum 18)</label>
-                    <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="18">
-                </div>
-
-            </div>
-
-            <button type="button" class="btn btn-primary new-color bouton-vert">Search</button>
-
-        </form>
-
-        <h2> Friend List:</h2>
+        <h2> We found for you friend:</h2>
 
         <div class="ffp">
             <div class="card offp" style="margin-bottom: 10%;">
@@ -227,8 +152,6 @@
                 </div>
             </div>
         </div>
-
-        <button type="button" class="btn btn-primary new-color ffp">Explore More Friend</button>
     </main>
 </body>
 

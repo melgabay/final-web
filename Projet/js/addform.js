@@ -5,10 +5,8 @@ $(document).ready(function () {
 
     $("#count").click(function () { //on click on the button id count
         $("#form").clone().prependTo("#pre"); //then copy the form number one and append to the end of the form
-        console.log(count);
         count++;
-
-        if (count == 3 ) { // cant add more than 3 form
+        if (count == 3) { // cant add more than 3 form
             $("#count").css("visibility", "hidden");  //then if we have 3 form, hidden the button add
         }
         return count;
