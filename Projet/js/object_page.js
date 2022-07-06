@@ -1,5 +1,4 @@
 $("document").ready(() => {
-    console.log("45656");
     $(".btn").click(function() {
         $('input[name="begin"]').prop('disabled', false);
         $('input[name="end"]').prop('disabled', false);

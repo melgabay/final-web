@@ -163,7 +163,7 @@
                 echo             '<img src="images/Vector 4.png">';
                 echo             '<span>Areas:</span>';
                 echo             '<ol>';
-                $queryArea 	= "SELECT a.area_name from tbl_destination_206 as d
+                $queryArea 	= "SELECT a.area_name,a.a_id from tbl_destination_206 as d
                 inner join tbl_destination_area_206  as d_a
                 on d.d_id=d_a.d_id
                 inner join tbl_area_206 as a
@@ -179,7 +179,7 @@
                 {
                 echo                 '<li>';
                 echo                     '<div class="form-check">';
-                echo    '<input class="form-check-input" type="checkbox" name="dest1_ares[]" value="' . $row["d_id"].'" checked>';
+                echo    '<input class="form-check-input" type="checkbox" name="dest1_ares[]" value="' . $row["d_id"].'" id="'.  $rowArea["a_id"].'" checked>';
                 echo    '<label class="form-check-label"> '.  $rowArea["area_name"].'</label>';
                 echo                     '</div>';
                 echo                 '</li>';
@@ -198,9 +198,27 @@
         </div>
 
         <div class="change-button">
-            <button type="button" class="btn btn-secondary">Delete</button>
+            <button type="button" class="btn btn-secondary" id="delete_button" >Delete</button>
             <div class="edit" id="edit_button"> <button type="button" class="btn btn-secondary">Edit</button></div>
         </div>
+        <div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p id="mes_text">Are you sure you want to delete this trip?</p>
+                <p class="text-secondary"><small></small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="delete_button_mes">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     </main>
 </body>
