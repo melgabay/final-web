@@ -27,13 +27,13 @@
 	$Id = $_GET["Id"];
     $array= $_GET["array"];
     $ids = implode("','", $array);
-    queryMethod("DELETE FROM posts WHERE id IN ('".$ids."')");
 
-	$query 	= "DELETE  FROM tbl_destination_area_206  WHERE tbl_destination_area_206.d_id=" . $Id ."AND tbl_destination_area_206.a_id IN('".$ids."')";
+	$query 	= "DELETE  FROM tbl_destination_area_206  WHERE tbl_destination_area_206.d_id=" . $Id ." AND tbl_destination_area_206.a_id IN(".$ids.")";
+    echo $query;
+
 
 	$result = mysqli_query($connection, $query);
 
-    echo $query;
 
 	if($result==true) {
         echo '1';

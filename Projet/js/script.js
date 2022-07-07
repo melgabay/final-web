@@ -133,19 +133,25 @@ $("document").ready(() => {
 
             }
             console.log(dest);
+            let AreaId = 0;
             for (i = 0; i < 4; i++) {
-                if ((dest[0].length) != 0) {
+                console.log("i= " + i);
+                if ((dest[i].length) != 0) {
                     $.ajax({
                         type: 'GET',
                         url: 'DeleteAreas.php',
                         data: {
-                            Id: i + 1,
+                            Id: i,
                             array: dest[i]
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        },
+                        success: function(data) {
+                            console.log(data);
+
                         }
-                    }).fail(function(jqXHR, textStatus) {
-                        console.log(jqXHR);
-                        console.log(textStatus);
-                    });
+                    })
 
                 }
 
