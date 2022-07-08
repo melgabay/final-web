@@ -1,44 +1,46 @@
 "use strict";
 
 $("document").ready(function () {
-  $('.edit_button').click(function () {
-    var index = $('.edit_button').index(this);
-
-    if (index == 0) {
+  $(".edit").click(function () {
+    if ($(".edit").attr('id') == "edit_button") {
       $('input[name="begin"]').prop('disabled', false);
       $('input[name="end"]').prop('disabled', false);
-    }
-
-    if (index == 1) {
       $('select[name="Ages"]').prop('disabled', false);
-    }
-
-    if (index == 2) {
       $('select[name="Character"]').prop('disabled', false);
+      $('input[name="dest1_ares[]').css("visibility", "visible");
+      $('input[name="dest2_ares[]').css("visibility", "visible");
+      $('input[name="dest3_ares[]').css("visibility", "visible");
+      $('input[name="dest4_ares[]').css("visibility", "visible");
+      $('#Save-Button').css("visibility", "visible");
+      $(".btn").eq(1).html('Save');
+      $(".edit").attr('id', 'save_button');
+    } else if ($(".edit").attr('id') == "save_button") {
+      $('input[name="begin"]').prop('disabled', true);
+      $('input[name="end"]').prop('disabled', true);
+      $('select[name="Ages"]').prop('disabled', true);
+      $('select[name="Character"]').prop('disabled', true);
+      var Cheaks = $('.form-check-input');
+      var ClassCheack = $('.form-check');
+      var numberOfCheaks = Cheaks.length;
+
+      for (i = 0; i < numberOfCheaks; i++) {
+        if (!Cheaks.eq(i).is(':checked')) {
+          ClassCheack.eq(i).css("display", "none");
+        }
+      }
+
+      $('input[name="dest1_ares[]').css("visibility", "hidden");
+      $('input[name="dest2_ares[]').css("visibility", "hidden");
+      $('input[name="dest3_ares[]').css("visibility", "hidden");
+      $('input[name="dest4_ares[]').css("visibility", "hidden");
+      $(".btn").eq(1).html('Edit');
+      $(".edit").attr('id', 'edit_button');
     }
-
-    if (index > 2) {
-      index = index - 2;
-
-      if (index == 1) {
-        $('input[name="dest1_ares[]').css("visibility", "visible");
-      }
-
-      if (index == 2) {
-        $('input[name="dest2_ares[]').css("visibility", "visible");
-      }
-
-      if (index == 3) {
-        $('input[name="dest3_ares[]').css("visibility", "visible");
-      }
-
-      if (index == 4) {
-        $('input[name="dest4_ares[]').css("visibility", "visible");
-      }
-    }
-
-    $('#Save-Button').css("visibility", "visible");
   });
+  var selectedAges = $('select[name="Ages"]').attr("data-selected");
+  $('select[name="Ages"]').val(selectedAges);
+  var selectedNature = $('select[name="Character"]').attr("data-selected");
+  $('select[name="Character"]').val(selectedNature);
 });
 
 (function () {

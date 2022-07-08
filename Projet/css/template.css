@@ -222,10 +222,10 @@ main {
 .prof-pic {
     margin-right: 15px;
 }
-
+/* 
 .main-form {
     height: 100%;
-}
+} */
 
 
 /****** INDEX ******/
@@ -286,6 +286,7 @@ main {
 .formpage {
     height: 100%;
 }
+
 
 .form-dest-page {
     width: 60%;
@@ -623,6 +624,7 @@ tr.clickable-row:hover {
 
 .hpmain {
     height: 100%;
+    padding-bottom: 2%;
 }
 
 .mont {
@@ -635,14 +637,20 @@ tr.clickable-row:hover {
     align-items: flex-end;
 }
 
-.div-in-div {
-    /* display: flex; */
-    width: 50%;
-    background-color: #e2dcdc;
-    border-radius: 8px;
-    /* align-items: center; */
-    margin-bottom: 2%;
-    /* text-align: center; */
+.card-body h3, .card-body .hppage{
+    color: #000000;
+}
+
+/* .ffp a:hover, .card-body a .card-text.hppage:hover, */
+.card-body a.textgreen {
+    color: #338575;
+    text-decoration: none;
+}
+
+.card-body a.textgreen:hover{
+    text-decoration: underline;
+    color: #338575;
+
 }
 
 .btn.btn-primary.new-color {
@@ -650,13 +658,31 @@ tr.clickable-row:hover {
     border-color: #338575;
 }
 
+.hpmain h2 {
+    padding-top: 2%;
+    margin-left: 20%;
+}
+
+.emf.ex{
+    margin-left: 40%;
+}
+/* 
+.div-in-div {
+    /* display: flex; 
+    width: 50%;
+    background-color: #e2dcdc;
+    border-radius: 8px;
+    /* align-items: center; 
+    margin-bottom: 2%;
+    /* text-align: center; 
+}
+
+
 .homepage {
     margin-left: 30px;
 }
 
-.homepage h2 {
-    padding-top: 2%;
-}
+
 
 .frec {
     display: grid;
@@ -674,13 +700,6 @@ tr.clickable-row:hover {
 
 .trec a {
     text-decoration: none;
-}
-
-.frec a:hover p,
-.textgreen,
-.trec a:hover p,
-.emf:hover {
-    color: #338575;
 }
 
 .rec,
@@ -735,14 +754,14 @@ tr.clickable-row:hover {
     .arec {
         margin-top: 20px;
     }
-}
+} */
 
-formed
 /* FIND FRIEND */
 
-.ffmain {
+.ffmain{
+    height: 100%;
     padding-top: 2%;
-    height: 100vh;
+    padding-bottom: 2%;
 }
 
 .rec-white {
@@ -765,10 +784,38 @@ formed
 
 .ffp {
     margin-top: 2%;
-    margin-left: 10%;
+    margin-left: 20%;
+    display: grid;
+    grid-template-columns: auto auto ;
+    /* gap:50px */
+}
+
+.card.offp{
+    width: 45%;
+}
+
+@media (max-width: 985px) {
+    .ffmain{
+        height: 100%;
+    }
+    .ffp {
+    display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .d1{
+        display: block!important;
+    }
+}
+
+.ffmain h2{
+    margin-top: 2%;
+    margin-left: 20%;
+
 }
 
 .btn.btn-primary.new-color.ffp {
-    margin-left: 33%;
-    margin-bottom: 2%;
+    margin-left: 45%;
+    /* padding-bottom: 2%; */
 }
