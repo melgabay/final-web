@@ -218,13 +218,13 @@
 
                     <div class="col-md-3">
                         <label class="control-label" for="date">Start Date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" >
                     </div>
 
 
                     <div class="col-md-3">
                         <label class="control-label" for="date">End date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
+                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" >
                     </div>
 
                 </div>
