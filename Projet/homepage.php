@@ -99,7 +99,7 @@
 
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
+            <span>Hello </span>
         </section>
     </header>
 

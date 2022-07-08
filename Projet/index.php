@@ -1,3 +1,69 @@
+
+<?php 
+
+//create a mySQL DB connection:
+
+include "config.php";
+
+
+
+$connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
+
+//testing connection success
+
+if(mysqli_connect_errno()) {
+
+    die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+
+    );
+
+}
+
+?>
+
+<?php 
+    if(!empty($_POST["email"])) {
+
+        // echo 'Form sent';
+
+
+
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $query 	= "SELECT u_id FROM tbl_users_206 where tbl_users_206.email='" .$email. "' AND tbl_users_206.password='" .$password . "'";
+
+        $result = mysqli_query($connection , $query);
+    
+
+        $row    = mysqli_fetch_array($result);
+
+        if(is_array($row)) {
+
+            echo 'Authentication success !';
+
+
+
+            session_start();
+
+            $_SESSION["user_id"] = $row['user_id'];
+
+            header('Location:homepage.php');
+
+
+        } else {
+
+            $message = "Invalid username or password !";
+
+        }
+
+    }
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +114,7 @@
             <h1>Connect</h1>
         </div>
 
-        <form action="logincheck.php" method="get" class="form-index d-flex flex-column align-items-center text-center">
+        <form action="#" method="POST" class="form-index d-flex flex-column align-items-center text-center">
             <label for="exampleInputEmail1">Enter an email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email" name="email" required>
@@ -58,7 +124,7 @@
                 name="password" required>
 
             <button type="submit" class="btn btn-primary index d-flex justify-content-center">Sign in</button>
-
+            <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>   
 
         </form>
 
