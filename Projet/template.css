@@ -288,7 +288,7 @@ main {
 } */
 
 
-.formpage h2{
+.formpage h2, .editmain h2{
     padding-top: 2%;
     text-align: center;
 }
@@ -665,8 +665,8 @@ tr.clickable-row:hover {
 }
 
 .btn.btn-primary.new-color {
-    background-color: #338575;
-    border-color: #338575;
+    background-color: #338575 ;
+    border-color: #338575 ;
 }
 
 .hpmain h2 {
@@ -841,4 +841,17 @@ tr.clickable-row:hover {
 
 .path-class{
     margin: 0;
+}
+
+@media (max-width: 770px) {
+    .editmain{
+        height: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .img-account-profile{
+        width: 80px;
+        height: 80px;
+    }
 }

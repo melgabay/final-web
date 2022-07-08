@@ -108,12 +108,12 @@
     </header>
 
     <main class="main-form">
-    <div id="trip_details">
+    <div class="trip_details">
             <section class="trip_details_section">
                 <span>Dates:</span>
                 <input type="date" name="begin" placeholder="dd-mm-yyyy"  min="1997-01-01"
                     max="2030-12-31" value="<?php echo $row["start_date"];?>" disabled >
-                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row["end_date"];?>"" min="1997-01-01"
+                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row["end_date"];?>" min="1997-01-01"
                     max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
@@ -145,7 +145,7 @@
             </section>
     </div>
         <h2 id="object_page_h2">Path:</h2>
-        <div id="trip_destnations">
+        <div id="trip_destnations" class="trip_destnations1">
             <?php 
         $numberDest=0;
         while($row) 
