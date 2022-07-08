@@ -29,7 +29,6 @@
     $ids = implode("','", $array);
 
 	$query 	= "DELETE  FROM tbl_destination_area_206  WHERE tbl_destination_area_206.d_id=" . $Id ." AND tbl_destination_area_206.a_id IN(".$ids.")";
-    echo $query;
 
 
 	$result = mysqli_query($connection, $query);

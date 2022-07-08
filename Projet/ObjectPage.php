@@ -213,7 +213,7 @@
                 <p class="text-secondary"><small></small></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit_button_mes">Cancel</button>
                 <button type="button" class="btn btn-primary" id="delete_button_mes">Delete</button>
             </div>
         </div>

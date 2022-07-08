@@ -1,5 +1,10 @@
 const xhttp = new XMLHttpRequest();
+let successEdit = 0;
+let successDelete = 0;
 
+function setData(data) {
+
+}
 
 function loadDoc(pageUrl) {
     xhttp.onload = function() {
@@ -30,6 +35,12 @@ function BackToList() {
 
 
 $("document").ready(() => {
+    let id = getUrlParameter('prodId');
+
+    const selectedAges = $('select[name="Ages"]').attr("data-selected");
+    $('select[name="Ages"]').val(selectedAges);
+    const selectedNature = $('select[name="Character"]').attr("data-selected");
+    $('select[name="Character"]').val(selectedNature);
 
     let qstr = { "begin": null, "end": null, "Ages": null, "Characher": null };
 
@@ -67,30 +78,25 @@ $("document").ready(() => {
         } else if ($(".edit").attr('id') == "save_button") {
             //save update in db
             let str = "";
+
             for (const x in qstr) {
                 if (qstr[x] != undefined && qstr[x] != NaN) {
                     str += qstr[x];
                 }
 
             }
-            let id = getUrlParameter('prodId');
+
+
             if (str != "") {
                 loadDoc('UpdateObject.php?prodId=' + id + str);
                 console.log('UpdateObject.php?prodId=' + id + str);
-            }
-            /*xhttp.onload = function() {
-                if ((this.responseText) == 1) {
-                    $("#mes_text").text("Edit Succeeded");
-                    location.reload();
+                xhttp.onload = function() {
+                    if ((this.responseText) == 1) {
+                        successEdit = 1;
 
-                } else {
-                    $("#mes_text").text("Edit Failed");
-                    location.reload();
+                    }
                 }
-            } */
-
-
-
+            }
 
 
 
@@ -104,11 +110,12 @@ $("document").ready(() => {
             let Cheaks = $('.form-check-input');
             let ClassCheack = $('.form-check');
             let numberOfCheaks = Cheaks.length;
+
             let Areas1 = [];
             let Areas2 = [];
             let Areas3 = [];
             let Areas4 = [];
-            let dest = [Areas1, Areas2, Areas3, Areas4]
+            let dest = [Areas1, Areas2, Areas3, Areas4];
 
             for (i = 0; i < numberOfCheaks; i++) {
                 if (!Cheaks.eq(i).is(':checked')) {
@@ -132,11 +139,9 @@ $("document").ready(() => {
                 }
 
             }
-            console.log(dest);
-            let AreaId = 0;
             for (i = 0; i < 4; i++) {
-                console.log("i= " + i);
                 if ((dest[i].length) != 0) {
+
                     $.ajax({
                         type: 'GET',
                         url: 'DeleteAreas.php',
@@ -144,38 +149,63 @@ $("document").ready(() => {
                             Id: i,
                             array: dest[i]
                         },
+                        async: false,
                         error: function(data) {
                             console.log(data);
                         },
                         success: function(data) {
-                            console.log(data);
-
+                            if (data == 1) {
+                                successDelete = 1;
+                                console.log("successDelete= " + successDelete);
+                            }
                         }
                     })
 
                 }
 
-
             }
+
+
+            console.log("successDelete= " + successDelete);
+
+
+
 
             $('input[name="dest1_ares[]').css("visibility", "hidden");
             $('input[name="dest2_ares[]').css("visibility", "hidden");
             $('input[name="dest3_ares[]').css("visibility", "hidden");
             $('input[name="dest4_ares[]').css("visibility", "hidden");
+
+            if (successDelete == 1 || successEdit == 1) {
+                $("#mes_text").text("Edit Success");
+                $("#myModal").modal('show');
+                $("#delete_button_mes").css("visibility", "hidden");
+                $("#edit_button_mes").css("visibility", "hidden");
+
+                setTimeout(200);
+                $("#myModal").modal('hide');
+
+
+
+            } else {
+                $("#mes_text").text("Edit Failed");
+                $("#myModal").modal('show');
+                $("#delete_button_mes").css("visibility", "hidden");
+                $("#edit_button_mes").css("visibility", "hidden");
+                setTimeout(200);
+                $("#myModal").modal('hide');
+                location.reload();
+            }
             $(".btn").eq(1).html('Edit');
             $(".edit").attr('id', 'edit_button');
 
+
         }
-
-
-
     });
-    const selectedAges = $('select[name="Ages"]').attr("data-selected");
-    $('select[name="Ages"]').val(selectedAges);
-    const selectedNature = $('select[name="Character"]').attr("data-selected");
-    $('select[name="Character"]').val(selectedNature);
+
     $("#delete_button_mes").click(function() {
-        loadDoc("GET", 'DeleteObject.php?prodId=' + id);
+        loadDoc('DeleteObject.php?prodId=' + id);
+        console.log('DeleteObject.php?prodId=' + id);
         xhttp.onload = function() {
             console.log((this.responseText));
             if ((this.responseText) == 1) {
@@ -195,6 +225,9 @@ $("document").ready(() => {
     });
 
     $("#delete_button").click(function() {
+        $("#mes_text").text("Are you sure want to delete this trip?");
+        $("#delete_button_mes").css("visibility", "visible");
+        $("#edit_button_mes").css("visibility", "visible");
         $("#myModal").modal('show');
 
     });
