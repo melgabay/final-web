@@ -283,8 +283,19 @@ main {
 
 /****** FORM ******/
 
-.formpage {
-    height: 100%;
+/* .formpage {
+    height: 100vh;
+} */
+
+
+.formpage h2{
+    padding-top: 2%;
+    text-align: center;
+}
+
+.beige-rec{
+    background-color: #F9EAD5;
+    border-radius: 8px;
 }
 
 
@@ -380,7 +391,7 @@ tr.clickable-row:hover {
 
 /* ChANGE PAGE + OBJECT PAGE */
 
-#trip_details {
+.trip_details {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -437,7 +448,7 @@ tr.clickable-row:hover {
     font-weight: bold;
 }
 
-#trip_destnations {
+.trip_destnations1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -570,7 +581,7 @@ tr.clickable-row:hover {
     #object_page_h2 {
         margin-left: 1.5%;
     }
-    #trip_destnations {
+    .trip_destnations1 {
         margin-left: 5%;
         margin-right: 5%;
     }
@@ -818,4 +829,16 @@ tr.clickable-row:hover {
 .btn.btn-primary.new-color.ffp {
     margin-left: 45%;
     /* padding-bottom: 2%; */
+}
+
+
+/* PATH */
+
+.pathre{
+    max-width: 75%;
+    /* max-height: 50%; */
+}
+
+.path-class{
+    margin: 0;
 }
