@@ -1,3 +1,18 @@
+<?php 
+
+    //create a mySQL DB connection:
+
+	include "config.php";
+
+
+    //testing connection success
+
+    include "logincheak.php"; 
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +97,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
         <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -96,10 +111,30 @@
 
 
 
-        <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
-        </section>
+        
+        <?php 
+
+            //get data from DB
+
+            $userdId = $_SESSION["user_id"];
+
+
+            $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+            $resultUser = mysqli_query($connection, $userCheak);
+
+            if($resultUser) {
+                $rowUser	= mysqli_fetch_assoc($resultUser);
+            }
+
+            else die("DB query failed.");
+
+            ?>
+
+            <section class="prof-pic">
+                <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+                <span>Hello <?php echo   $rowUser["name"]; ?></span>
+            </section>
     </header>
 
     <main class="editmain">
@@ -192,3 +227,11 @@
 </body>
 
 </html>
+
+<?php
+
+//close DB connection
+
+mysqli_close($connection);
+
+?>

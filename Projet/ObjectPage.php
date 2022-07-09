@@ -5,28 +5,10 @@
 	include "config.php";
 
 
-
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    
-
     //testing connection success
 
-    if(mysqli_connect_errno()) {
+    include "logincheak.php"; 
 
-        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
-        );
-
-    }
-    
-    if(!isset($_SESSION["user_id"])) {
-
-        //echo 'no user id';
-
-        header('Location:index.php');
-
-    }
 
 ?>
 
@@ -70,7 +52,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/object_page.css">
     <link rel="stylesheet" href="css/template.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
@@ -96,7 +77,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
          <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -109,10 +90,29 @@
 
         
 
-        <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
-        </section>
+        <?php 
+
+        //get data from DB
+
+        $userdId = $_SESSION["user_id"];
+
+
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+        $resultUser = mysqli_query($connection, $userCheak);
+
+        if($resultUser) {
+            $rowUser	= mysqli_fetch_assoc($resultUser);
+        }
+
+        else die("DB query failed.");
+
+        ?>
+
+    <section class="prof-pic">
+        <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+        <span>Hello <?php echo   $rowUser["name"]; ?></span>
+    </section>
     </header>
 
     <main class="main-form">

@@ -1,3 +1,17 @@
+<?php 
+
+    //create a mySQL DB connection:
+
+	include "config.php";
+
+
+    //testing connection success
+
+    include "logincheak.php"; 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +96,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
          <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -95,9 +109,29 @@
 
         
 
+       
+        <?php 
+
+        //get data from DB
+
+        $userdId = $_SESSION["user_id"];
+
+
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+        $resultUser = mysqli_query($connection, $userCheak);
+
+        if($resultUser) {
+            $rowUser	= mysqli_fetch_assoc($resultUser);
+        }
+
+        else die("DB query failed.");
+
+        ?>
+
         <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
+            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+            <span>Hello <?php echo   $rowUser["name"]; ?></span>
         </section>
 </header>
 
@@ -142,27 +176,27 @@
                 <div class="col-md-3">
                     <label> Select the age</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="18!">
+                        <input class="form-check-input" type="radio" name="age" value="1">
                         <label class="form-check-label">18-25</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="25">
-                        <label class="form-check-label">25-35</label>
+                        <input class="form-check-input" type="radio" name="age" value="2">
+                        <label class="form-check-label">26-35</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="35">
-                        <label class="form-check-label">35-45</label>
+                        <input class="form-check-input" type="radio" name="age" value="3">
+                        <label class="form-check-label">26-45</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="45">
-                        <label class="form-check-label">45-60</label>
+                        <input class="form-check-input" type="radio" name="age" value="4">
+                        <label class="form-check-label">46-60</label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="60">
+                        <input class="form-check-input" type="radio" name="age" value="5">
                         <label class="form-check-label">60 +</label>
                     </div>
                 </div>
@@ -171,15 +205,15 @@
             <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
                 <div class="d-flex fp justify-content-around">
                         <div class="col-md-3">
-                            <label for="inputState" class="form-label">Choose continent</label>
-                            <select id="inputState" class="form-select" required>
+                            <label for="continents" class="form-label">Choose continent</label>
+                            <select id="continents" class="form-select" required>
                                 <option value="">...</option>
-                                <option value="South America">South America</option>
+                               <!-- <option value="South America">South America</option>
                                 <option value="North America">North America</option>
                                 <option value="Europe">Europe</option>
                                 <option value="Asia">Asia</option>
                                 <option value="Australia">Australia</option>
-                                <option value="Africa">Africa</option>
+                                <option value="Africa">Africa</option>  -->
                             </select>
                         </div>
 
@@ -197,7 +231,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="inputState" class="form-label">Choose Town</label>
+                            <label for="inputState" class="form-label">Choose Area</label>
                             <select id="inputState" class="form-select" required>
                                 <option value="">...</option>
                                 <!-- IF THE COUNTRY CHOOSE IS BRASILIA  -->
@@ -319,3 +353,11 @@
 </body>
 
 </html>
+
+<?php
+
+//close DB connection
+
+mysqli_close($connection);
+
+?>

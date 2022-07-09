@@ -103,7 +103,7 @@ if(mysqli_connect_errno()) {
 <body>
 
     <header class="d-flex justify-content-between">
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
         <section class="prof-pic">
             <a href="#" class="user_pic index"></a>
             <span>Hello Guest</span>
@@ -152,3 +152,11 @@ if(mysqli_connect_errno()) {
 </body>
 
 </html>
+
+<?php
+
+//close DB connection
+
+mysqli_close($connection);
+
+?>

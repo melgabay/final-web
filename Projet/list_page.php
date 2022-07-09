@@ -5,20 +5,10 @@
 	include "config.php";
 
 
-
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    
-
     //testing connection success
 
-    if(mysqli_connect_errno()) {
+    include "logincheak.php"; 
 
-        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
-        );
-
-    }
 
 ?>
 
@@ -26,7 +16,9 @@
 
 	//get data from DB
 
-    $query 	= "SELECT * FROM tbl_trips_206  ORDER BY start_date "; //change by date by default
+    $query 	= "SELECT * FROM tbl_trips_206 t  inner join tbl_user_trips_206 u
+    ON t.t_id=u.t_id WHERE u.u_id=". $_SESSION["user_id"]."
+    ORDER BY start_date "; //change by date by default
     
 
 	$result = mysqli_query($connection, $query);
@@ -85,7 +77,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
          <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -98,10 +90,29 @@
 
         
 
-        <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
-        </section>
+        <?php 
+
+            //get data from DB
+
+            $userdId = $_SESSION["user_id"];
+
+
+            $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+            $resultUser = mysqli_query($connection, $userCheak);
+
+            if($resultUser) {
+                $rowUser	= mysqli_fetch_assoc($resultUser);
+            }
+
+            else die("DB query failed.");
+
+            ?>
+
+            <section class="prof-pic">
+                <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+                <span>Hello <?php echo   $rowUser["name"]; ?></span>
+            </section>
     </header>
 
     <main>

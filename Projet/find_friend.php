@@ -1,3 +1,18 @@
+<?php 
+
+    //create a mySQL DB connection:
+
+	include "config.php";
+
+
+    //testing connection success
+
+    include "logincheak.php"; 
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,8 +86,7 @@
             <nav id="sidebar-menu">
                 <h3>Menu</h3>
                 <ul>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
                     <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
                     <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                     <li class="nav-item"><a class="nav-link active " href="find_friend.php">Find Friend</a></li>
@@ -81,7 +95,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
         <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -95,9 +109,29 @@
 
 
 
+        
+        <?php 
+
+        //get data from DB
+
+        $userdId = $_SESSION["user_id"];
+
+
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+        $resultUser = mysqli_query($connection, $userCheak);
+
+        if($resultUser) {
+            $rowUser	= mysqli_fetch_assoc($resultUser);
+        }
+
+        else die("DB query failed.");
+
+        ?>
+
         <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello Dana</span>
+            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+            <span>Hello <?php echo   $rowUser["name"]; ?></span>
         </section>
     </header>
     <main class="ffmain">
@@ -109,12 +143,12 @@
                     <label for="inputState" class="form-label">Search by trip</label>
                     <select id="inputState" class="form-select" required>
                         <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
+                        <?php
+                        while($row = mysqli_fetch_assoc($result)) 
+                         { 
+                        echo '<option value="'.$row["t_id"].'">'.$row["t_name"].'</option>';
+                         }
+                        ?>
                     </select>
                 </div>
 
@@ -143,32 +177,33 @@
                     <label for="inputState" class="form-label">Search by trip Charactere</label>
                     <select id="inputState" class="form-select" required>
                         <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
+                        <option value="1">Chill</option>
+                        <option value="2">Sunbathing</option>
+                        <option value="3">Tracks</option>
+                        <option value="4">Nature</option>
+                        <option value="5">Field</option>
+                        <option value="6">Shopping</option>
                     </select>
                 </div>
 
                 <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by Location</label>
+                <label for="inputState" class="form-label">Search by Age</label>
                     <select id="inputState" class="form-select" required>
                         <option value="">...</option>
-                        <option value="South America">South America</option>
-                        <option value="North America">North America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Africa">Africa</option>
+                        <option value="1">18-25</option>
+                        <option value="2">26-35</option>
+                        <option value="3">36-45</option>
+                        <option value="4">46-60</option>
+                        <option value="5">60+</option>
                     </select>
                 </div>
-
                 <div class="col-md-3">
-                    <label> Search by age (minimum 18)</label>
-                    <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="18">
+                    <label> Search by Budget</label>
+                    <input type="number" class="form-control" id="inputPassword2" placeholder="0 $">
                 </div>
+
+
+            </div>
 
             </div>
 
@@ -187,7 +222,7 @@
                     <p class="card-text"><b>Age:</b> 27</p>
                     <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
                     <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Talk to me</a>
+                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
                 </div>
             </div>
 
@@ -199,7 +234,7 @@
                     <p class="card-text"><b>Age:</b> 27</p>
                     <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
                     <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Talk to me</a>
+                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
                 </div>
             </div>
 
@@ -211,7 +246,7 @@
                     <p class="card-text"><b>Age:</b> 27</p>
                     <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
                     <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Talk to me</a>
+                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
                 </div>
             </div>
 
@@ -223,7 +258,7 @@
                     <p class="card-text"><b>Age:</b> 27</p>
                     <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
                     <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Talk to me</a>
+                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
                 </div>
             </div>
         </div>
@@ -233,3 +268,12 @@
 </body>
 
 </html>
+
+
+<?php
+
+//close DB connection
+
+mysqli_close($connection);
+
+?>

@@ -5,30 +5,10 @@
 	include "config.php";
 
 
-
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-    
-
     //testing connection success
 
-    if(mysqli_connect_errno()) {
+    include "logincheak.php"; 
 
-        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
-        );
-
-    }
-    session_start();
-    
-    
-    if(!isset($_SESSION["user_id"])) {
-
-        echo 'no user id';
-
-        header('Location:index.php');
-
-    } 
 
 ?>
 
@@ -121,7 +101,7 @@
         </label>
 
         <div class="overlay"></div>
-        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
 
         <nav id="main-menu">
             <ul class="d-flex justify-content-around align-items-center">
@@ -140,21 +120,21 @@
         $userdId = $_SESSION["user_id"];
 
 
-        $query 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
 
-        $result = mysqli_query($connection, $query);
+        $resultUser = mysqli_query($connection, $userCheak);
 
-        if($result) {
-            $row 	= mysqli_fetch_assoc($result);
+        if($resultUser) {
+            $rowUser	= mysqli_fetch_assoc($resultUser);
         }
-        
+
         else die("DB query failed.");
 
-?>
+        ?>
 
         <section class="prof-pic">
-            <a href="#" class="user_pic"></a>
-            <span>Hello <?php echo   $row["name"]; ?></span>
+            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+            <span>Hello <?php echo   $rowUser["name"]; ?></span>
         </section>
     </header>
 
@@ -410,3 +390,11 @@
 </body>
 
 </html>
+
+<?php
+
+//close DB connection
+
+mysqli_close($connection);
+
+?>
