@@ -1,3 +1,41 @@
+<?php 
+
+    //create a mySQL DB connection:
+
+	include "config.php";
+
+
+
+    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+    
+
+    //testing connection success
+
+    if(mysqli_connect_errno()) {
+
+        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
+
+        );
+
+    }
+    session_start();
+    
+    
+    if(!isset($_SESSION["user_id"])) {
+
+        echo 'no user id';
+
+        header('Location:index.php');
+
+    } 
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,11 +133,28 @@
             </ul>
         </nav>
 
+        <?php 
 
+        //get data from DB
+
+        $userdId = $_SESSION["user_id"];
+
+
+        $query 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+
+        $result = mysqli_query($connection, $query);
+
+        if($result) {
+            $row 	= mysqli_fetch_assoc($result);
+        }
+        
+        else die("DB query failed.");
+
+?>
 
         <section class="prof-pic">
             <a href="#" class="user_pic"></a>
-            <span>Hello </span>
+            <span>Hello <?php echo   $row["name"]; ?></span>
         </section>
     </header>
 

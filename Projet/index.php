@@ -48,7 +48,9 @@ if(mysqli_connect_errno()) {
 
             session_start();
 
-            $_SESSION["user_id"] = $row['user_id'];
+             
+
+            $_SESSION["user_id"] = $row["u_id"];
 
             header('Location:homepage.php');
 
