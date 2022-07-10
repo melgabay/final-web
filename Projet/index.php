@@ -102,19 +102,23 @@ if(mysqli_connect_errno()) {
 
 <body>
 
-    <header class="d-flex justify-content-between">
-        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
-        <section class="prof-pic">
-            <a href="#" class="user_pic index"></a>
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+        <a href="index.php">
+            <img src="./images/logo.png" alt="logo" class="logo">
+        </a>
+        <section class="mt-1">
+            <a href="#" class=" d-flex justify-content-center ">
+                <img src="./images/somone.png" alt="someone" class="photo_profil">
+            </a>
             <span>Hello Guest</span>
         </section>
     </header>
 
 
     <main>
-        <div class="h1_template">
-            <h1>Connect</h1>
-        </div>
+        <!-- <div class="h1_template"> -->
+            <h1 class="text-center">Connect</h1>
+        <!-- </div> -->
 
         <form action="#" method="POST" class="form-index d-flex flex-column align-items-center text-center">
             <label for="exampleInputEmail1">Enter an email address</label>
@@ -142,7 +146,7 @@ if(mysqli_connect_errno()) {
                 Login With Google
             </button>
         </div>
-        <footer class="footer-index d-flex justify-content-center align-items-center">
+        <footer class="footer-index d-flex justify-content-center align-items-center bl">
             <a href="#"> Sign Up</a>
             <a href="#"> Forgot my password</a>
         </footer>

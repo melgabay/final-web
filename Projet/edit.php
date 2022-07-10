@@ -72,7 +72,9 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
-    <!-- calendar -->
+ <!-- fav icone -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>TripDream</title>
 </head>
@@ -81,61 +83,62 @@
 
 <body>
 
-    <header class="d-flex justify-content-between">
-        <input type="checkbox" id="hamburger-input" class="burger-shower" />
-        <label id="hamburger-menu" for="hamburger-input">
-            <nav id="sidebar-menu">
-                <h3>Menu</h3>
-                <ul>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                    <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                    <li class="nav-item"><a class="nav-link " href="find_friend.php">Find Friend</a></li>
-                </ul>
-            </nav>
-        </label>
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+    <a href="index.php">
+        <img src="./images/logo.png" alt="logo" class="logo">
+    </a>
 
-        <div class="overlay"></div>
-        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
-
-        <nav id="main-menu">
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-                </li>
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link " href="find_friend.php">Find Friend</a></li>
-            </ul>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            <a class="nav-link  active" href="form.php">Create New Trip</a>
+            <a class="nav-link " href="list_page.php">My Trips</a>
+            <a class="nav-link  " href="find_friend.php">Find Friend</a>
+        </div>
+        <nav class="navbar navbar-dark ml-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa fa-bars"></i>
+            </button>
         </nav>
+    </div>
 
+    <nav>
+        <ul class="d-flex justify-content-between nav">
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            </li>
+            <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+            <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+        </ul>
+    </nav>
 
+    <?php 
 
-        
-        <?php 
+    //get data from DB
+    $userdId = $_SESSION["user_id"];
+    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+    $resultUser = mysqli_query($connection, $userCheak);
 
-            //get data from DB
+    if($resultUser) {
+    $rowUser	= mysqli_fetch_assoc($resultUser);
+    }
 
-            $userdId = $_SESSION["user_id"];
+    else die("DB query failed.");
 
+    ?>
 
-            $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-
-            $resultUser = mysqli_query($connection, $userCheak);
-
-            if($resultUser) {
-                $rowUser	= mysqli_fetch_assoc($resultUser);
-            }
-
-            else die("DB query failed.");
-
-            ?>
-
-            <section class="prof-pic">
-                <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
-                <span>Hello <?php echo   $rowUser["name"]; ?></span>
-            </section>
-    </header>
+    <section class="mt-1">
+        <a href="#" class="d-flex justify-content-center">
+            <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+        </a>
+        <span>Hello
+            <?php echo   $rowUser["name"]; ?>
+        </span>
+    </section>
+</header>
 
     <main class="editmain">
 
@@ -148,8 +151,8 @@
                         <div class="card-header">Profile Picture</div>
                         <div class="card-body text-center">
                             <!-- Profile picture image-->
-                            <img class="img-account-profile rounded-circle mb-2" src="../images/user_picture.png"
-                                alt="pp">
+                                <?php  echo '<img src="'.$rowUser["picture"].'" class="img-account-profile rounded-circle mb-2 alt=".$rowUser["picture"]" />'?>
+
                             <!-- Profile picture help block-->
                             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                             <!-- Profile picture upload button-->
@@ -211,7 +214,8 @@
                                     <!-- Form Group (birthday)-->
                                     <div class="col-md-6">
                                         <label class="control-label" for="date">Start Date</label>
-                                        <input class="form-control" id="date" name="date" placeholder="30/11/1999" type="text" >
+                                        <input class="form-control" id="date" name="date" placeholder="30/11/1999"
+                                            type="text">
                                     </div>
                                 </div>
                                 <!-- Save changes button-->

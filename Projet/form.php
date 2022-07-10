@@ -72,7 +72,9 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
-    <!-- calendar -->
+ <!-- fav icone -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>TripDream</title>
 </head>
@@ -80,140 +82,136 @@
 
 <body>
 
-  
-<header class="d-flex justify-content-between">
-    <input type="checkbox" id="hamburger-input" class="burger-shower" >
-        <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-            <h3>Menu</h3>
-            <ul>
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+    <a href="index.php">
+        <img src="./images/logo.png" alt="logo" class="logo">
+    </a>
+
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            <a class="nav-link  active" href="form.php">Create New Trip</a>
+            <a class="nav-link " href="list_page.php">My Trips</a>
+            <a class="nav-link  " href="find_friend.php">Find Friend</a>
+        </div>
+        <nav class="navbar navbar-dark ml-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+
+    <nav>
+        <ul class="d-flex justify-content-between nav">
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            </li>
             <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
             <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
-        </label>
+        </ul>
+    </nav>
 
-        <div class="overlay"></div>
-        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
+    <?php 
 
-         <nav id="main-menu">
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
+    //get data from DB
+    $userdId = $_SESSION["user_id"];
+    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+    $resultUser = mysqli_query($connection, $userCheak);
 
-        
+    if($resultUser) {
+    $rowUser	= mysqli_fetch_assoc($resultUser);
+    }
 
-       
-        <?php 
+    else die("DB query failed.");
 
-        //get data from DB
+    ?>
 
-        $userdId = $_SESSION["user_id"];
-
-
-        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-
-        $resultUser = mysqli_query($connection, $userCheak);
-
-        if($resultUser) {
-            $rowUser	= mysqli_fetch_assoc($resultUser);
-        }
-
-        else die("DB query failed.");
-
-        ?>
-
-        <section class="prof-pic">
-            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
-            <span>Hello <?php echo   $rowUser["name"]; ?></span>
-        </section>
+    <section class="mt-1">
+        <a href="#" class="d-flex justify-content-center">
+            <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+        </a>
+        <span>Hello
+            <?php echo   $rowUser["name"]; ?>
+        </span>
+    </section>
 </header>
 
-<main class="formpage">
-    <h2> Create New Trip </h2>
-    <div class="d-flex justify-content-center  mt-5">
-        <form action="#" method="GET" class="rec-white col-md-8"> 
-            <div class="d-flex fp justify-content-around">
-                <div class="col-md-3">
-                    <label> Amount of trip</label>
-                    <input type="number" class="form-control" id="amount" placeholder="0 $" min="0">
+    <main class="formpage">
+        <h1 class="text-center"> Create New Trip </h1>
+        <div class="d-flex justify-content-center mt-5">
+            <form action="#" method="GET" class="rec-white col-md-8">
+                <div class="d-flex fp justify-content-around dis">
+                    <div class="col-md-3">
+                        <label> Amount of trip</label>
+                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label> Type of trip</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Nature">
+                            <label class="form-check-label" for="flexCheckDefault">Nature</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
+                            <label class="form-check-label" for="flexCheckDefault">Beach</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
+                            <label class="form-check-label" for="flexCheckDefault">Sport</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
+                            <label class="form-check-label" for="flexCheckDefault">Quiet</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
+                            <label class="form-check-label" for="flexCheckDefault">Party</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <label> Select the age</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="1">
+                            <label class="form-check-label">18-25</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="2">
+                            <label class="form-check-label">26-35</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="3">
+                            <label class="form-check-label">26-45</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="4">
+                            <label class="form-check-label">46-60</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="age" value="5">
+                            <label class="form-check-label">60 +</label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-md-3">
-                    <label> Type of trip</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Nature">
-                        <label class="form-check-label" for="flexCheckDefault">Nature</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
-                        <label class="form-check-label" for="flexCheckDefault">Beach</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
-                        <label class="form-check-label" for="flexCheckDefault">Sport</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
-                        <label class="form-check-label" for="flexCheckDefault">Quiet</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
-                        <label class="form-check-label" for="flexCheckDefault">Party</label>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <label> Select the age</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="1">
-                        <label class="form-check-label">18-25</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="2">
-                        <label class="form-check-label">26-35</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="3">
-                        <label class="form-check-label">26-45</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="4">
-                        <label class="form-check-label">46-60</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="age" value="5">
-                        <label class="form-check-label">60 +</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
-                <div class="d-flex fp justify-content-around">
+                <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
+                    <div class="d-flex fp justify-content-around dis">
                         <div class="col-md-3">
                             <label for="continents" class="form-label">Choose continent</label>
                             <select id="continents" class="form-select" required>
                                 <option value="">...</option>
-                               <!-- <option value="South America">South America</option>
-                                <option value="North America">North America</option>
-                                <option value="Europe">Europe</option>
-                                <option value="Asia">Asia</option>
-                                <option value="Australia">Australia</option>
-                                <option value="Africa">Africa</option>  -->
                             </select>
                         </div>
 
@@ -234,7 +232,6 @@
                             <label for="inputState" class="form-label">Choose Area</label>
                             <select id="inputState" class="form-select" required>
                                 <option value="">...</option>
-                                <!-- IF THE COUNTRY CHOOSE IS BRASILIA  -->
                                 <option value="Brasilia">Brasilia</option>
                                 <option value="Rio de Janero">Rio de Janero</option>
                                 <option value="Sao Paulo">Sao Paulo</option>
@@ -242,113 +239,34 @@
                                 <option value="Manaus">Manaus</option>
                             </select>
                         </div>
-                </div>
-
-                <div class="d-flex fp justify-content-around">
-                    <div class="col-md-3 budget-in">
-                        <label class="control-label" for="budget">Enter a budget</label>
-                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
                     </div>
 
-                    <div class="col-md-3">
-                        <label class="control-label" for="date">Start Date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" >
-                    </div>
+                    <div class="d-flex fp justify-content-around dis">
+                        <div class="col-md-3">
+                            <label class="control-label" for="date">Start Date</label>
+                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
+                        </div>
 
 
-                    <div class="col-md-3">
-                        <label class="control-label" for="date">End date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" >
-                    </div>
+                        <div class="col-md-3">
+                            <label class="control-label" for="date">End date</label>
+                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
+                        </div>
 
-                </div>
-            </div>
-
-            <div class="d-block mt-5 pb-5" id="pre">
-
-                <button type="button" class="btn btn-outline-success" id="count">
-                    Add destination
-                    <img src="./images/PLUS.png" alt="plus">
-                </button>
-
-                <button type="button" class="btn btn-primary new-color bouton-form">Search</button>
-            </div>
-        </form>
-    </div>
-        <!-- <form action="#" method="GET" class="form-page-form">
-            <h3> Choose destination:</h3>
-            <div class="rec-white form-dest-page " id="form">
-                <div class="d-flex fp justify-content-around">
-                    <div class="col-md-3">
-                        <label for="inputState" class="form-label">Choose continent</label>
-                        <select id="inputState" class="form-select" required>
-                            <option value="">...</option>
-                            <option value="South America">South America</option>
-                            <option value="North America">North America</option>
-                            <option value="Europe">Europe</option>
-                            <option value="Asia">Asia</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Africa">Africa</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label for="inputState" class="form-label">Choose Country</label>
-                        <select id="inputState" class="form-select" required>
-                            <option value="">...</option>
-                            <option value="Bresilia">Bresilia</option>
-                            <option value="Paraguay">Paraguay</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Urugay">Urugay</option>
-                            <option value="Perou">Perou</option>
-                            <option value="Mexique">Mexique</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-3">
-                        <label for="inputState" class="form-label">Choose Town</label>
-                        <select id="inputState" class="form-select" required>
-                            <option value="">...</option>
-                            <!-- IF THE COUNTRY CHOOSE IS BRASILIA 
-                            <option value="Brasilia">Brasilia</option>
-                            <option value="Rio de Janero">Rio de Janero</option>
-                            <option value="Sao Paulo">Sao Paulo</option>
-                            <option value="Salvador da Bahia">Salvador da Bahia</option>
-                            <option value="Manaus">Manaus</option>
-                        </select>
                     </div>
                 </div>
 
-                <div class="d-flex fp justify-content-around">
-                    <div class="col-md-3 budget-in">
-                        <label class="control-label" for="budget">Enter a budget</label>
-                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 $" min="0">
-                    </div>
+                <div class="d-block mt-5 pb-5" id="pre">
 
-                    <div class="col-md-3">
-                        <label class="control-label" for="date">Start Date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                    </div>
+                    <button type="button" class="btn btn-outline-success" id="count">
+                        Add destination
+                        <img src="./images/PLUS.png" alt="plus">
+                    </button>
 
-
-                    <div class="col-md-3">
-                        <label class="control-label" for="date">End date</label>
-                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
-                    </div>
-
+                    <button type="button" class="btn btn-primary new-color bouton-form">Search</button>
                 </div>
-
-            </div>
-
-            <div class=" d-block" id="pre">
-                <button type="button" class="btn btn-outline-success" id="count">
-                    Add destination
-                    <img src="./images/PLUS.png" alt="plus">
-                </button>
-
-                <button type="button" class="btn btn-primary new-color bouton-form">Search</button>
-            </div>
-        </form> -->
+            </form>
+        </div>
     </main>
 </body>
 
