@@ -12,7 +12,24 @@
 
 ?>
 
+<?php 
 
+	//get data from DB
+
+    $query 	= "SELECT * FROM tbl_trips_206 t  inner join tbl_user_trips_206 u
+    ON t.t_id=u.t_id WHERE u.u_id=". $_SESSION["user_id"]."
+    ORDER BY start_date "; //change by date by default
+    
+
+	$result = mysqli_query($connection, $query);
+
+    if(!$result) {
+
+        die("DB query failed.");
+
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +103,8 @@
             <nav id="sidebar-menu">
                 <h3>Menu</h3>
                 <ul>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
                     <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                     <li class="nav-item"><a class="nav-link active " href="find_friend.php">Find Friend</a></li>
