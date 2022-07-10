@@ -40,7 +40,7 @@
 <html lang="en">
 
 <head>
-<link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,79 +55,87 @@
     <link rel="stylesheet" href="css/template.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
+     <!-- fav icone -->
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>TripDream</title>
 </head>
 
 
 <body>
 
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+    <a href="index.php">
+        <img src="./images/logo.png" alt="logo" class="logo">
+    </a>
 
-<header class="d-flex justify-content-between">
-     <input type="checkbox" id="hamburger-input" class="burger-shower" />
-        <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-            <h3>Menu</h3>
-            <ul>
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            <a class="nav-link  " href="form.php">Create New Trip</a>
+            <a class="nav-link active " href="list_page.php">My Trips</a>
+            <a class="nav-link  " href="find_friend.php">Find Friend</a>
+        </div>
+        <nav class="navbar navbar-dark ml-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+
+    <nav>
+        <ul class="d-flex justify-content-between nav">
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
+            </li>
             <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
+            <li class="nav-item"><a class="nav-link active " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
-        </label>
+        </ul>
+    </nav>
 
-        <div class="overlay"></div>
-        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
+    <?php 
 
-         <nav id="main-menu">
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
+    //get data from DB
+    $userdId = $_SESSION["user_id"];
+    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+    $resultUser = mysqli_query($connection, $userCheak);
 
-        
+    if($resultUser) {
+    $rowUser	= mysqli_fetch_assoc($resultUser);
+    }
 
-        <?php 
+    else die("DB query failed.");
 
-        //get data from DB
+    ?>
 
-        $userdId = $_SESSION["user_id"];
-
-
-        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-
-        $resultUser = mysqli_query($connection, $userCheak);
-
-        if($resultUser) {
-            $rowUser	= mysqli_fetch_assoc($resultUser);
-        }
-
-        else die("DB query failed.");
-
-        ?>
-
-    <section class="prof-pic">
-        <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
-        <span>Hello <?php echo   $rowUser["name"]; ?></span>
+    <section class="mt-1">
+        <a href="#" class="d-flex justify-content-center">
+            <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+        </a>
+        <span>Hello
+            <?php echo   $rowUser["name"]; ?>
+        </span>
     </section>
-    </header>
+</header>
 
     <main class="main-form">
-    <div class="trip_details">
+        <div class="trip_details">
             <section class="trip_details_section">
                 <span>Dates:</span>
-                <input type="date" name="begin" placeholder="dd-mm-yyyy"  min="1997-01-01"
-                    max="2030-12-31" value="<?php echo $row["start_date"];?>" disabled >
-                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row["end_date"];?>" min="1997-01-01"
-                    max="2030-12-31" disabled>
+                <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
+                    value="<?php echo $row[" start_date"];?>" disabled >
+                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row[" end_date"];?>"
+                min="1997-01-01"
+                max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
                 <span>Ages:</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Ages" disabled data-selected="<?php echo $row["ages"];?>">
+                <select name="Ages" disabled data-selected="<?php echo $row[" ages"];?>">
                     <option value="1">18-25</option>
                     <option value="2">26-35</option>
                     <option value="3">36-45</option>
@@ -138,7 +146,7 @@
             <section class="trip_details_section">
                 <span>Character</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Character" disabled  data-selected="<?php echo $row["nature"];?>">
+                <select name="Character" disabled data-selected="<?php echo $row[" nature"];?>">
                     <option value="1">Chill</option>
                     <option value="2">Sunbathing</option>
                     <option value="3">Tracks</option>
@@ -149,9 +157,11 @@
             </section>
             <section class="trip_details_section">
                 <span>Total</span>
-                <span><?php echo $row["budget"];?> &nbsp;&#8362;</span>
+                <span>
+                    <?php echo $row["budget"];?> &nbsp;&#8362;
+                </span>
             </section>
-    </div>
+        </div>
         <h2 id="object_page_h2">Path:</h2>
         <div id="trip_destnations" class="trip_destnations1">
             <?php 
@@ -201,32 +211,33 @@
                 echo     '</div>';
                 $row= mysqli_fetch_assoc($result);
                 }
-        ?> 
-        
+        ?>
+
         </div>
 
         <div class="change-button">
-            <button type="button" class="btn btn-secondary" id="delete_button" >Delete</button>
+            <button type="button" class="btn btn-secondary" id="delete_button">Delete</button>
             <div class="edit" id="edit_button"> <button type="button" class="btn btn-secondary">Edit</button></div>
         </div>
         <div id="myModal" class="modal fade" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Message</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <p id="mes_text">Are you sure you want to delete this trip?</p>
-                <p class="text-secondary"><small></small></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit_button_mes">Cancel</button>
-                <button type="button" class="btn btn-primary" id="delete_button_mes">Delete</button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mes_text">Are you sure you want to delete this trip?</p>
+                        <p class="text-secondary"><small></small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            id="edit_button_mes">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="delete_button_mes">Delete</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
     </main>
 </body>
