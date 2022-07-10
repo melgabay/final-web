@@ -148,7 +148,7 @@
         ?>
 
         <section class="prof-pic">
-            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
+            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>');" ></a>
             <span>Hello <?php echo   $rowUser["name"]; ?></span>
         </section>
     </header>
