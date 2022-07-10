@@ -25,22 +25,23 @@
 <?php 
 
 	//get data from DB
-    $begin=0;
-    $end=0;
-    $ages=0;
+    $tripId=0;
+    $destId=0;
+    $date=0;
     $character =0;
-	$prodId = $_GET["prodId"];
-    if(isset( $_GET["begin"]))
+    $Age =0;
+
+    if(isset( $_GET["tripId"]))
     {
-    $begin = $_GET["begin"]; 
+    $tripId = $_GET["tripId"]; 
     }
-    if(isset( $_GET["end"]))
+    if(isset( $_GET["destId"]))
     {
-    $end = $_GET["end"];
+    $destId = $_GET["destId"];
     }
-    if(isset( $_GET["ages"]))
+    if(isset( $_GET["date"]))
     {
-    $ages = $_GET["ages"];
+    $date = $_GET["date"];
     }
     if(isset($_GET["character"]))
     {
