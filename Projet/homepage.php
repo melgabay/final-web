@@ -85,59 +85,48 @@
 
 
 <body>
+    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+            <nav id="sidebar-menu">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+                    <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+                </ul>
+            </nav>
+        </label>
 
-    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+        <div class="overlay"></div>
         <a href="index.php">
             <img src="./images/logo.png" alt="logo" class="logo">
         </a>
 
-        <div class="pos-f-t">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <a class="nav-link active" aria-current="page" href="homepage.php">Homepage</a>
-                <a class="nav-link  " href="form.php">Create New Trip</a>
-                <a class="nav-link " href="list_page.php">My Trips</a>
-                <a class="nav-link  " href="find_friend.php">Find Friend</a>
-            </div>
-            <nav class="navbar navbar-dark ml-0">
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <!-- <span class="navbar-toggler-icon"></span> -->
-                    <i class="fa fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-
-        <nav>
-            <ul class="d-flex justify-content-between nav">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="homepage.php">Homepage</a>
-                </li>
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+        <nav id="main-menu">
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
                 <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
             </ul>
         </nav>
 
-
-
         <?php 
 
-//get data from DB
+    //get data from DB
+    $userdId = $_SESSION["user_id"];
+    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+    $resultUser = mysqli_query($connection, $userCheak);
 
-$userdId = $_SESSION["user_id"];
-
-
-$userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-
-$resultUser = mysqli_query($connection, $userCheak);
-
-if($resultUser) {
+    if($resultUser) {
     $rowUser	= mysqli_fetch_assoc($resultUser);
-}
+    }
 
-else die("DB query failed.");
+    else die("DB query failed.");
 
-?>
+    ?>
 
         <section class="mt-1">
             <a href="#" class="d-flex justify-content-center">
@@ -148,60 +137,6 @@ else die("DB query failed.");
             </span>
         </section>
     </header>
-
-    <!-- <header class="d-flex justify-content-between">
-        <input type="checkbox" id="hamburger-input" class="burger-shower" />
-        <label id="hamburger-menu" for="hamburger-input">
-            <nav id="sidebar-menu">
-                <h3>Menu</h3>
-                <ul>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="homepage.php">Homepage</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                    <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                    <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-                </ul>
-            </nav>
-        </label>
-
-        <div class="overlay"></div>
-        <a href="index.php"><img src="./images/logo.png" alt="logo"></a>
-
-        <nav id="main-menu">
-            <ul class="d-flex justify-content-around align-items-center">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="homepage.php">Homepage</a>
-                </li>
-                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-            </ul>
-        </nav>
-
-        <?php 
-
-        //get data from DB
-
-        $userdId = $_SESSION["user_id"];
-
-
-        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-
-        $resultUser = mysqli_query($connection, $userCheak);
-
-        if($resultUser) {
-            $rowUser	= mysqli_fetch_assoc($resultUser);
-        }
-
-        else die("DB query failed.");
-
-        ?>
-
-        <section class="prof-pic">
-            <a href="#" class="user_pic" style="background-image: url('<?php echo   $rowUser["picture"]; ?>.png');" ></a>
-            <span>Hello <?php echo   $rowUser["name"]; ?></span>
-        </section>
-    </header> -->
-
 
 
     <div class="mont d-flex justify-content-center">
@@ -216,10 +151,11 @@ else die("DB query failed.");
 
     </div>
 
+    
     <main class="hpmain">
         <h2>Recommended Trips:</h2>
-        <div class="ffp">
-            <div class="card offp" style="margin-bottom: 10%;">
+        <div class="ffp d-flex flex-wrap">
+            <div class="card offp">
                 <img src="./images/safari.png" alt="safari">
                 <div class="card-body">
                     <!-- <a href="#"> -->
@@ -233,7 +169,7 @@ else die("DB query failed.");
                 </div>
             </div>
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/brazil festival.png" alt="brazil">
                 <div class="card-body">
                     <!-- <a href="#"> -->
@@ -247,7 +183,7 @@ else die("DB query failed.");
                 </div>
             </div>
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/europe.png" alt="europe">
                 <div class="card-body">
                     <!-- <a href="#"> -->
@@ -262,7 +198,7 @@ else die("DB query failed.");
             </div>
 
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/china.png" alt="china">
                 <div class="card-body">
                     <!-- <a href="#"> -->
@@ -278,8 +214,60 @@ else die("DB query failed.");
         </div>
         <h2 class="yourfriend">Your friends:</h2>
 
+        <div class="d-flex flex-wrap homegap">
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+
+        </div>
+        <!-- 
         <div class="ffp">
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
                 <div class="card-body">
                     <h3 class="card-title">Asaf Levi</h3>
@@ -291,7 +279,7 @@ else die("DB query failed.");
                 </div>
             </div>
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
                 <div class="card-body">
                     <h3 class="card-title">Asaf Levi</h3>
@@ -303,7 +291,7 @@ else die("DB query failed.");
                 </div>
             </div>
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
                 <div class="card-body">
                     <h3 class="card-title">Asaf Levi</h3>
@@ -315,7 +303,7 @@ else die("DB query failed.");
                 </div>
             </div>
 
-            <div class="card offp" style="margin-bottom: 10%;">
+            <div class="card offp">
                 <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
                 <div class="card-body">
                     <h3 class="card-title">Asaf Levi</h3>
@@ -327,7 +315,7 @@ else die("DB query failed.");
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary new-color emf ex ">Explore More Friend</button>
+        <button type="button" class="btn btn-primary new-color emf ex ">Explore More Friend</button> -->
 
         <!-- <div class="homepage">
 

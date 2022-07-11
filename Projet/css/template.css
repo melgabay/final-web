@@ -39,16 +39,102 @@ header>a {
     height: 40px;  
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+}
 
-.pos-f-t{
+#main-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+#hamburger-menu {
+    margin: auto 30px;
+    width: 40px;
+    height: 40px;
+    display: none;
+    border: none;
+    background: linear-gradient( to bottom, #a0632f, #a0632f 20%, #F7EBD4 20%, #F7EBD4 40%, #a0632f 40%, #a0632f 60%, #F7EBD4 60%, #F7EBD4 80%, #a0632f 80%, #a0632f 100%);
+}
+
+#hamburger-menu #sidebar-menu {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #318371;
+    transition: 0.3s;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+    color: #B9FAF8;
+    font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+    padding-left: 0px;
+}
+
+#hamburger-menu li {
+    list-style-type: none;
+    line-height: 3rem;
+}
+
+#hamburger-menu a {
+    color: #B9FAF8;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+    text-decoration: underline;
+}
+
+#hamburger-input:checked+#hamburger-menu #sidebar-menu {
+    visibility: visible;
+    left: 0;
+}
+
+#hamburger-input:checked~.overlay {
+    visibility: visible;
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+    #main-menu {
+        display: none;
+    }
+    #hamburger-menu {
+        display: inline;
+    }
+}
+
+/* .pos-f-t{
     display: none;
 }
 
 .navbar-dark .navbar-toggler {
     color: #212529;
     border-color: #212529;
-}
-
+} */
+/* 
 @media screen and (max-width: 750px) {
     .pos-f-t{
         display: block;
@@ -56,17 +142,17 @@ header>a {
     nav ul.nav{
         display: none !important;
     }
-}
+} */
 
 /* header>a {
     /* margin-left: 30px; 
 } */
-
+/* 
 nav {
     width: 80%;
-    /* margin-top: auto; */
+    /* margin-top: auto; 
     margin: 0px auto;
-}
+} */
 
 ul {
     list-style-type: none;
@@ -153,11 +239,11 @@ main h1{
 }
 
 
-@media (max-width: 180px) {
+/* @media (max-width: 180px) {
     .bl{
         display: block !important;
     }
-}
+} */
 
 /****** FORM ******/
 
@@ -175,11 +261,23 @@ main h1{
     border-color: #dce7e9;
 }
 
-@media screen and (max-width: 700px) {
+@media (max-width: 770px) {
+    .rec-white.col-md-8{
+        width: 50%;
+    }
+
+    .formpage{
+        height: 100%;
+    }
+}
+
+
+
+/* @media screen and (max-width: 700px) {
     .dis{
         display: block !important;
     }
-}
+} */
 
 
 /****** LIST PAGE ******/
@@ -258,39 +356,42 @@ tr.clickable-row:hover {
 }
 
 .trip_destnations1 {
+    border-radius: 8px;
+    margin-left: 20%;
+  
+    background-color: white;
+    width: 100%;
+    padding: 5%;
+}
+
+.blanc-rec{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 5%;
 }
 
 .area_list {
-    height: 388px;
-    width: 288px;
-    background-color: rgba(255, 255, 255, .5);
+    height: 100%;
+    width: 100%;
+    background-color:  #F7EBD4;
     position: relative;
+    border-radius: 8px;
+
 }
 
 .area_list img {
     position: absolute;
     top: 40px;
-    left: 7.5px;
-    width: 278px;
+    /* left: 7.5px; */
+    /* width: 278px; */
     height: 1px;
 }
 
-.area_list h3 {
-    font-size: 25px;
-    line-height: 42px;
-    text-align: left;
-    margin-left: 7.5px;
+.area_list h3, .area_list p {
+    margin-left: 10%;
 }
 
-.area_list span {
-    font-size: 21px;
-    font-weight: bold;
-    margin-left: 32px;
-}
+
 
 .area_list ol li {
     list-style: none;
@@ -308,20 +409,19 @@ tr.clickable-row:hover {
 
 .area_list section {
     position: absolute;
-    width: 168px;
-    height: 32px;
-    top: 314px;
-    left: 60px;
     background: #E1AA7A;
     text-align: center;
     font-size: 20px;
-    line-height: 26px;
-    font-weight: bold;
+    width: 100%;
+    height: 10%;
+    top: 260px;
+    left: 0px;
+    border-radius: 0px 0px 8px 8px
 }
 
 .des_img {
     position: relative;
-    width: 288px;
+    /* width: 288px; */
     height: 87px;
 }
 
@@ -375,7 +475,6 @@ tr.clickable-row:hover {
     color: #000000;
 }
 
-@media (max-width: 1420px) {
     /* header>a {
         margin: auto auto;
     } */
@@ -390,10 +489,10 @@ tr.clickable-row:hover {
     #object_page_h2 {
         margin-left: 1.5%;
     }
-    .trip_destnations1 {
+    /* .trip_destnations1 {
         margin-left: 5%;
         margin-right: 5%;
-    }
+    } */
     .des_img {
         width: 156px;
     }
@@ -410,12 +509,7 @@ tr.clickable-row:hover {
     .des_img :nth-child(4) {
         left: 109px;
     }
-    .area_list section {
-        width: 150px;
-        height: 32px;
-        top: 248px;
-        left: 8px;
-    }
+  
     #last_vector {
         width: 156px
     }
@@ -426,7 +520,7 @@ tr.clickable-row:hover {
     .area_list ol li {
         font-size: 16px;
     }
-}
+
 
 .change-button {
     display: flex;
@@ -463,6 +557,30 @@ tr.clickable-row:hover {
     color: #000000;
 }
 
+.homegap{
+    margin-left: 20%;
+    margin-right: 1%;
+}
+
+.media.rec-white{
+    margin-bottom: 2%;
+    padding-right: 8%;
+    padding-left: 2%;
+}
+
+.card.offp{
+    width: 25%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+}
+
+
+
+@media (max-width: 800px){
+    .hpmain h2, .homegap, .hpmain .ffp{
+        margin-left: 0;
+    }
+}
 
 /* .ffp a:hover, .card-body a .card-text.hppage:hover, */
 
@@ -490,11 +608,11 @@ tr.clickable-row:hover {
     margin-left: 40%;
 }
 
-@media (max-width: 180px){
+/* @media (max-width: 180px){
     .hpmain h2{
         margin: 0;
     }
-}
+} */
 
 
 /* FIND FRIEND */
@@ -508,6 +626,7 @@ tr.clickable-row:hover {
 .rec-white {
     background-color: white;
     border-radius: 8px;
+    width: max-content;
 }
 
 .find-friend-page {
@@ -531,10 +650,6 @@ tr.clickable-row:hover {
     /* gap:50px */
 }
 
-.card.offp {
-    width: 45%;
-}
-
 @media (max-width: 985px) {
     .ffmain {
         height: 100%;
@@ -544,11 +659,11 @@ tr.clickable-row:hover {
     }
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
     .d1 {
         display: block!important;
     }
-}
+} */
 
 .ffmain h2 {
     margin-top: 2%;
@@ -565,11 +680,21 @@ tr.clickable-row:hover {
 
 .pathre {
     max-width: 75%;
-    /* max-height: 50%; */
+    margin-top: 2%;
+    padding-bottom: 2%;
 }
 
 .path-class {
     margin: 0;
+}
+
+.path-main{
+    height: 100%;
+}
+
+.choose{
+    margin-left: auto;
+    margin-top: 2%;
 }
 
 /* EDIT FILE */
