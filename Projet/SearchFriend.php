@@ -25,42 +25,29 @@
 <?php 
 
 	//get data from DB
-    $tripId=0;
-    $destId=0;
-    $date=0;
-    $character =0;
-    $Age =0;
+    $dateYear=0;
+    $dateMonth=0;
 
-    if(isset( $_GET["tripId"]))
+
+    if(isset( $_GET["dateYear"]))
     {
-    $tripId = $_GET["tripId"]; 
+    $dateYear = $_GET["dateYear"]; 
     }
-    if(isset( $_GET["destId"]))
+
+    if(isset( $_GET["dateMonth"]))
     {
-    $destId = $_GET["destId"];
-    }
-    if(isset( $_GET["date"]))
-    {
-    $date = $_GET["date"];
-    }
-    if(isset($_GET["character"]))
-    {
-    $character = $_GET["character"];
+    $dateMonth = $_GET["dateMonth"]; 
     }
 
 
-	$query 	= "UPDATE tbl_trips_206 t
-    SET      t.start_date = COALESCE(NULLIF($begin, 0), t.start_date),
-             t.end_date =  COALESCE(NULLIF($end, 0), t.end_date),
-             t.ages =  COALESCE(NULLIF($ages, 0), t.ages),
-             t.nature =  COALESCE(NULLIF($character, 0), t.nature)
-    WHERE t.t_id=" . $prodId;
+	$query 	= "SELECT * from tbl_users_206 u
+    WHERE    u.dates_year = $dateYear
+    AND       u.dates_month =$dateMonth";
     echo $query;
-	// echo $query;
 	$result = mysqli_query($connection, $query);
 
 	if($result==true) {
-        echo '1';
+        echo $result;
 	}
 
 	else die("DB query failed.");
