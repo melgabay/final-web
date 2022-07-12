@@ -116,9 +116,7 @@ if(mysqli_connect_errno()) {
 
 
     <main>
-        <!-- <div class="h1_template"> -->
             <h1 class="text-center">Connect</h1>
-        <!-- </div> -->
 
         <form action="#" method="POST" class="form-index d-flex flex-column align-items-center text-center">
             <label for="exampleInputEmail1">Enter an email address</label>
@@ -130,7 +128,9 @@ if(mysqli_connect_errno()) {
                 name="password" required>
 
             <button type="submit" class="btn btn-primary index d-flex justify-content-center">Sign in</button>
-            <div class="error-message"><?php if(isset($message)) { echo $message; } ?></div>   
+            <!-- <div class="error-message"> NOT SURE NEED THIS BECAUSE THERE IS NO CSS ON IN -->
+                <?php if(isset($message)) { echo $message; } ?>
+            <!-- </div>    -->
 
         </form>
 
@@ -146,7 +146,7 @@ if(mysqli_connect_errno()) {
                 Login With Google
             </button>
         </div>
-        <footer class="footer-index d-flex justify-content-center align-items-center bl">
+        <footer class="footer-index d-flex justify-content-center align-items-center flex-wrap">
             <a href="#"> Sign Up</a>
             <a href="#"> Forgot my password</a>
         </footer>

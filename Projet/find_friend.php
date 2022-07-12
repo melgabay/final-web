@@ -100,7 +100,7 @@
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <nav id="main-menu">
+    <nav class="main-menu">
         <ul class="d-flex justify-content-around align-items-center">
             <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
             <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
@@ -153,7 +153,7 @@
 
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by Destination</label>
-                    <select id="inputState" class="form-select" name="destId" required>
+                    <select id="inputState" class="form-select" required>
                         <option value="">...</option>
                         <option value="South America">South America</option>
                         <option value="North America">North America</option>
@@ -174,7 +174,7 @@
             <div class="d-flex flex-wrap">
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by trip Charactere</label>
-                    <select id="inputState" class="form-select" name="charactere" required>
+                    <select id="inputState" class="form-select" required>
                         <option value="">...</option>
                         <option value="1">Chill</option>
                         <option value="2">Sunbathing</option>
@@ -186,8 +186,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label for="inputState" class="form-label">Search by Age</label>
-                    <select id="inputState" class="form-select" name="ages" required>
+                <label for="inputState" class="form-label">Search by Age</label>
+                    <select id="inputState" class="form-select" required>
                         <option value="">...</option>
                         <option value="1">18-25</option>
                         <option value="2">26-35</option>
@@ -210,9 +210,57 @@
 
         </form>
 
-        <h2> Friend List:</h2>
+        <h2 class="yourfriend">Your friends:</h2>
 
-        <div class="ffp" id="friend_result"> 
+        <div class="d-flex flex-wrap homegap">
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
+            <div class="media rec-white">
+                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                <div class="media-body mt-3">
+                    <h3>Asaf Levi</h3>
+                    <p><b>From:</b> Tel Aviv, Israel</p>
+                    <p><b>Age:</b> 27</p>
+                    <p ><b>Wants to travel to:</b> South America from May-August</p>
+                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                </div>
+                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+            </div>
+
 
         </div>
 

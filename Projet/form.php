@@ -37,6 +37,28 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+<!-- multiselect -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+
+
+
+<!-- Include Twitter Bootstrap and jQuery: -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- Include the plugin's CSS and JS: -->
+<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+
 
 
     <!-- BOOTSRAP -->
@@ -81,7 +103,7 @@
 
 
 <body>
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center ">
     <input type="checkbox" id="hamburger-input" class="burger-shower" />
     <label id="hamburger-menu" for="hamburger-input">
         <nav id="sidebar-menu">
@@ -100,7 +122,7 @@
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <nav id="main-menu">
+    <nav class="main-menu">
         <ul class="d-flex justify-content-around align-items-center">
             <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
             <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
@@ -138,8 +160,8 @@
 <main class="formpage">
         <h1 class="text-center"> Create New Trip </h1>
         <div class="d-flex justify-content-center mt-5 flex-wrap">
-            <form action="#" method="GET" class="rec-white col-md-8">
-                <div class="d-flex fp justify-content-around flex-wrap">
+            <form action="#" method="GET" class="rec-white col-md-8 mb-5">
+                <div class="d-flex justify-content-around flex-wrap">
                     <div class="col-md-3">
                         <label> Amount of trip</label>
                         <input type="number" class="form-control" id="amount" placeholder="0 $" min="0">
@@ -200,16 +222,18 @@
                             <label class="form-check-label">60 +</label>
                         </div>
                     </div>
-                </div>
-
-                <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
-                    <div class="d-flex fp justify-content-around flex-wrap">
-                        <div class="col-md-3">
+                    
+                    <div class="col-md-3">
                             <label for="continents" class="form-label">Choose continent</label>
                             <select id="continents" class="form-select" required>
                                 <option value="">...</option>
                             </select>
                         </div>
+                </div>
+
+                <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
+                    <div class="d-flex justify-content-around flex-wrap">
+                      
 
                         <div class="col-md-3">
                             <label for="inputState" class="form-label">Choose Country</label>
@@ -225,19 +249,20 @@
                         </div>
 
                         <div class="col-md-3">
-                            <label for="inputState" class="form-label">Choose Area</label>
-                            <select id="inputState" class="form-select" required>
-                                <option value="">...</option>
+                            <label for="inputaera" class="form-label">Choose Area</label>
+                            <!-- <select id="inputaera" class="form-select" required> -->
+                            <select class="selectpicker" multiple>
                                 <option value="Brasilia">Brasilia</option>
                                 <option value="Rio de Janero">Rio de Janero</option>
                                 <option value="Sao Paulo">Sao Paulo</option>
                                 <option value="Salvador da Bahia">Salvador da Bahia</option>
                                 <option value="Manaus">Manaus</option>
+                                
                             </select>
                         </div>
                     </div>
 
-                    <div class="d-flex fp justify-content-around flex-wrap">
+                    <div class="d-flex justify-content-around flex-wrap mt-4">
                         <div class="col-md-3">
                             <label class="control-label" for="date">Start Date</label>
                             <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
@@ -252,14 +277,14 @@
                     </div>
                 </div>
 
-                <div class="d-block mt-5 pb-5" id="pre">
+                <div class="d-block" id="pre">
 
-                    <button type="button" class="btn btn-outline-success" id="count">
+                    <button type="button" class="btn btn-outline-success mt-5 mb-5" id="count">
                         Add destination
                         <img src="./images/PLUS.png" alt="plus">
                     </button>
 
-                    <button type="button" class="btn btn-primary new-color bouton-form">Search</button>
+                    <button type="button" class="btn btn-primary new-color bouton-form mt-5 mb-5">Search</button>
                 </div>
             </form>
         </div>

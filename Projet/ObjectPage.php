@@ -72,8 +72,8 @@
             <h3>Menu</h3>
             <ul>
                 <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+                <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
             </ul>
         </nav>
@@ -84,11 +84,11 @@
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <nav id="main-menu">
+    <nav class="main-menu">
         <ul class="d-flex justify-content-around align-items-center">
             <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-            <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+            <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+            <li class="nav-item"><a class="nav-link active " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
         </ul>
     </nav>
@@ -119,8 +119,8 @@
 </header>
 
     <main class="main-form">
-        <div class="trip_details">
-            <section class="trip_details_section">
+        <div class="trip_details d-flex justify-content-center flex-wrap">
+            <section class="trip_details_section d-flex flex-wrap">
                 <span>Dates:</span>
                 <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
                     value="<?php echo $row[" start_date"];?>" disabled >
@@ -158,7 +158,7 @@
                 </span>
             </section>
         </div>
-        <h2 id="object_page_h2">Path:</h2>
+        <h2 class="object_page_h2">Path:</h2>
         <div id="trip_destnations" class="trip_destnations1">
             <?php 
         $numberDest=0;

@@ -6,14 +6,7 @@
     font-family: 'Assistant';
 }
 
-header,
-main,
-footer,
-nav,
-aside,
-section,
-div,
-article {
+header, main, footer, nav, aside, section, div, article {
     display: block;
 }
 
@@ -23,17 +16,13 @@ a {
 
 header {
     background-color: #F7EBD4;
-    /* height: 75px; */
-}
-
-header>a {
-    /* margin-left: 30px; */
 }
 
 .logo{
     width: 70px;
     height: 70px;
 }
+
 .photo_profil{
     width: 40px;
     height: 40px;  
@@ -53,7 +42,7 @@ header>a {
     z-index: -1;
 }
 
-#main-menu a:hover {
+.main-menu a:hover {
     text-decoration: underline;
 }
 
@@ -118,7 +107,7 @@ header>a {
 }
 
 @media screen and (max-width: 750px) {
-    #main-menu {
+    .main-menu {
         display: none;
     }
     #hamburger-menu {
@@ -126,38 +115,9 @@ header>a {
     }
 }
 
-/* .pos-f-t{
-    display: none;
-}
-
-.navbar-dark .navbar-toggler {
-    color: #212529;
-    border-color: #212529;
-} */
-/* 
-@media screen and (max-width: 750px) {
-    .pos-f-t{
-        display: block;
-    }
-    nav ul.nav{
-        display: none !important;
-    }
-} */
-
-/* header>a {
-    /* margin-left: 30px; 
-} */
-/* 
-nav {
-    width: 80%;
-    /* margin-top: auto; 
-    margin: 0px auto;
-} */
-
 ul {
     list-style-type: none;
 }
-
 
 a.nav-link {
     color: #585858;
@@ -177,20 +137,11 @@ main {
     height: 100vh;
 }
 
-/* .prof-pic {
-    margin-right: 15px;
-} */
-
-
 /****** INDEX ******/
 
 main h1{
     background-color: #B5DBD3;
 }
-
-/* .user_pic.index {
-    background-image: url("../images/somone.png");
-} */
 
 .form-index {
     margin: 20px auto 0 auto;
@@ -238,23 +189,19 @@ main h1{
     }
 }
 
-
-/* @media (max-width: 180px) {
-    .bl{
-        display: block !important;
-    }
-} */
-
 /****** FORM ******/
+
+.formpage{
+    height: 100%;
+}
 
 .beige-rec {
     background-color: #F9EAD5;
     border-radius: 8px;
 }
 
-
-.fp {
-    margin-top: 2%;
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
 }
 
 .btn-outline-success {
@@ -265,20 +212,7 @@ main h1{
     .rec-white.col-md-8{
         width: 50%;
     }
-
-    .formpage{
-        height: 100%;
-    }
 }
-
-
-
-/* @media screen and (max-width: 700px) {
-    .dis{
-        display: block !important;
-    }
-} */
-
 
 /****** LIST PAGE ******/
 
@@ -296,12 +230,9 @@ tr.clickable-row:hover {
 }
 
 
-/* ChANGE PAGE + OBJECT PAGE */
+/* PATH PAGE + OBJECT PAGE */
 
 .trip_details {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 0px;
@@ -309,8 +240,6 @@ tr.clickable-row:hover {
 }
 
 .trip_details_section {
-    display: flex;
-    flex-wrap: wrap;
     max-width: 396px;
     height: 100px;
     width: 135px;
@@ -349,7 +278,7 @@ tr.clickable-row:hover {
     height: 28px;
 }
 
-#object_page_h2 {
+.object_page_h2 {
     margin-left: 200px;
     margin-top: 50px;
     font-weight: bold;
@@ -358,7 +287,6 @@ tr.clickable-row:hover {
 .trip_destnations1 {
     border-radius: 8px;
     margin-left: 20%;
-  
     background-color: white;
     width: 100%;
     padding: 5%;
@@ -382,16 +310,12 @@ tr.clickable-row:hover {
 .area_list img {
     position: absolute;
     top: 40px;
-    /* left: 7.5px; */
-    /* width: 278px; */
     height: 1px;
 }
 
 .area_list h3, .area_list p {
     margin-left: 10%;
 }
-
-
 
 .area_list ol li {
     list-style: none;
@@ -421,15 +345,15 @@ tr.clickable-row:hover {
 
 .des_img {
     position: relative;
-    /* width: 288px; */
     height: 87px;
+    width: 156px;
 }
 
 .des_img :nth-child(1) {
     position: absolute;
     top: 29px;
     left: 0px;
-    width: 405px;
+    width: 170px;
     height: 3px;
 }
 
@@ -448,79 +372,40 @@ tr.clickable-row:hover {
 .des_img :nth-child(4) {
     position: absolute;
     top: 10px;
-    left: 240px;
+    left: 109px;
 }
 
-#last_vector {
-    width: 288px;
+#trip_details {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#Save-Button {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
-    visibility: hidden;
+.trip_details_section {
+    margin: auto auto;
 }
 
-#Save-Button button {
-    width: 140px;
-    height: 49px;
-    background: #338575;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 134.3%;
-    text-align: center;
-    color: #000000;
+.object_page_h2 {
+    margin-left: 1.5%;
 }
 
-    /* header>a {
-        margin: auto auto;
-    } */
-    #trip_details {
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .trip_details_section {
-        margin: auto auto;
-    }
-    #object_page_h2 {
-        margin-left: 1.5%;
-    }
-    /* .trip_destnations1 {
-        margin-left: 5%;
-        margin-right: 5%;
-    } */
-    .des_img {
-        width: 156px;
-    }
-    .area_list {
-        width: 156px;
-        height: 288px;
-    }
-    .area_list img {
-        width: 156px;
-    }
-    .des_img :nth-child(1) {
-        width: 170px;
-    }
-    .des_img :nth-child(4) {
-        left: 109px;
-    }
-  
-    #last_vector {
-        width: 156px
-    }
-    .area_list span {
-        margin-left: 22px;
-        font-size: 18px;
-    }
-    .area_list ol li {
-        font-size: 16px;
-    }
+.area_list {
+    width: 156px;
+    height: 288px;
+}
 
+.area_list img {
+    width: 156px;
+}
+
+.area_list span {
+    margin-left: 22px;
+    font-size: 18px;
+}
+
+.area_list ol li {
+    font-size: 16px;
+}
 
 .change-button {
     display: flex;
@@ -533,7 +418,6 @@ tr.clickable-row:hover {
     margin-right: 2%;
 }
 
-
 /* HOMEPAGE */
 
 .hpmain {
@@ -543,8 +427,6 @@ tr.clickable-row:hover {
 
 .mont {
     background-image: url("../images/mont.jpg");
-    /* display: flex; */
-    /* justify-content: center; */
     background-size: cover;
     width: 100%;
     height: 425px;

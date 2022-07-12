@@ -84,7 +84,7 @@
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <nav id="main-menu">
+    <nav class="main-menu">
         <ul class="d-flex justify-content-around align-items-center">
             <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
             <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
