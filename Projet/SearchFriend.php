@@ -1,70 +1,125 @@
-<?php 
+<?php
 
-    //create a mySQL DB connection:
+//create a mySQL DB connection:
 
-	include "config.php";
+include "config.php";
 
 
+//testing connection success
 
-    $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+include "logincheak.php";
 
-    
-
-    //testing connection success
-
-    if(mysqli_connect_errno()) {
-
-        die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
-
-        );
-
-    }
 
 ?>
 
 <?php 
 
 	//get data from DB
-    $begin=0;
-    $end=0;
-    $ages=0;
-    $character =0;
-	$prodId = $_GET["prodId"];
-    if(isset( $_GET["begin"]))
+    $dateYear=0;
+    $dateMonth=0;
+    $destId=0;
+    $char=0;
+    $tripId=0;
+    $queryAge="(SELECT * from tbl_users_206) as a";
+    $queryDate="(SELECT * from tbl_users_206) as d";
+    $queryDest="(SELECT * from tbl_users_206) as de";
+    $queryChar="(SELECT * from tbl_users_206) as ch";
+    $queryTrip="(SELECT * from tbl_users_206) as t";
+
+    if(isset( $_GET["dateYear"]))
     {
-    $begin = $_GET["begin"]; 
+    $dateYear = $_GET["dateYear"]; 
     }
-    if(isset( $_GET["end"]))
+
+    if(isset( $_GET["dateMonth"]))
     {
-    $end = $_GET["end"];
+    $dateMonth = $_GET["dateMonth"]; 
+    $queryDate 	= "(SELECT * from tbl_users_206 d
+    WHERE    d.dates_year = $dateYear
+    AND       d.dates_month =$dateMonth) as d";
     }
+
+    if(isset( $_GET["dest"]))
+    {
+    $destId = $_GET["dest"]; 
+    $queryDest="(SELECT * from tbl_users_206 de where de.wants_travel_to = $destId) as de";
+    }
+    if(isset( $_GET["char"]))
+    {
+    $char = $_GET["char"]; 
+    $queryChar="(SELECT * from tbl_users_206 ch where ch.favorite_charactere = $char) as ch";
+    }
+
+    if(isset( $_GET["tripId"]))
+    {
+    $tripId = $_GET["tripId"]; 
+    $queryChar=" (SELECT * FROM tbl_user_trips_206 tr where tr.t_id=$tripId) as t";
+    }
+
     if(isset( $_GET["ages"]))
     {
-    $ages = $_GET["ages"];
-    }
-    if(isset($_GET["character"]))
-    {
-    $character = $_GET["character"];
-    }
+    $ages = $_GET["ages"]; 
+    switch ($ages) {
+        case 1:
+            $queryAge= "(SELECT * from tbl_users_206 a WHERE a.age > 18 AND a.age <25) as a";
+            break;
+        case 2:
+            $queryAge= "(SELECT * from tbl_users_206 a WHERE a.age > 26 AND a.age <35) as a";
+            break;
+        case 3:
+            $queryAge= "(SELECT * from tbl_users_206 a WHERE a.age > 36 AND a.age <45) as a";
+            break;
+        case 4:
+            $queryAge= "(SELECT * from tbl_users_206 a WHERE a.age > 36 AND a.age <45) as a";
+            break;
+        case 5:
+            $queryAge= "(SELECT * from tbl_users_206 a WHERE a.age > 60) as a";
+        break;
+        }
 
 
-	$query 	= "UPDATE tbl_trips_206 t
-    SET      t.start_date = COALESCE(NULLIF($begin, 0), t.start_date),
-             t.end_date =  COALESCE(NULLIF($end, 0), t.end_date),
-             t.ages =  COALESCE(NULLIF($ages, 0), t.ages),
-             t.nature =  COALESCE(NULLIF($character, 0), t.nature)
-    WHERE t.t_id=" . $prodId;
-    echo $query;
-	// echo $query;
+    }
+
+    $query= "select * from ".$queryDate ." 
+    inner join ".$queryAge ." on a.u_id=d.u_id 
+    inner join ". $queryDest. " on d.u_id=de.u_id 
+    inner join ".$queryChar . " on ch.u_id=de.u_id 
+    inner join ".$queryTrip . " on t.u_id=d.u_id";
+
+
 	$result = mysqli_query($connection, $query);
 
-	if($result==true) {
-        echo '1';
-	}
-
-	else die("DB query failed.");
-
-
-
 ?>
+
+    <?php
+    if (mysqli_num_rows($result) != 0) 
+        {
+        while ($row = mysqli_fetch_assoc($result))
+            {
+        echo ' <div class="media rec-white">';
+        echo             '<img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="'.$row["picture"].'" alt="man picture">';
+        echo               '<div class="media-body mt-3">';
+        echo                 '<h3>'.$row["name"].'</h3>';
+        echo                   '<p><b>From: </b>'.$row["city"].','. $row["country"].'</p>';
+        echo                    '<p><b>Age: </b>'. $row["age"].'</p>';
+
+        $queryDest     = "SELECT * from tbl_destination_206  where d_id=".$row["wants_travel_to"];
+        $resultDest = mysqli_query($connection, $queryDest);
+        $rowDest = mysqli_fetch_assoc($resultDest);
+
+        echo                   '<p><b>Wants to travel to: </b>'.$rowDest["destination_name"].' in '.$row["dates_month"].'/'.$row["dates_year"].'</p>';
+        echo  '<p><b>Interest: </b>'.$row["Interest"].'</p>';
+        echo                   '<a href="#" class="btn btn-primary new-color">Add Friend</a>';
+        echo               '</div>';
+        echo           '</div>';
+            }
+    }else 
+    {
+        echo 'No Friend found ,try another paramters';
+    }
+
+    ?>
+
+
+
 

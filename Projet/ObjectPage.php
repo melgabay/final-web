@@ -71,7 +71,7 @@
         <nav id="sidebar-menu">
             <h3>Menu</h3>
             <ul>
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
                 <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
                 <li class="nav-item"><a class="nav-link active" href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
@@ -86,7 +86,7 @@
 
     <nav class="main-menu">
         <ul class="d-flex justify-content-around align-items-center">
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
             <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
             <li class="nav-item"><a class="nav-link active " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>

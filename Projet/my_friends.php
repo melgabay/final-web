@@ -83,34 +83,36 @@
 <body>
 
 <header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
-    <input type="checkbox" id="hamburger-input" class="burger-shower" />
-    <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-            <h3>Menu</h3>
-            <ul>
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+            <nav id="sidebar-menu">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="nav-item"><a class="nav-link  " aria-current="page" href="index.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
+                    <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link " href="find_friend.php">Find Friend</a></li>
+                    <li class="nav-item"><a class="nav-link  active" href="my_friends.php">My Friends</a></li>
+                </ul>
+            </nav>
+        </label>
+
+        <div class="overlay"></div>
+        <a href="index.php">
+            <img src="./images/logo.png" alt="logo" class="logo">
+        </a>
+
+        <nav class="main-menu">
+            <ul class="d-flex justify-content-around align-items-center">
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
                 <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+                <li class="nav-item"><a class="nav-link  active" href="my_friends.php">My Friends</a></li>
             </ul>
         </nav>
-    </label>
 
-    <div class="overlay"></div>
-    <a href="index.php">
-        <img src="./images/logo.png" alt="logo" class="logo">
-    </a>
-
-    <nav class="main-menu">
-        <ul class="d-flex justify-content-around align-items-center">
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
-            <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-        </ul>
-    </nav>
-
-    <?php 
+        <?php 
 
     //get data from DB
     $userdId = $_SESSION["user_id"];
@@ -133,7 +135,7 @@
                 <?php echo   $rowUser["name"]; ?>
             </span>
         </section>
-</header>
+    </header>
 
     <main class="ffmain">
         <h2> We found for you friend:</h2>
