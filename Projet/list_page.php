@@ -65,34 +65,30 @@
 </head>
 
 <body>
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+    <input type="checkbox" id="hamburger-input" class="burger-shower" />
+    <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+            <h3>Menu</h3>
+            <ul>
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+            </ul>
+        </nav>
+    </label>
+
+    <div class="overlay"></div>
     <a href="index.php">
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-            <a class="nav-link  " href="form.php">Create New Trip</a>
-            <a class="nav-link active " href="list_page.php">My Trips</a>
-            <a class="nav-link  " href="find_friend.php">Find Friend</a>
-        </div>
-        <nav class="navbar navbar-dark ml-0">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <!-- <span class="navbar-toggler-icon"></span> -->
-                <i class="fa fa-bars"></i>
-            </button>
-        </nav>
-    </div>
-
-    <nav>
-        <ul class="d-flex justify-content-between nav">
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-            </li>
-            <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link active " href="list_page.php">My Trips</a></li>
+    <nav id="main-menu">
+        <ul class="d-flex justify-content-around align-items-center">
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+            <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+            <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
         </ul>
     </nav>
@@ -112,14 +108,14 @@
 
     ?>
 
-    <section class="mt-1">
-        <a href="#" class="d-flex justify-content-center">
-            <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
-        </a>
-        <span>Hello
-            <?php echo   $rowUser["name"]; ?>
-        </span>
-    </section>
+        <section class="mt-1">
+            <a href="#" class="d-flex justify-content-center">
+                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+            </a>
+            <span>Hello
+                <?php echo   $rowUser["name"]; ?>
+            </span>
+        </section>
 </header>
 
     <main>

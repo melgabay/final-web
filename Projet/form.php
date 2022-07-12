@@ -72,8 +72,8 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
- <!-- fav icone -->
- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- fav icone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>TripDream</title>
@@ -81,33 +81,28 @@
 
 
 <body>
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+    <input type="checkbox" id="hamburger-input" class="burger-shower" />
+    <label id="hamburger-menu" for="hamburger-input">
+        <nav id="sidebar-menu">
+            <h3>Menu</h3>
+            <ul>
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+                <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+            </ul>
+        </nav>
+    </label>
 
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center bl">
+    <div class="overlay"></div>
     <a href="index.php">
         <img src="./images/logo.png" alt="logo" class="logo">
     </a>
 
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-            <a class="nav-link  active" href="form.php">Create New Trip</a>
-            <a class="nav-link " href="list_page.php">My Trips</a>
-            <a class="nav-link  " href="find_friend.php">Find Friend</a>
-        </div>
-        <nav class="navbar navbar-dark ml-0">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <!-- <span class="navbar-toggler-icon"></span> -->
-                <i class="fa fa-bars"></i>
-            </button>
-        </nav>
-    </div>
-
-    <nav>
-        <ul class="d-flex justify-content-between nav">
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a>
-            </li>
+    <nav id="main-menu">
+        <ul class="d-flex justify-content-around align-items-center">
+            <li class="nav-item"><a class="nav-link " aria-current="page" href="homepage.php">Homepage</a></li>
             <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
             <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
             <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
@@ -129,21 +124,22 @@
 
     ?>
 
-    <section class="mt-1">
-        <a href="#" class="d-flex justify-content-center">
-            <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
-        </a>
-        <span>Hello
-            <?php echo   $rowUser["name"]; ?>
-        </span>
-    </section>
+        <section class="mt-1">
+            <a href="#" class="d-flex justify-content-center">
+                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+            </a>
+            <span>Hello
+                <?php echo   $rowUser["name"]; ?>
+            </span>
+        </section>
 </header>
 
-    <main class="formpage">
+
+<main class="formpage">
         <h1 class="text-center"> Create New Trip </h1>
-        <div class="d-flex justify-content-center mt-5">
+        <div class="d-flex justify-content-center mt-5 flex-wrap">
             <form action="#" method="GET" class="rec-white col-md-8">
-                <div class="d-flex fp justify-content-around dis">
+                <div class="d-flex fp justify-content-around flex-wrap">
                     <div class="col-md-3">
                         <label> Amount of trip</label>
                         <input type="number" class="form-control" id="amount" placeholder="0 $" min="0">
@@ -207,7 +203,7 @@
                 </div>
 
                 <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
-                    <div class="d-flex fp justify-content-around dis">
+                    <div class="d-flex fp justify-content-around flex-wrap">
                         <div class="col-md-3">
                             <label for="continents" class="form-label">Choose continent</label>
                             <select id="continents" class="form-select" required>
@@ -241,7 +237,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex fp justify-content-around dis">
+                    <div class="d-flex fp justify-content-around flex-wrap">
                         <div class="col-md-3">
                             <label class="control-label" for="date">Start Date</label>
                             <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
@@ -267,7 +263,7 @@
                 </div>
             </form>
         </div>
-    </main>
+</main>
 </body>
 
 </html>
