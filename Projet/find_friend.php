@@ -166,7 +166,7 @@ include "logincheak.php";
                 ?>
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by Destination</label>
-                    <select id="inputState" class="form-select" name="tripId" required>
+                    <select id="inputState" class="form-select" name="destId" required>
                         <option value="">...</option>
                         <?php
                         while ($rowDest = mysqli_fetch_assoc($resultDest))
@@ -185,7 +185,7 @@ include "logincheak.php";
             <div class="d-flex d1">
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by trip Charactere</label>
-                    <select id="inputState" class="form-select" required>
+                    <select id="inputState" class="form-select" name="charactere" required>
                         <option value="">...</option>
                         <option value="1">Chill</option>
                         <option value="2">Sunbathing</option>
@@ -198,7 +198,7 @@ include "logincheak.php";
 
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by Age</label>
-                    <select id="inputState" class="form-select" required>
+                    <select id="inputState" class="form-select" name="ages" required>
                         <option value="">...</option>
                         <option value="1">18-25</option>
                         <option value="2">26-35</option>
@@ -220,54 +220,8 @@ include "logincheak.php";
 
         <h2> Friend List:</h2>
 
-        <div class="ffp">
-            <div class="card offp" style="margin-bottom: 10%;">
-                <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
-                <div class="card-body">
-                    <h3 class="card-title">Asaf Levi</h3>
-                    <p class="card-text"><b>From:</b> Tel Aviv, Israel</p>
-                    <p class="card-text"><b>Age:</b> 27</p>
-                    <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
-                    <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
-                </div>
-            </div>
+        <div class="ffp" id="friend_result"> 
 
-            <div class="card offp" style="margin-bottom: 10%;">
-                <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
-                <div class="card-body">
-                    <h3 class="card-title">Asaf Levi</h3>
-                    <p class="card-text"><b>From:</b> Tel Aviv, Israel</p>
-                    <p class="card-text"><b>Age:</b> 27</p>
-                    <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
-                    <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
-                </div>
-            </div>
-
-            <div class="card offp" style="margin-bottom: 10%;">
-                <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
-                <div class="card-body">
-                    <h3 class="card-title">Asaf Levi</h3>
-                    <p class="card-text"><b>From:</b> Tel Aviv, Israel</p>
-                    <p class="card-text"><b>Age:</b> 27</p>
-                    <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
-                    <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
-                </div>
-            </div>
-
-            <div class="card offp" style="margin-bottom: 10%;">
-                <img src="./images/asaf levi.jpg" class="card-img-top" alt="man picture">
-                <div class="card-body">
-                    <h3 class="card-title">Asaf Levi</h3>
-                    <p class="card-text"><b>From:</b> Tel Aviv, Israel</p>
-                    <p class="card-text"><b>Age:</b> 27</p>
-                    <p class="card-text"><b>Wants to travel to:</b> South America from May-August</p>
-                    <p class="card-text"><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                    <a href="#" class="btn btn-primary new-color">Add Friend</a>
-                </div>
-            </div>
         </div>
 
         <button type="button" class="btn btn-primary new-color ffp">Explore More Friend</button>
