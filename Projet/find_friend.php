@@ -47,14 +47,12 @@ include "logincheak.php";
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>-->
-    <script defer="" src="js/list_page.js"></script>
-    <script defer="" src="js/script.js"></script>
+    <script src="js/find_friend.js"></script>
 
 
     <!-- calendar -->
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="js/find_friend.js"></script>
     <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 
@@ -115,7 +113,7 @@ include "logincheak.php";
         ?>
 
         <section class="mt-1">
-            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class=" d-flex justify-content-center">
+            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class="d-flex justify-content-center">
                 <?php echo '<img src="' . $rowUser["picture"] . '" class="photo_profil" alt="' . $rowUser["picture"] . '"/>'; ?>
             </a>
             <span>Hello

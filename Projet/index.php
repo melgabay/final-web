@@ -117,7 +117,6 @@
         </nav>
 
         <?php 
-
     //get data from DB
     $userdId = $_SESSION["user_id"];
     $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;

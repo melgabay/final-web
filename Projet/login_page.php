@@ -147,8 +147,7 @@ if(mysqli_connect_errno()) {
             </button>
         </div>
         <footer class="footer-index d-flex justify-content-center align-items-center flex-wrap">
-            <a href="#"> Sign Up</a>
-            <a href="#"> Forgot my password</a>
+            <a href="profile_page.php"> Sign Up</a>
         </footer>
 
     </main>
