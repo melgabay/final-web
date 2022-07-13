@@ -142,7 +142,7 @@ include "logincheak.php";
         <form class="rec-white find-friend-page">
             <h3> How would you like to search for Friend</h3>
 
-            <div class="d-flex d1">
+            <div class="d-flex d1 flex-wrap">
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by trip</label>
                     <select id="inputState" class="form-select" name="tripId" required>
@@ -180,7 +180,7 @@ include "logincheak.php";
             </div>
 
 
-            <div class="d-flex d1">
+            <div class="d-flex d1 flex-wrap">
                 <div class="col-md-3">
                     <label for="inputState" class="form-label">Search by trip Charactere</label>
                     <select id="inputState" class="form-select" name="charactere" required>

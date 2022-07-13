@@ -136,7 +136,7 @@ if (mysqli_connect_errno()) {
                 <?php if ($userdId != 0) {
                     echo   $rowUser["name"];
                 } else {
-                    echo  "Guset";
+                    echo  "Guest";
                 } ?>
             </span>
         </section>
