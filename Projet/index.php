@@ -32,14 +32,14 @@
 
     <!-- bootsrap js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
 
 
@@ -91,7 +91,8 @@
             <nav id="sidebar-menu">
                 <h3>Menu</h3>
                 <ul>
-                    <li class="nav-item"><a class="nav-link active " aria-current="page" href="index.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link active " aria-current="page" href="index.php">Homepage</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link  " href="form.php">Create New Trip</a></li>
                     <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                     <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
@@ -131,8 +132,8 @@
     ?>
 
         <section class="mt-1">
-            <a href="#" class="d-flex justify-content-center">
-                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+            <a href="profile_page.php?id=<?php echo   $userdId.'"' ; ?>  class="d-flex justify-content-center">           
+                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt="'.$rowUser["picture"].'"/>';?>
             </a>
             <span>Hello
                 <?php echo   $rowUser["name"]; ?>
@@ -145,7 +146,7 @@
         <button type="button" class="btn btn-primary new-color emf mb-5">Create new Trip</button>
     </div>
 
-    
+
     <main class="hpmain">
         <h2>Recommended Trips:</h2>
         <div class="ffp d-flex flex-wrap">
@@ -211,8 +212,8 @@
                     <h3>Asaf Levi</h3>
                     <p><b>From:</b> Tel Aviv, Israel</p>
                     <p><b>Age:</b> 27</p>
-                    <p ><b>Wants to travel to:</b> South America from May-August</p>
-                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    <p><b>Wants to travel to:</b> South America from May-August</p>
+                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
                 </div>
                 <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
             </div>
@@ -223,8 +224,8 @@
                     <h3>Asaf Levi</h3>
                     <p><b>From:</b> Tel Aviv, Israel</p>
                     <p><b>Age:</b> 27</p>
-                    <p ><b>Wants to travel to:</b> South America from May-August</p>
-                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    <p><b>Wants to travel to:</b> South America from May-August</p>
+                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
                 </div>
                 <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
             </div>
@@ -235,8 +236,8 @@
                     <h3>Asaf Levi</h3>
                     <p><b>From:</b> Tel Aviv, Israel</p>
                     <p><b>Age:</b> 27</p>
-                    <p ><b>Wants to travel to:</b> South America from May-August</p>
-                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    <p><b>Wants to travel to:</b> South America from May-August</p>
+                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
                 </div>
                 <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
             </div>
@@ -247,15 +248,15 @@
                     <h3>Asaf Levi</h3>
                     <p><b>From:</b> Tel Aviv, Israel</p>
                     <p><b>Age:</b> 27</p>
-                    <p ><b>Wants to travel to:</b> South America from May-August</p>
-                    <p ><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    <p><b>Wants to travel to:</b> South America from May-August</p>
+                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
                 </div>
                 <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
             </div>
 
 
         </div>
-       </main>
+    </main>
 
 </body>
 

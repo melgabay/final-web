@@ -71,7 +71,7 @@ include "logincheak.php";
 
 
 <body>
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input">
             <nav id="sidebar-menu">
@@ -101,24 +101,22 @@ include "logincheak.php";
             </ul>
         </nav>
 
-        <?php 
+        <?php
 
-    //get data from DB
-    $userdId = $_SESSION["user_id"];
-    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-    $resultUser = mysqli_query($connection, $userCheak);
+        //get data from DB
+        $userdId = $_SESSION["user_id"];
+        $userCheak     = "SELECT * from tbl_users_206 where u_id =" . $userdId;
+        $resultUser = mysqli_query($connection, $userCheak);
 
-    if($resultUser) {
-    $rowUser	= mysqli_fetch_assoc($resultUser);
-    }
+        if ($resultUser) {
+            $rowUser    = mysqli_fetch_assoc($resultUser);
+        } else die("DB query failed.");
 
-    else die("DB query failed.");
-
-    ?>
+        ?>
 
         <section class="mt-1">
-            <a href="#" class="d-flex justify-content-center">
-                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class=" d-flex justify-content-center">
+                <?php echo '<img src="' . $rowUser["picture"] . '" class="photo_profil" alt="' . $rowUser["picture"] . '"/>'; ?>
             </a>
             <span>Hello
                 <?php echo   $rowUser["name"]; ?>
@@ -132,7 +130,7 @@ include "logincheak.php";
         //get data from DB
 
         $query     = "SELECT * FROM tbl_trips_206 t  inner join tbl_user_trips_206 u
-        ON t.t_id=u.t_id WHERE u.u_id=" . $_SESSION["user_id"] . ""; 
+        ON t.t_id=u.t_id WHERE u.u_id=" . $_SESSION["user_id"] . "";
 
         $result = mysqli_query($connection, $query);
 
@@ -143,7 +141,7 @@ include "logincheak.php";
 
         ?>
 
-        <form  class="rec-white find-friend-page">
+        <form class="rec-white find-friend-page">
             <h3> How would you like to search for Friend</h3>
 
             <div class="d-flex d1">
@@ -222,7 +220,7 @@ include "logincheak.php";
 
         <h2> Friend List:</h2>
 
-        <div class="ffp" id="friend_result"> 
+        <div class="ffp" id="friend_result">
 
         </div>
 

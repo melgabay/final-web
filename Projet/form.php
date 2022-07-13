@@ -1,13 +1,13 @@
-<?php 
+<?php
 
-    //create a mySQL DB connection:
+//create a mySQL DB connection:
 
-	include "config.php";
+include "config.php";
 
 
-    //testing connection success
+//testing connection success
 
-    include "logincheak.php"; 
+include "logincheak.php";
 
 
 ?>
@@ -23,47 +23,39 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
 
     <!-- boostrap css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- bootsrap js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<!-- multiselect -->
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- multiselect -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 
 
 
 
-<!-- Include Twitter Bootstrap and jQuery: -->
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- Include Twitter Bootstrap and jQuery: -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<!-- Include the plugin's CSS and JS: -->
-<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
-<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+    <!-- Include the plugin's CSS and JS: -->
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />
 
 
 
     <!-- BOOTSRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- css -->
 
@@ -89,10 +81,8 @@
     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 
     <!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
     <!-- fav icone -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,61 +93,59 @@
 
 
 <body>
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center ">
-    <input type="checkbox" id="hamburger-input" class="burger-shower" />
-    <label id="hamburger-menu" for="hamburger-input">
-        <nav id="sidebar-menu">
-            <h3>Menu</h3>
-            <ul>
+    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center ">
+        <input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+            <nav id="sidebar-menu">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
+                    <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
+                    <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+                </ul>
+            </nav>
+        </label>
+
+        <div class="overlay"></div>
+        <a href="index.php">
+            <img src="./images/logo.png" alt="logo" class="logo">
+        </a>
+
+        <nav class="main-menu">
+            <ul class="d-flex justify-content-around align-items-center">
                 <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
                 <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
                 <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
             </ul>
         </nav>
-    </label>
 
-    <div class="overlay"></div>
-    <a href="index.php">
-        <img src="./images/logo.png" alt="logo" class="logo">
-    </a>
+        <?php
 
-    <nav class="main-menu">
-        <ul class="d-flex justify-content-around align-items-center">
-            <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
-            <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
-            <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
-            <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
-        </ul>
-    </nav>
+        //get data from DB
+        $userdId = $_SESSION["user_id"];
+        $userCheak     = "SELECT * from tbl_users_206 where u_id =" . $userdId;
+        $resultUser = mysqli_query($connection, $userCheak);
 
-    <?php 
+        if ($resultUser) {
+            $rowUser    = mysqli_fetch_assoc($resultUser);
+        } else die("DB query failed.");
 
-    //get data from DB
-    $userdId = $_SESSION["user_id"];
-    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-    $resultUser = mysqli_query($connection, $userCheak);
-
-    if($resultUser) {
-    $rowUser	= mysqli_fetch_assoc($resultUser);
-    }
-
-    else die("DB query failed.");
-
-    ?>
+        ?>
 
         <section class="mt-1">
-            <a href="#" class="d-flex justify-content-center">
-                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt=".$rowUser["picture"]" />'?>
+            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class=" d-flex justify-content-center">
+                <?php echo '<img src="' . $rowUser["picture"] . '" class="photo_profil" alt="' . $rowUser["picture"] . '"/>'; ?>
             </a>
             <span>Hello
                 <?php echo   $rowUser["name"]; ?>
             </span>
         </section>
-</header>
+    </header>
 
 
-<main class="formpage">
+    <main class="formpage">
         <h1 class="text-center"> Create New Trip </h1>
         <div class="d-flex justify-content-center mt-5 flex-wrap">
             <form action="#" method="GET" class="rec-white col-md-8 mb-5">
@@ -222,18 +210,18 @@
                             <label class="form-check-label">60 +</label>
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3">
-                            <label for="continents" class="form-label">Choose continent</label>
-                            <select id="continents" class="form-select" required>
-                                <option value="">...</option>
-                            </select>
-                        </div>
+                        <label for="continents" class="form-label">Choose continent</label>
+                        <select id="continents" class="form-select" required>
+                            <option value="">...</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
                     <div class="d-flex justify-content-around flex-wrap">
-                      
+
 
                         <div class="col-md-3">
                             <label for="inputState" class="form-label">Choose Country</label>
@@ -257,7 +245,7 @@
                                 <option value="Sao Paulo">Sao Paulo</option>
                                 <option value="Salvador da Bahia">Salvador da Bahia</option>
                                 <option value="Manaus">Manaus</option>
-                                
+
                             </select>
                         </div>
                     </div>
@@ -288,7 +276,7 @@
                 </div>
             </form>
         </div>
-</main>
+    </main>
 </body>
 
 </html>
