@@ -168,34 +168,34 @@ include "logincheak.php";
                 <div class="d-flex justify-content-around flex-wrap">
                     <div class="col-md-3">
                         <label> Amount of trip</label>
-                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0" pattern="[0+]">
+                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0" pattern="[0+]" required>
                     </div>
 
                     <div class="col-md-3">
-                        <label> Type of trip</label>
+                        <label> Type Of Trip</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Nature">
-                            <label class="form-check-label" for="flexCheckDefault">Nature</label>
+                            <input class="form-check-input" type="radio" name="age" value="1">
+                            <label class="form-check-label">Nature</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
-                            <label class="form-check-label" for="flexCheckDefault">Beach</label>
+                            <input class="form-check-input" type="radio" name="age" value="2">
+                            <label class="form-check-label">Beach</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
-                            <label class="form-check-label" for="flexCheckDefault">Sport</label>
+                            <input class="form-check-input" type="radio" name="age" value="3">
+                            <label class="form-check-label">Sport</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
-                            <label class="form-check-label" for="flexCheckDefault">Quiet</label>
+                            <input class="form-check-input" type="radio" name="age" value="4">
+                            <label class="form-check-label">Quiet</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
-                            <label class="form-check-label" for="flexCheckDefault">Party</label>
+                            <input class="form-check-input" type="radio" name="age" value="5">
+                            <label class="form-check-label">Party </label>
                         </div>
                     </div>
 
@@ -235,51 +235,64 @@ include "logincheak.php";
                     </div>
                 </div>
 
-                <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
-                    <div class="d-flex justify-content-around flex-wrap">
-
-
-                        <div class="col-md-3">
-                            <label for="inputState" class="form-label">Choose Country</label>
-                            <select id="inputState" class="form-select" required>
-                                <option value="">...</option>
-                                <option value="Bresilia">Bresilia</option>
-                                <option value="Paraguay">Paraguay</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Urugay">Urugay</option>
-                                <option value="Perou">Perou</option>
-                                <option value="Mexique">Mexique</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="inputaera" class="form-label">Choose Area</label>
-                            <!-- <select id="inputaera" class="form-select" required> -->
-                            <select class="selectpicker" multiple>
-                                <option value="Brasilia">Brasilia</option>
-                                <option value="Rio de Janero">Rio de Janero</option>
-                                <option value="Sao Paulo">Sao Paulo</option>
-                                <option value="Salvador da Bahia">Salvador da Bahia</option>
-                                <option value="Manaus">Manaus</option>
-
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-around flex-wrap mt-4">
+                <div class="d-flex justify-content-around flex-wrap mt-4">
                         <div class="col-md-3">
                             <label class="control-label" for="date">Start Date</label>
-                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
+                            <input class="form-control" id="date" name="dateStart" placeholder="MM/DD/YYY" type="text">
                         </div>
 
 
                         <div class="col-md-3">
                             <label class="control-label" for="date">End date</label>
-                            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
+                            <input class="form-control" id="date" name="dateEnd" placeholder="MM/DD/YYY" type="text">
                         </div>
 
                     </div>
+
+
+                <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
+                    <div class="d-flex justify-content-around flex-wrap">
+
+
+                        <div class="col-md-3">
+                            <label  class="form-label">Choose Country</label>
+                            <select  id="inputCountry" name="inputCountry1" class="form-select country">
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                        <label> Choose Town</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Brasilia">
+                            <label class="form-check-label" for="flexCheckDefault">Brasil</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
+                            <label class="form-check-label" for="flexCheckDefault">Beach</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
+                            <label class="form-check-label" for="flexCheckDefault">Sport</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
+                            <label class="form-check-label" for="flexCheckDefault">Quiet</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
+                            <label class="form-check-label" for="flexCheckDefault">Party</label>
+                        </div>
+                    </div>
+                    </div>
+
+                   
                 </div>
+                
+                <input name="NumDest" id="NumDest" value="1">
 
                 <div class="d-block" id="pre">
 
@@ -288,7 +301,7 @@ include "logincheak.php";
                         <img src="./images/PLUS.png" alt="plus">
                     </button>
 
-                    <button type="button" class="btn btn-primary new-color bouton-form mt-5 mb-5">Search</button>
+                    <input type="submit" class="btn btn-primary new-color bouton-form mt-5 mb-5" value="Search"></input>
                 </div>
             </form>
         </div>

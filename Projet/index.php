@@ -154,7 +154,7 @@
     </header>
 
     <div class="mont d-flex justify-content-center">
-        <button type="button" class="btn btn-primary new-color emf mb-5">Create new Trip</button>
+       <a href="form.php" ><button type="button" class="btn btn-primary new-color emf mb-5">Create new Trip</button> </a>
     </div>
 
 

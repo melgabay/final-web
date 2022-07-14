@@ -17,7 +17,7 @@ if(!isset($_SESSION["user_id"])) {
 
 echo 'no user id';
 
-header('Location:index.php');
+header('Location:login_page.php');
 
 } 
 

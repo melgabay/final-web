@@ -218,6 +218,10 @@ main h1 {
     border-color: #dce7e9;
 }
 
+#NumDest {
+    display: none;
+}
+
 @media (max-width: 770px) {
     .rec-white.col-md-8 {
         width: 50%;
@@ -429,7 +433,7 @@ tr.clickable-row:hover {
 }
 
 @media (max-width: 1246px) {
-    .main-form{
+    .main-form {
         height: 100%;
     }
 }
@@ -451,11 +455,10 @@ tr.clickable-row:hover {
     padding-bottom: 2%;
 }
 
-#wrapper{
+#wrapper {
     margin: auto;
     width: 50%;
 }
-
 
 .card-body h3,
 .card-body .hppage {
@@ -475,9 +478,12 @@ tr.clickable-row:hover {
 }
 
 @media (max-width: 825px) {
-    .media.rec-white{
+    .media.rec-white {
         display: block;
         padding-bottom: 2%;
+    }
+    .card-text {
+        display: none;
     }
 }
 
@@ -509,7 +515,7 @@ tr.clickable-row:hover {
     padding-bottom: 2%;
 }
 
-.ffmain.myfriend{
+.ffmain.myfriend {
     height: 100%;
 }
 

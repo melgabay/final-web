@@ -249,6 +249,8 @@ $("document").ready(() => {
     });
 
     var date_input = $('input[name="date"]'); //our date input has the name "date"
+    var date_input_end = $('input[name="dateEnd"]');
+    var date_input_start = $('input[name="dateStart"]');
     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
     var options = {
         format: 'mm/dd/yyyy',
@@ -257,6 +259,11 @@ $("document").ready(() => {
         autoclose: true,
     };
     date_input.datepicker(options);
+    date_input_start.datepicker(options);
+    date_input_end.datepicker(options);
+
+
+
 
     let Delete = getUrlParameter('Delete');
     console.log(Delete);

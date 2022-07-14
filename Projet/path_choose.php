@@ -128,156 +128,42 @@ include "logincheak.php";
     <main class="path-main">
         <h1 class="text-center">Choose Path</h1>
 
-        <div class="pathre">
-            <div id="trip_destnations" class="trip_destnations1">
-                <div class="blanc-rec">
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest1.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-
-                        <div class="area_list">
-                            <h3>Argentina</h3>
-                            <img src="images/Vector 4.png">
-                            <p>Buenos Aires</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest2.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Chile</h3>
-                            <img src="images/Vector 4.png">
-                            <p>Santiago</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest3.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Brazil</h3>
-                            <img src="images/Vector 4.png">
-                            <p> De Janeiro</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest4.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Peru</h3>
-                            <img src="images/Vector 4.png">
-                            <p> Cusco</p>
-                            <p> Lima</p>
-                            <p> Machu Pichu</p>
-                            <p> Huaraz</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary new-color d-flex choose">Choose this trip</button>
-
-            </div>
-
-        </div>
+         <?php echo $_POST["NumDest"] ?>
 
         <div class="pathre">
-            <div id="trip_destnations" class="trip_destnations1">
+                
+            <div id="trip_destnations1" class="trip_destnations1">
+                <h2>your plan </h2>
                 <div class="blanc-rec">
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest1.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
 
-                        <div class="area_list">
-                            <h3>Argentina</h3>
-                            <img src="images/Vector 4.png">
-                            <p>Buenos Aires</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest2.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Chile</h3>
-                            <img src="images/Vector 4.png">
-                            <p>Santiago</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest3.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Brazil</h3>
-                            <img src="images/Vector 4.png">
-                            <p> De Janeiro</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                    <div class="destnation">
-                        <div class="des_img">
-                            <img src="images/Vector 3.png">
-                            <img src="images/dest4.png">
-                            <img src="images/dots.png">
-                            <img src="images/bus.png">
-                        </div>
-                        <div class="area_list">
-                            <h3>Peru</h3>
-                            <img src="images/Vector 4.png">
-                            <p> Cusco</p>
-                            <p> Lima</p>
-                            <p> Machu Pichu</p>
-                            <p> Huaraz</p>
-                            <section>
-                                <p>Total:7000 &nbsp;₪</p>
-                            </section>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                for ($i = 1; $i <= $_POST["NumDest"]; $i++)
+                {
+                echo   '<div class="destnation">';
+                 echo         '<div class="des_img">';
+                 echo          '<img src="images/Vector 3.png">';
+                 echo          '<img src="images/dest'.$i.'.png">';
+                 echo         '<img src="images/dots.png">';
+                 echo         '<img src="images/bus.png">';
+                 echo      '</div>';
+                echo      '<div class="area_list">';
+                $inputcountry='inputCountry'.$i;
+                echo          '<h3>'.$_POST[$inputcountry].'</h3>';
+                echo          '<img src="images/Vector 4.png">';
+                $inputArea='inputArea'.$i;
+                foreach( $_POST[$inputArea] as $key => $val ) {
+                    echo '<p>'.$val.'</p>';
+
+                }
+                echo           '<section>';
+                echo               '<p>Total:7000 &nbsp;₪</p>';
+                echo          '</section>';
+                echo      '</div>';
+                echo  '</div>';
+               }?>
+                 </div>
+                
+    
                 <button type="button" class="btn btn-primary new-color d-flex choose">Choose this trip</button>
 
             </div>
