@@ -140,12 +140,6 @@ if(mysqli_connect_errno()) {
             <div class="line-separator"></div>
         </div>
 
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-dark">
-                <img src="https://img.icons8.com/color/16/000000/google-logo.png">
-                Login With Google
-            </button>
-        </div>
         <footer class="footer-index d-flex justify-content-center align-items-center flex-wrap">
             <a href="profile_page.php"> Sign Up</a>
         </footer>
