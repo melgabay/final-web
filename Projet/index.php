@@ -33,13 +33,13 @@
     <!-- bootsrap js -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        </script>
 
 
 
@@ -117,29 +117,41 @@
         </nav>
 
         <?php 
-    //get data from DB
-    $userdId = $_SESSION["user_id"];
-    $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
-    $resultUser = mysqli_query($connection, $userCheak);
+        //get data from DB
+        $userdId = $_SESSION["user_id"];
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+        $resultUser = mysqli_query($connection, $userCheak);
 
-    if($resultUser) {
-    $rowUser	= mysqli_fetch_assoc($resultUser);
-    }
+        if($resultUser) {
+        $rowUser	= mysqli_fetch_assoc($resultUser);
+        }
 
-    else die("DB query failed.");
+        else die("DB query failed.");
 
-    ?>
+        ?>
 
-        <section class="mt-1">
-            <a href="profile_page.php?id=<?php echo   $userdId.'"' ; ?>  class="d-flex justify-content-center">           
-                <?php  echo '<img src="'.$rowUser["picture"].'" class="photo_profil" alt="'.$rowUser["picture"].'"/>';?>
-            </a>
-            <span>Hello
-                <?php echo   $rowUser["name"]; ?>
-            </span>
-        </section>
+            <section class="mt-1">
+                <a href="profile_page.php <?php if ($userdId != 0) {
+                                                echo   '?id=' . $userdId;
+                                            } ?>  " class=" d-flex justify-content-center">
+                    <img <?php if ($userdId != 0) {
+                                echo ' src="' . $rowUser["picture"] . '"';
+                            } else {
+                                echo ' src="./images/somone.png"';
+                            }
+                            ?> class="photo_profil" alt="user picture" />
+                </a>
+                <span>Hello
+                    <?php if ($userdId != 0) {
+                        echo   $rowUser["name"];
+                    } else {
+                        echo  "Guset";
+                    } ?>
+                </span>
+            </section>
+
+        
     </header>
-
 
     <div class="mont d-flex justify-content-center">
         <button type="button" class="btn btn-primary new-color emf mb-5">Create new Trip</button>
@@ -147,113 +159,116 @@
 
 
     <main class="hpmain">
-        <h2>Recommended Trips:</h2>
-        <div class="ffp d-flex flex-wrap">
-            <div class="card offp">
-                <img src="./images/safari.png" alt="safari">
-                <div class="card-body">
-                    <h3>African Safari</h3>
-                    <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
-                        quaerat velit sequi eos ipsum nam aliquam doloremque.
-                        Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
-                        repudiandae sit illo.</p>
-                    <a class="textgreen" href="#"> Learn more</a>
+        <div id="wrapper">
+            <h2>Recommended Trips:</h2>
+            <div class="ffp d-flex flex-wrap">
+                <div class="card offp">
+                    <img src="./images/safari.png" alt="safari">
+                    <div class="card-body">
+                        <h3>African Safari</h3>
+                        <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
+                            quaerat velit sequi eos ipsum nam aliquam doloremque.
+                            Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
+                            repudiandae sit illo.</p>
+                        <a class="textgreen" href="#"> Learn more</a>
+                    </div>
+                </div>
+
+                <div class="card offp">
+                    <img src="./images/brazil festival.png" alt="brazil">
+                    <div class="card-body">
+                        <h3>Brazil Festival</h3>
+                        <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
+                            quaerat velit sequi eos ipsum nam aliquam doloremque.
+                            Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
+                            repudiandae sit illo.</p>
+                        <a class="textgreen" href="#"> Learn more</a>
+                    </div>
+                </div>
+
+                <div class="card offp">
+                    <img src="./images/europe.png" alt="europe">
+                    <div class="card-body">
+                        <!-- <a href="#"> -->
+                        <h3>Europe by Trains</h3>
+                        <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
+                            quaerat velit sequi eos ipsum nam aliquam doloremque.
+                            Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
+                            repudiandae sit illo.</p>
+                        <a class="textgreen" href="#"> Learn more</a>
+                        <!-- </a> -->
+                    </div>
+                </div>
+
+
+                <div class="card offp">
+                    <img src="./images/china.png" alt="china">
+                    <div class="card-body">
+                        <!-- <a href="#"> -->
+                        <h3>Explore China</h3>
+                        <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
+                            quaerat velit sequi eos ipsum nam aliquam doloremque.
+                            Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
+                            repudiandae sit illo.</p>
+                        <a class="textgreen" href="#"> Learn more</a>
+                        <!-- </a> -->
+                    </div>
                 </div>
             </div>
+            
+            <h2 class="yourfriend">Your friends:</h2>
 
-            <div class="card offp">
-                <img src="./images/brazil festival.png" alt="brazil">
-                <div class="card-body">
-                    <h3>Brazil Festival</h3>
-                    <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
-                        quaerat velit sequi eos ipsum nam aliquam doloremque.
-                        Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
-                        repudiandae sit illo.</p>
-                    <a class="textgreen" href="#"> Learn more</a>
+            <div class="d-flex flex-wrap homegap">
+                <div class="media rec-white">
+                    <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                    <div class="media-body mt-3">
+                        <h3>Asaf Levi</h3>
+                        <p><b>From:</b> Tel Aviv, Israel</p>
+                        <p><b>Age:</b> 27</p>
+                        <p><b>Wants to travel to:</b> South America from May-August</p>
+                        <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
                 </div>
-            </div>
 
-            <div class="card offp">
-                <img src="./images/europe.png" alt="europe">
-                <div class="card-body">
-                    <!-- <a href="#"> -->
-                    <h3>Europe by Trains</h3>
-                    <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
-                        quaerat velit sequi eos ipsum nam aliquam doloremque.
-                        Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
-                        repudiandae sit illo.</p>
-                    <a class="textgreen" href="#"> Learn more</a>
-                    <!-- </a> -->
+                <div class="media rec-white">
+                    <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                    <div class="media-body mt-3">
+                        <h3>Asaf Levi</h3>
+                        <p><b>From:</b> Tel Aviv, Israel</p>
+                        <p><b>Age:</b> 27</p>
+                        <p><b>Wants to travel to:</b> South America from May-August</p>
+                        <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
                 </div>
-            </div>
 
-
-            <div class="card offp">
-                <img src="./images/china.png" alt="china">
-                <div class="card-body">
-                    <!-- <a href="#"> -->
-                    <h3>Explore China</h3>
-                    <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto
-                        quaerat velit sequi eos ipsum nam aliquam doloremque.
-                        Eos, aliquam sapiente beatae, nihil officiis consequatur praesentium voluptatem recusandae
-                        repudiandae sit illo.</p>
-                    <a class="textgreen" href="#"> Learn more</a>
-                    <!-- </a> -->
+                <div class="media rec-white">
+                    <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                    <div class="media-body mt-3">
+                        <h3>Asaf Levi</h3>
+                        <p><b>From:</b> Tel Aviv, Israel</p>
+                        <p><b>Age:</b> 27</p>
+                        <p><b>Wants to travel to:</b> South America from May-August</p>
+                        <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
                 </div>
-            </div>
-        </div>
-        <h2 class="yourfriend">Your friends:</h2>
 
-        <div class="d-flex flex-wrap homegap">
-            <div class="media rec-white">
-                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
-                <div class="media-body mt-3">
-                    <h3>Asaf Levi</h3>
-                    <p><b>From:</b> Tel Aviv, Israel</p>
-                    <p><b>Age:</b> 27</p>
-                    <p><b>Wants to travel to:</b> South America from May-August</p>
-                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                <div class="media rec-white">
+                    <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
+                    <div class="media-body mt-3">
+                        <h3>Asaf Levi</h3>
+                        <p><b>From:</b> Tel Aviv, Israel</p>
+                        <p><b>Age:</b> 27</p>
+                        <p><b>Wants to travel to:</b> South America from May-August</p>
+                        <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
+                    </div>
+                    <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
                 </div>
-                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
+
+
             </div>
-
-            <div class="media rec-white">
-                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
-                <div class="media-body mt-3">
-                    <h3>Asaf Levi</h3>
-                    <p><b>From:</b> Tel Aviv, Israel</p>
-                    <p><b>Age:</b> 27</p>
-                    <p><b>Wants to travel to:</b> South America from May-August</p>
-                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                </div>
-                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
-            </div>
-
-            <div class="media rec-white">
-                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
-                <div class="media-body mt-3">
-                    <h3>Asaf Levi</h3>
-                    <p><b>From:</b> Tel Aviv, Israel</p>
-                    <p><b>Age:</b> 27</p>
-                    <p><b>Wants to travel to:</b> South America from May-August</p>
-                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                </div>
-                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
-            </div>
-
-            <div class="media rec-white">
-                <img class="align-self-start mr-3 img-fluid ml-3 mt-3" src="images/or_biron.png" alt="man picture">
-                <div class="media-body mt-3">
-                    <h3>Asaf Levi</h3>
-                    <p><b>From:</b> Tel Aviv, Israel</p>
-                    <p><b>Age:</b> 27</p>
-                    <p><b>Wants to travel to:</b> South America from May-August</p>
-                    <p><b>Interest:</b> Hiking, Nature, History, Explore cultures.</p>
-                </div>
-                <a href="#" class="btn btn-primary new-color  mt-2 mr-2">Talk to me</a>
-            </div>
-
-
         </div>
     </main>
 

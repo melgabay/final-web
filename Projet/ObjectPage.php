@@ -44,8 +44,11 @@ if ($result) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
     <!-- BOOTSRAP -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/template.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
@@ -100,22 +103,35 @@ if ($result) {
 
         ?>
 
-        <section class="mt-1">
-            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class=" d-flex justify-content-center">
-                <?php echo '<img src="' . $rowUser["picture"] . '" class="photo_profil" alt="' . $rowUser["picture"] . '"/>'; ?>
-            </a>
-            <span>Hello
-                <?php echo   $rowUser["name"]; ?>
-            </span>
-        </section>
+<section class="mt-1">
+                <a href="profile_page.php <?php if ($userdId != 0) {
+                                                echo   '?id=' . $userdId;
+                                            } ?>  " class=" d-flex justify-content-center">
+                    <img <?php if ($userdId != 0) {
+                                echo ' src="' . $rowUser["picture"] . '"';
+                            } else {
+                                echo ' src="./images/somone.png"';
+                            }
+                            ?> class="photo_profil" alt="user picture" />
+                </a>
+                <span>Hello
+                    <?php if ($userdId != 0) {
+                        echo   $rowUser["name"];
+                    } else {
+                        echo  "Guset";
+                    } ?>
+                </span>
+            </section>
     </header>
 
     <main class="main-form">
         <div class="trip_details d-flex justify-content-center flex-wrap">
             <section class="trip_details_section d-flex flex-wrap">
                 <span>Dates:</span>
-                <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31" value="<?php echo $row[" start_date"]; ?>" disabled>
-                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row[" end_date"]; ?>" min="1997-01-01" max="2030-12-31" disabled>
+                <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
+                    value="<?php echo $row[" start_date"]; ?>" disabled>
+                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row[" end_date"]; ?>"
+                min="1997-01-01" max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
                 <span>Ages:</span>
@@ -147,9 +163,11 @@ if ($result) {
                 </span>
             </section>
         </div>
+        <div id="wrapper">
         <h2 class="object_page_h2">Path:</h2>
-        <div id="trip_destnations" class="trip_destnations1">
-            <?php
+
+            <div id="trip_destnations" class="d-flex justify-content-between flex-wrap">
+                <?php
             $numberDest = 0;
             while ($row) {
                 $numberDest++;
@@ -194,30 +212,33 @@ if ($result) {
             }
             ?>
 
-        </div>
-
-        <div class="change-button">
-            <button type="button" class="btn btn-secondary" id="delete_button">Delete</button>
-            <div class="edit" id="edit_button"> <button type="button" class="btn btn-secondary">Edit</button></div>
-        </div>
-        <div id="myModal" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Message</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p id="mes_text">Are you sure you want to delete this trip?</p>
-                        <p class="text-secondary"><small></small></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="edit_button_mes">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="delete_button_mes">Delete</button>
+            </div>
+            <div class="change-button">
+                <button type="button" class="btn btn-danger" id="delete_button">Delete</button>
+                <div class="edit" id="edit_button"> <button type="button" class="btn btn-secondary">Edit</button></div>
+            </div>
+            <div id="myModal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="mes_text">Are you sure you want to delete this trip?</p>
+                            <p class="text-secondary"><small></small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                id="edit_button_mes">Cancel</button>
+                            <button type="button" class="btn btn-danger id="delete_button_mes">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
     </main>
 </body>
