@@ -174,27 +174,27 @@ include "logincheak.php";
                     <div class="col-md-3">
                         <label> Type Of Trip</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age" value="1">
+                            <input class="form-check-input" type="radio" name="type" value="1">
                             <label class="form-check-label">Nature</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age" value="2">
+                            <input class="form-check-input" type="radio" name="type" value="2">
                             <label class="form-check-label">Beach</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age" value="3">
+                            <input class="form-check-input" type="radio" name="type" value="3">
                             <label class="form-check-label">Sport</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age" value="4">
+                            <input class="form-check-input" type="radio" name="type" value="4">
                             <label class="form-check-label">Quiet</label>
                         </div>
 
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="age" value="5">
+                            <input class="form-check-input" type="radio" name="type" value="5">
                             <label class="form-check-label">Party </label>
                         </div>
                     </div>
@@ -262,30 +262,14 @@ include "logincheak.php";
 
                         <div class="col-md-3">
                         <label> Choose Town</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Brasilia">
-                            <label class="form-check-label" for="flexCheckDefault">Brasil</label>
+
+
+                        <div class="form-check" id="areas">
+                            <!--<input class="form-check-input" type="checkbox" name="TypeofTrip" value="Brasilia">
+                            <label class="form-check-label" for="flexCheckDefault"></label> -->
                         </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Beach">
-                            <label class="form-check-label" for="flexCheckDefault">Beach</label>
-                        </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Sport">
-                            <label class="form-check-label" for="flexCheckDefault">Sport</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Quiet">
-                            <label class="form-check-label" for="flexCheckDefault">Quiet</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="TypeofTrip" value="Party">
-                            <label class="form-check-label" for="flexCheckDefault">Party</label>
-                        </div>
                     </div>
                     </div>
 
