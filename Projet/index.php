@@ -54,7 +54,6 @@
 
     <!-- <link rel="stylesheet" href="css/form.css"> -->
     <script src="js/jquery-3.6.0.min.js"></script>
-        crossorigin="anonymous"></script>-->
     <script defer="" src="js/list_page.js"></script>
     <script defer="" src="js/script.js"></script>
 
