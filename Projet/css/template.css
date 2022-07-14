@@ -510,7 +510,6 @@ tr.clickable-row:hover {
 /* FIND FRIEND */
 
 .ffmain {
-    /* height: 100vh; */
     padding-top: 2%;
     padding-bottom: 2%;
 }
@@ -540,10 +539,8 @@ tr.clickable-row:hover {
 
 .ffp {
     margin-top: 2%;
-    /* margin-left: 20%; */
     display: grid;
     grid-template-columns: auto auto;
-    /* gap:50px */
 }
 
 @media (max-width: 985px) {
@@ -556,12 +553,6 @@ tr.clickable-row:hover {
 }
 
 
-/* @media (max-width: 400px) {
-    .d1 {
-        display: block!important;
-    }
-} */
-
 .ffmain h2 {
     margin-top: 2%;
     margin-left: 10%;
@@ -569,7 +560,6 @@ tr.clickable-row:hover {
 
 .btn.btn-primary.new-color.ffp {
     margin-left: 45%;
-    /* padding-bottom: 2%; */
 }
 
 
