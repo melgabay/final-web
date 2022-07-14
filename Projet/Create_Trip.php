@@ -34,6 +34,7 @@
     (t_name	,start_date	,end_date, ages	,nature,budget	)
     VALUES  (".$Name.",".$dateStart.",". $dateEnd.",".$age.",".$type.",".$amount.")";
 
+
     echo  $query ;
 
     $result = mysqli_query($connection, $query);

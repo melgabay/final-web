@@ -239,13 +239,13 @@ include "logincheak.php";
 
                     <div class="col-md-3">
                         <label class="control-label" for="date">Start Date</label>
-                        <input class="form-control" id="date" name="dateStart" placeholder="MM/DD/YYY" type="text">
+                        <input class="form-control" name="dateStart"  placeholder="dd-mm-yyyy" type="date">
                     </div>
 
 
                     <div class="col-md-3">
                         <label class="control-label" for="date">End date</label>
-                        <input class="form-control" id="date" name="dateEnd" placeholder="MM/DD/YYY" type="text">
+                        <input class="form-control" name="dateEnd" placeholder="dd-mm-yyyy"  type="date">
                     </div>
 
                 </div>
