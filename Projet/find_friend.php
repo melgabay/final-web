@@ -222,7 +222,6 @@ include "logincheak.php";
 
         </div>
 
-        <button type="button" class="btn btn-primary new-color ffp">Explore More Friend</button>
     </main>
 </body>
 

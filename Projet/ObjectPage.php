@@ -129,14 +129,14 @@ if ($result) {
             <section class="trip_details_section d-flex flex-wrap">
                 <span>Dates:</span>
                 <input type="date" name="begin" placeholder="dd-mm-yyyy" min="1997-01-01" max="2030-12-31"
-                    value="<?php echo $row[" start_date"]; ?>" disabled>
-                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row[" end_date"]; ?>"
+                    value="<?php echo $row["start_date"]; ?>" disabled>
+                <input type="date" name="end" placeholder="dd-mm-yyyy" value="<?php echo $row["end_date"]; ?>"
                 min="1997-01-01" max="2030-12-31" disabled>
             </section>
             <section class="trip_details_section">
                 <span>Ages:</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Ages" disabled data-selected="<?php echo $row[" ages"]; ?>">
+                <select name="Ages" disabled data-selected="<?php echo $row["ages"]; ?>">
                     <option value="1">18-25</option>
                     <option value="2">26-35</option>
                     <option value="3">36-45</option>
@@ -147,7 +147,7 @@ if ($result) {
             <section class="trip_details_section">
                 <span>Character</span>
                 <!-- <button class="edit_button"></button>  -->
-                <select name="Character" disabled data-selected="<?php echo $row[" nature"]; ?>">
+                <select name="Character" disabled data-selected="<?php echo $row["nature"]; ?>">
                     <option value="1">Chill</option>
                     <option value="2">Sunbathing</option>
                     <option value="3">Tracks</option>

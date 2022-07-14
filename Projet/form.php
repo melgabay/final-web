@@ -93,7 +93,7 @@ include "logincheak.php";
 
 
 <body>
-<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
+    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input">
             <nav id="sidebar-menu">
@@ -124,41 +124,39 @@ include "logincheak.php";
             </ul>
         </nav>
 
-        <?php 
+        <?php
         //get data from DB
         $userdId = $_SESSION["user_id"];
-        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
+        $userCheak     = "SELECT * from tbl_users_206 where u_id =" . $userdId;
         $resultUser = mysqli_query($connection, $userCheak);
 
-        if($resultUser) {
-        $rowUser	= mysqli_fetch_assoc($resultUser);
-        }
-
-        else die("DB query failed.");
+        if ($resultUser) {
+            $rowUser    = mysqli_fetch_assoc($resultUser);
+        } else die("DB query failed.");
 
         ?>
 
-            <section class="mt-1">
-                <a href="profile_page.php <?php if ($userdId != 0) {
-                                                echo   '?id=' . $userdId;
-                                            } ?>  " class=" d-flex justify-content-center">
-                    <img <?php if ($userdId != 0) {
-                                echo ' src="' . $rowUser["picture"] . '"';
-                            } else {
-                                echo ' src="./images/somone.png"';
-                            }
-                            ?> class="photo_profil" alt="user picture" />
-                </a>
-                <span>Hello
-                    <?php if ($userdId != 0) {
-                        echo   $rowUser["name"];
-                    } else {
-                        echo  "Guset";
-                    } ?>
-                </span>
-            </section>
+        <section class="mt-1">
+            <a href="profile_page.php <?php if ($userdId != 0) {
+                                            echo   '?id=' . $userdId;
+                                        } ?>  " class=" d-flex justify-content-center">
+                <img <?php if ($userdId != 0) {
+                            echo ' src="' . $rowUser["picture"] . '"';
+                        } else {
+                            echo ' src="./images/somone.png"';
+                        }
+                        ?> class="photo_profil" alt="user picture" />
+            </a>
+            <span>Hello
+                <?php if ($userdId != 0) {
+                    echo   $rowUser["name"];
+                } else {
+                    echo  "Guset";
+                } ?>
+            </span>
+        </section>
 
-        
+
     </header>
 
     <main class="formpage">
@@ -168,7 +166,7 @@ include "logincheak.php";
                 <div class="d-flex justify-content-around flex-wrap">
                     <div class="col-md-3">
                         <label> Amount of trip</label>
-                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0" pattern="[0+]" required>
+                        <input type="number" class="form-control" id="amount"  name="amount" placeholder="0 $" min="0" pattern="[0+]" required>
                     </div>
 
                     <div class="col-md-3">
@@ -227,27 +225,30 @@ include "logincheak.php";
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <label for="continents" class="form-label">Choose continent</label>
-                        <select id="continents" class="form-select" required>
-                            <option value="">...</option>
-                        </select>
-                    </div>
+
                 </div>
 
                 <div class="d-flex justify-content-around flex-wrap mt-4">
-                        <div class="col-md-3">
-                            <label class="control-label" for="date">Start Date</label>
-                            <input class="form-control" id="date" name="dateStart" placeholder="MM/DD/YYY" type="text">
-                        </div>
 
-
-                        <div class="col-md-3">
-                            <label class="control-label" for="date">End date</label>
-                            <input class="form-control" id="date" name="dateEnd" placeholder="MM/DD/YYY" type="text">
-                        </div>
-
+                    <div class="col-md-3">
+                        <label for="continents" class="form-label" >Choose continent</label>
+                        <select id="continents" class="form-select" name="continent" required>
+                            <option value="">...</option>
+                        </select>
                     </div>
+
+                    <div class="col-md-3">
+                        <label class="control-label" for="date">Start Date</label>
+                        <input class="form-control" id="date" name="dateStart" placeholder="MM/DD/YYY" type="text">
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <label class="control-label" for="date">End date</label>
+                        <input class="form-control" id="date" name="dateEnd" placeholder="MM/DD/YYY" type="text">
+                    </div>
+
+                </div>
 
 
                 <div class="beige-rec pb-5 pt-3 mt-4" id="form-part-two">
@@ -255,28 +256,28 @@ include "logincheak.php";
 
 
                         <div class="col-md-3">
-                            <label  class="form-label" for="inputCountry">Choose Country</label>
-                            <select  id="inputCountry" name="inputCountry1" class="form-select country">
-                            <option value="">...</option>
+                            <label class="form-label" for="inputCountry">Choose Country</label>
+                            <select id="inputCountry" name="inputCountry1" class="form-select country">
+                                <option value="">...</option>
                             </select>
                         </div>
 
                         <div class="col-md-3">
-                        <label> Choose Town</label>
+                            <label> Choose Town</label>
 
 
-                        <div class="form-check" id="areas">
-                            <!--<input class="form-check-input" type="checkbox" name="TypeofTrip" value="Brasilia">
+                            <div class="form-check" id="areas">
+                                <!--<input class="form-check-input" type="checkbox" name="TypeofTrip" value="Brasilia">
                             <label class="form-check-label" for="flexCheckDefault"></label> -->
+                            </div>
+
+
                         </div>
-
-
-                    </div>
                     </div>
 
-                   
+
                 </div>
-                
+
                 <input name="NumDest" id="NumDest" value="1">
 
                 <div class="d-block" id="pre">

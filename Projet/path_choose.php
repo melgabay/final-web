@@ -47,7 +47,7 @@ include "logincheak.php";
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>-->
     <script defer="" src="js/list_page.js"></script>
-    <script defer="" src="js/script.js"></script>
+    <script defer="" src="js/choose_path.js"></script>
 
 
     <!-- calendar -->
@@ -129,14 +129,21 @@ include "logincheak.php";
         <h1 class="text-center">Choose Path</h1>
 
          <?php echo $_POST["NumDest"] ?>
-
+    </form>
         <div class="pathre">
                 
             <div id="trip_destnations1" class="trip_destnations1">
-                <h2>your plan </h2>
                 <div class="blanc-rec">
 
                 <?php 
+                echo '<input name ="amount" style="display:none" value='.$_POST["amount"].'>';
+                echo '<input name ="age" style="display:none" value='.$_POST["age"].'>';
+                echo '<input name ="type" style="display:none" value='.$_POST["type"].'>';
+                echo '<input name ="dateStart" style="display:none"  value='.$_POST["dateStart"].'>';
+                echo '<input name="dateEnd" style="display:none" value='.$_POST["dateEnd"].'>';
+                echo '<input name="continent" style="display:none" value='.$_POST["continent"].'>';
+
+
                 for ($i = 1; $i <= $_POST["NumDest"]; $i++)
                 {
                 echo   '<div class="destnation">';
@@ -145,14 +152,14 @@ include "logincheak.php";
                  echo          '<img src="images/dest'.$i.'.png">';
                  echo         '<img src="images/dots.png">';
                  echo         '<img src="images/bus.png">';
-                 echo      '</div>';
+                echo      '</div>';
                 echo      '<div class="area_list">';
                 $inputcountry='inputCountry'.$i;
                 echo          '<h3>'.$_POST[$inputcountry].'</h3>';
                 echo          '<img src="images/Vector 4.png">';
                 $inputArea='areas'.$i;
-                foreach( $_POST[$inputArea] as $key => $val ) {
-                    echo '<p>'.$val.'</p>';
+                foreach( $_POST[$inputArea] as $key => $value ) {
+                    echo '<p>'.$value.'</p>';
 
                 }
                 echo           '<section>';
@@ -164,11 +171,12 @@ include "logincheak.php";
                  </div>
                 
     
-                <button type="button" class="btn btn-primary new-color d-flex choose">Choose this trip</button>
+            <button type="button" class="btn btn-primary new-color d-flex choose">Save this trip</button> 
 
             </div>
 
         </div>
+        <form>
 
     </main>
 

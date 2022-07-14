@@ -36,11 +36,11 @@ $(document).ready(function() {
         });
 
         newForm.find('input').each(function() {
-            let selectName = ($(this).attr('input'));
+            let selectName = ($(this).attr('name'));
             if (String(selectName).indexOf("areas") >= 0) {
                 console.log($(this));
                 console.log($(this).attr('name'));
-                $(this).attr('name', 'areas' + (count + 1));
+                $(this).attr('name', 'areas' + (count + 1) + '[]');
             }
         });
 
@@ -70,12 +70,18 @@ $(document).ready(function() {
                     const div = document.createElement('div');
                     div.setAttribute('class', 'form-check');
                     label.setAttribute('value', `${jsondata.Continents[continentSelected].countries[key].areas[keyC].area_name}`);
+                    input.setAttribute('value', `${jsondata.Continents[continentSelected].countries[key].areas[keyC].area_name}`);
                     input.setAttribute('class', 'form-check-input');
                     input.setAttribute('type', 'checkbox');
+                    let id = 1;
+                    input.setAttribute('id', 'checkbox');
+                    label.setAttribute('for', 'checkbox');
+                    id++;
                     input.setAttribute('name', 'areas1[]');
                     label.setAttribute('class', 'form-check-label');
                     label.setAttribute('class', 'flexCheckDefault');
-                    label.append = input;
+                    label.innerHTML = sHtml;
+                    div.append(input);
                     div.append(label);
 
                     $("#areas").append(div);
