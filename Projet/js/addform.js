@@ -33,38 +33,52 @@ $(document).ready(function() {
                 console.log($(this).attr('name'));
                 $(this).attr('name', 'inputCountry' + (count + 1));
             }
+        });
 
-            newForm.prependTo("#pre"); //then copy the form number one and append to the end of the form
-
-            count++;
-
-            $("#NumDest").val(count);
-
-            if (count == 4) { // cant add more than 3 form
-                $("#count").css("visibility", "hidden"); //then if we have 3 form, hidden the button add
+        newForm.find('input').each(function() {
+            let selectName = ($(this).attr('input'));
+            if (String(selectName).indexOf("areas") >= 0) {
+                console.log($(this));
+                console.log($(this).attr('name'));
+                $(this).attr('name', 'areas' + (count + 1));
             }
-            return count;
         });
 
 
 
+        newForm.prependTo("#pre"); //then copy the form number one and append to the end of the form
 
+        count++;
 
+        $("#NumDest").val(count);
 
-
-
+        if (count == 4) { // cant add more than 3 form
+            $("#count").css("visibility", "hidden"); //then if we have 3 form, hidden the button add
+        }
+        return count;
     });
-    $("#inputCountry").live('change', function() {
-        console.log("kldfkalfkdsfdksl");
+
+
+    $('body').on('change', "#inputCountry", function() {
         for (const key in jsondata.Continents[continentSelected].countries) {
             if (`${jsondata.Continents[continentSelected].countries[key].country_name}` == $('.form-select.country').find(":selected").text()) {
                 for (const keyC in jsondata.Continents[continentSelected].countries[key].areas) {
                     sHtml = `${jsondata.Continents[continentSelected].countries[key].areas[keyC].area_name}`;
                     console.log(sHtml);
                     const input = document.createElement('input');
-                    input.setAttribute('value', `${jsondata.Continents[continentSelected].countries[key].areas[keyC].area_name}`);
-                    input.innerHTML = sHtml;
-                    $("#areas").html(input);
+                    const label = document.createElement('label');
+                    const div = document.createElement('div');
+                    div.setAttribute('class', 'form-check');
+                    label.setAttribute('value', `${jsondata.Continents[continentSelected].countries[key].areas[keyC].area_name}`);
+                    input.setAttribute('class', 'form-check-input');
+                    input.setAttribute('type', 'checkbox');
+                    input.setAttribute('name', 'areas1[]');
+                    label.setAttribute('class', 'form-check-label');
+                    label.setAttribute('class', 'flexCheckDefault');
+                    label.append = input;
+                    div.append(label);
+
+                    $("#areas").append(div);
 
 
                 }
@@ -82,13 +96,13 @@ $(document).ready(function() {
             if (`${jsondata.Continents[key].continent_name}` == $("#continents").find(":selected").text()) {
                 continentSelected = $("#continents").find(":selected").val();
                 continentSelected--;
-                const option = document.createElement('option');
                 for (const keyC in jsondata.Continents[key].countries) {
+                    let option = document.createElement('option');
                     sHtml = `${jsondata.Continents[key].countries[keyC].country_name}`;
                     option.setAttribute('value', `${jsondata.Continents[key].countries[keyC].country_name}`);
                     option.innerHTML = sHtml;
                     console.log(option);
-                    $('.form-select.country').html(option);
+                    $('.form-select.country').append(option);
 
                 }
 

@@ -255,8 +255,9 @@ include "logincheak.php";
 
 
                         <div class="col-md-3">
-                            <label  class="form-label">Choose Country</label>
+                            <label  class="form-label" for="inputCountry">Choose Country</label>
                             <select  id="inputCountry" name="inputCountry1" class="form-select country">
+                            <option value="">...</option>
                             </select>
                         </div>
 

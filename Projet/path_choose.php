@@ -150,7 +150,7 @@ include "logincheak.php";
                 $inputcountry='inputCountry'.$i;
                 echo          '<h3>'.$_POST[$inputcountry].'</h3>';
                 echo          '<img src="images/Vector 4.png">';
-                $inputArea='inputArea'.$i;
+                $inputArea='areas'.$i;
                 foreach( $_POST[$inputArea] as $key => $val ) {
                     echo '<p>'.$val.'</p>';
 
