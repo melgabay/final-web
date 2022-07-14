@@ -562,7 +562,10 @@ tr.clickable-row:hover {
     margin-left: 45%;
 }
 
-
+.align-self-start.mr-3.img-fluid.ml-3.mt-3{
+    max-width: 90px;
+    max-height: 90px;
+}
 /* PATH */
 
 .pathre {
