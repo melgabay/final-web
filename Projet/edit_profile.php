@@ -105,7 +105,6 @@
     														
     $query=$query."WHERE u.u_id=" . $userId; 
 
-	echo $query;
 	$result = mysqli_query($connection, $query);
 
 	if($result==true) {

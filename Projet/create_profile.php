@@ -41,21 +41,21 @@
     $query 	= "insert into tbl_users_206 
     (name	,email	,city	,country	,phone	,wants_travel_to	,dates_month	,dates_year	,password	,Interest	,age	,favorite_charactere)
     VALUES  (".$fullName.",".$mail.",". $city.",".$country.",".$phone.",".$destId.",".$dateMonth.",".$dateYear.",".$pass.",".$interest.",".$age.",".$Character.")";
+    $resultInsert = mysqli_query($connection, $query);
+
     
-
-
 	$queryNewline="select * from tbl_users_206 u order by u.register_date desc limit 1";
-	$result = mysqli_query($connection, $queryNewline);
+	$resultNewLine = mysqli_query($connection, $queryNewline);
 
-	if($result==true) {
-        $rowUser    = mysqli_fetch_assoc($result);
+	if($resultNewLine) {
+        $rowUser    = mysqli_fetch_assoc($resultNewLine);
         header('Location:profile_page.php?id='.$rowUser["u_id"].'&create=1');
 	}
 
 	else 
     {
         header('Location:profile_pagr.php?create=0');
-    }
+    } 
 
 
 

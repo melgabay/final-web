@@ -49,18 +49,33 @@ $("document").ready(() => {
     });
 
     let update = getUrlParameter('update');
-    console.log(update);
     if (update != false) {
         if (update == 1) {
             $("#mes_text").text("Edit Success");
             $('#myModal').modal('show');
-            setTimeout(200);
+            setTimeout(800);
             $('#myModal').modal('hide');
 
         } else {
             $("#mes_text").text("Edit Failed");
             $("#myModal").modal('show');
-            setTimeout(200);
+            setTimeout(800);
+            $("#myModal").modal('hide');
+
+        }
+    }
+    let create = getUrlParameter('create');
+    if (create != false) {
+        if (create == 1) {
+            $("#mes_text").text("Create Success");
+            $('#myModal').modal('show');
+            setTimeout(800);
+            $('#myModal').modal('hide');
+
+        } else {
+            $("#mes_text").text("Create Failed");
+            $("#myModal").modal('show');
+            setTimeout(800);
             $("#myModal").modal('hide');
 
         }
