@@ -93,16 +93,18 @@ include "logincheak.php";
 
 
 <body>
-    <header class="d-flex justify-content-between pl-3 pr-3 align-items-center ">
+<header class="d-flex justify-content-between pl-3 pr-3 align-items-center">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input">
             <nav id="sidebar-menu">
                 <h3>Menu</h3>
                 <ul>
-                    <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Homepage</a></li>
+                    <li class="nav-item"><a class="nav-link  " aria-current="page" href="index.php">Homepage</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
                     <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                     <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+                    <li class="nav-item"><a class="nav-link  " href="my_friends.php">My Friends</a></li>
                 </ul>
             </nav>
         </label>
@@ -118,41 +120,55 @@ include "logincheak.php";
                 <li class="nav-item"><a class="nav-link active " href="form.php">Create New Trip</a></li>
                 <li class="nav-item"><a class="nav-link " href="list_page.php">My Trips</a></li>
                 <li class="nav-item"><a class="nav-link  " href="find_friend.php">Find Friend</a></li>
+                <li class="nav-item"><a class="nav-link  " href="my_friends.php">My Friends</a></li>
             </ul>
         </nav>
 
-        <?php
-
+        <?php 
         //get data from DB
         $userdId = $_SESSION["user_id"];
-        $userCheak     = "SELECT * from tbl_users_206 where u_id =" . $userdId;
+        $userCheak 	= "SELECT * from tbl_users_206 where u_id =".$userdId;
         $resultUser = mysqli_query($connection, $userCheak);
 
-        if ($resultUser) {
-            $rowUser    = mysqli_fetch_assoc($resultUser);
-        } else die("DB query failed.");
+        if($resultUser) {
+        $rowUser	= mysqli_fetch_assoc($resultUser);
+        }
+
+        else die("DB query failed.");
 
         ?>
 
-        <section class="mt-1">
-            <a href="profile_page.php?id=<?php echo   $userdId . '"'; ?>  class=" d-flex justify-content-center">
-                <?php echo '<img src="' . $rowUser["picture"] . '" class="photo_profil" alt="' . $rowUser["picture"] . '"/>'; ?>
-            </a>
-            <span>Hello
-                <?php echo   $rowUser["name"]; ?>
-            </span>
-        </section>
-    </header>
+            <section class="mt-1">
+                <a href="profile_page.php <?php if ($userdId != 0) {
+                                                echo   '?id=' . $userdId;
+                                            } ?>  " class=" d-flex justify-content-center">
+                    <img <?php if ($userdId != 0) {
+                                echo ' src="' . $rowUser["picture"] . '"';
+                            } else {
+                                echo ' src="./images/somone.png"';
+                            }
+                            ?> class="photo_profil" alt="user picture" />
+                </a>
+                <span>Hello
+                    <?php if ($userdId != 0) {
+                        echo   $rowUser["name"];
+                    } else {
+                        echo  "Guset";
+                    } ?>
+                </span>
+            </section>
 
+        
+    </header>
 
     <main class="formpage">
         <h1 class="text-center"> Create New Trip </h1>
         <div class="d-flex justify-content-center mt-5 flex-wrap">
-            <form action="#" method="GET" class="rec-white col-md-8 mb-5">
+            <form action="path_choose.php" method="POST" class="rec-white col-md-8 mb-5">
                 <div class="d-flex justify-content-around flex-wrap">
                     <div class="col-md-3">
                         <label> Amount of trip</label>
-                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0">
+                        <input type="number" class="form-control" id="amount" placeholder="0 $" min="0" pattern="[0+]">
                     </div>
 
                     <div class="col-md-3">

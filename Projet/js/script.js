@@ -257,4 +257,25 @@ $("document").ready(() => {
         autoclose: true,
     };
     date_input.datepicker(options);
+
+    let Delete = getUrlParameter('Delete');
+    console.log(Delete);
+    if (Delete != false) {
+        if (Delete == 1) {
+            $("#mes_text").text("Delete Success");
+            $('#myModal').modal('show');
+            setTimeout(800);
+            $('#myModal').modal('hide');
+
+        } else {
+            $("#mes_text").text("Delete Failed");
+            $("#myModal").modal('show');
+            setTimeout(800);
+            $("#myModal").modal('hide');
+
+        }
+    }
+
+
+
 });

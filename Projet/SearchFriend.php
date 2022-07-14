@@ -15,6 +15,7 @@ include "logincheak.php";
 <?php 
 
 	//get data from DB
+    $userdId = $_SESSION["user_id"];
     $dateYear=0;
     $dateMonth=0;
     $destId=0;
@@ -80,11 +81,16 @@ include "logincheak.php";
 
     }
 
-    $query= "select * from ".$queryDate ." 
+    $query= $queryDate ." 
     inner join ".$queryAge ." on a.u_id=d.u_id 
     inner join ". $queryDest. " on d.u_id=de.u_id 
     inner join ".$queryChar . " on ch.u_id=de.u_id 
     inner join ".$queryTrip . " on t.u_id=d.u_id";
+    $queryFriend= "(SELECT * FROM tbl_user_friend_206  where tbl_user_friend_206.u_id=". $userdId.") as fr";
+
+    $query= " select * from ".$queryFriend."
+    right join" .  $query ." 
+    on t.u_id=fr.f_id WHERE isnull(fr.u_id)AND t.u_id!=". $userdId;
 
 
 	$result = mysqli_query($connection, $query);
@@ -109,7 +115,7 @@ include "logincheak.php";
 
         echo                   '<p><b>Wants to travel to: </b>'.$rowDest["destination_name"].' in '.$row["dates_month"].'/'.$row["dates_year"].'</p>';
         echo  '<p><b>Interest: </b>'.$row["Interest"].'</p>';
-        echo                   '<a href="#" class="btn btn-primary new-color">Add Friend</a>';
+        echo                   '<a href="Add_Friend.php?id='.$row["u_id"].'" class="btn btn-primary new-color">Add Friend</a>';
         echo               '</div>';
         echo           '</div>';
             }

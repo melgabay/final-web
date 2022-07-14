@@ -1,8 +1,7 @@
-function loadDoc(pageUrl) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
+const xhttp = new XMLHttpRequest();
 
-    }
+function loadDoc(pageUrl) {
+
     xhttp.open("GET", pageUrl);
     xhttp.send();
 
@@ -55,7 +54,6 @@ $("document").ready(() => {
             loadDoc('SearchFriend.php' + str);
             xhttp.onload = function() {
                 $("#friend_result").html(this.responseText);
-
             }
         }
     });
