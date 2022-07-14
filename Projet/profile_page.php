@@ -54,6 +54,7 @@ if (mysqli_connect_errno()) {
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+
     <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
     <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
 
@@ -64,6 +65,9 @@ if (mysqli_connect_errno()) {
     <!-- fav icone -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script rel="text/javascript" src="js/upload.js"></script>
+
 
     <title>TripDream</title>
 </head>
@@ -153,7 +157,7 @@ if (mysqli_connect_errno()) {
                         <div class="card-header">Profile Picture</div>
                         <div class="card-body text-center">
                             <!-- Profile picture image-->
-                            <img <?php if ($userdId != 0) {
+                            <img id="change_profile" <?php if ($userdId != 0) {
                                         echo ' src="' . $rowUser["picture"] . '" class="img-account-profile rounded-circle mb-2" ';
                                     } else {
                                         echo ' src="./images/somone.png"  class="photo_profil"';
@@ -161,7 +165,7 @@ if (mysqli_connect_errno()) {
                             <!-- Profile picture help block-->
                             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                             <!-- Profile picture upload button-->
-                            <button class="btn btn-primary new-color" type="button">Upload new image</button>
+                            <button class="btn btn-primary new-color" type="button" id="upload">Upload new image</button>
                         </div>
                     </div>
                 </div>
