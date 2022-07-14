@@ -44,7 +44,6 @@ if (mysqli_connect_errno()) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="css/template.css">
-    <!-- <link rel="stylesheet" href="css/form.css"> -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script defer="" src="js/edit_profile.js"></script>
@@ -129,7 +128,7 @@ if (mysqli_connect_errno()) {
             <a href="profile_page.php <?php if ($userdId != 0) {
                                             echo   '?id=' . $userdId;
                                         } ?>  " class=" d-flex justify-content-center">
-                <img <?php if ($userdId != 0) {
+                <img id="changepp" <?php if ($userdId != 0) {
                             echo ' src="' . $rowUser["picture"] . '"';
                         } else {
                             echo ' src="./images/somone.png"';
