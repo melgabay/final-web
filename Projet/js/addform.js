@@ -100,7 +100,19 @@ $(document).ready(function() {
 
         for (const key in jsondata.Continents) {
             if (`${jsondata.Continents[key].continent_name}` == $("#continents").find(":selected").text()) {
+                console.log($("#continents").find(":selected").text());
                 continentSelected = $("#continents").find(":selected").val();
+                let input = document.createElement('input');
+
+                input.setAttribute('value', $("#continents").find(":selected").text());
+                input.setAttribute('name', 'continent');
+                input.setAttribute('class', 'continents');
+
+
+
+                $("#div_cont").append(input);
+
+
                 continentSelected--;
                 for (const keyC in jsondata.Continents[key].countries) {
                     let option = document.createElement('option');

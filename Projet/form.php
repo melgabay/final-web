@@ -230,9 +230,9 @@ include "logincheak.php";
 
                 <div class="d-flex justify-content-around flex-wrap mt-4">
 
-                    <div class="col-md-3">
+                    <div class="col-md-3" id="div_cont">
                         <label for="continents" class="form-label" >Choose continent</label>
-                        <select id="continents" class="form-select" name="continent" required>
+                        <select id="continents" class="form-select"  required>
                             <option value="">...</option>
                         </select>
                     </div>

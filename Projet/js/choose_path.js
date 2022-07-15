@@ -29,7 +29,6 @@ $("document").ready(() => {
 
 
     $(".btn").eq(0).click(function() {
-        console.log("adda");
         let str = "?id=1";
 
         for (const x in qstr) {
